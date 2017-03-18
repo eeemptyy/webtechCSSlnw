@@ -1,0 +1,71 @@
+.box-login{
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.77);
+  color: black;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+input[type="text"], input[type="password"] {
+  margin: 10px;
+  padding: 6px;
+  width: 75%;
+  background-color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+
+}
+
+input[type="text"]{
+  background-size: 20px;
+  background-image: url('../img/User.png');
+  background-repeat: no-repeat;
+  background-position: 10px 5px;
+}
+
+input[type="password"] {
+  background-size: 20px;
+  background-image: url('../img/Key.png');
+  background-repeat: no-repeat;
+  background-position: 10px 5px;
+}
+
+input[type="submit"] {
+  color: white;
+  background-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0px;
+  border: 1px;
+  width: 75%;
+  border-radius: 5px;
+}
+
+h1.myhead{
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  font-size: 4em;
+  padding-top: 20px;
+}
+
+h2.myhead{
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+  margin: 0;
+  padding: 2px;
+}
+
+h4{
+  margin: 0;
+  padding: 2px;
+  padding-left: 100px;
+}
