@@ -1,0 +1,43 @@
+#print{
+  background-image: url(img/Print-50.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  /*background: url(img/Print-50.png);
+  background-size: 45px;
+  background-position: 25px;
+  background-repeat: no-repeat;
+  border-style: hidden;
+  margin: 4px;
+  width: 80px;
+  height: 70px;
+  font-size: 30px;
+  font-family: inherit;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding-left: 50px;*/
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+  font-weight: bold;
+  /*text-align: center;*/
+  padding: 8px;
+  border: 1px solid #dddddd;
+}
+
+td{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-weight: lighter;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
