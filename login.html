@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Login</title>
     <meta charset="utf-8">
@@ -46,14 +47,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                      <a href="#login">Login</a>
+                        <a href="#login">Login</a>
 
                     </li>
                     <li>
-                      <a href="#about">About</a>
+                        <a href="#about">About</a>
                     </li>
                     <li>
-                      <a href="#contact">Contact Us</a>
+                        <a href="#contact">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -67,29 +68,32 @@
     <a name="login"></a>
     <div class="intro-header">
         <div class="container">
-          <div class="row">
-            <!-- <div class="intro-message"> -->
-              <h1 class="myhead">CLASS WORK</h1>
-              <br />
-              <div class="box-login">
-                      <h2 class="myhead">LOGIN</h2>
-                      <hr class="intro-divider">
-                      <form class="" action="" method="post">
-                        <input type="text" name="username" placeholder="Username" /><br />
-                        <input type="password" name="password" placeholder="Password" /><br />
+            <div class="row">
+                <!-- <div class="intro-message"> -->
+                <h1 class="myhead">CLASS WORK</h1>
+                <br />
+                <div class="box-login">
+                    <h2 class="myhead">LOGIN</h2>
+                    <hr class="intro-divider">
+                    <form class="" action="controller/create_seesion.php" method="post">
+                        <input type="text" name="username" id='username' placeholder="Username" /><br />
+                        <input type="password" name="password" id='pass' placeholder="Password" /><br />
+                        <input type="text" name="fname" id="fname" hidden>
+                        <input type="text" name="lname" id="lname" hidden>
+                        <input type="text" name="role" id="role" hidden>
                         <br /><br />
-                        <input type="submit" class="btn-login" value="LOGIN" />
-                      </form>
-              </div>
-            <!-- </div> -->
-          </div>
+                        <input type="submit" class="btn-login" value="LOGIN" onclick="validateLogin();" />
+                    </form>
+                </div>
+                <!-- </div> -->
+            </div>
         </div>
         <!-- /.container -->
     </div>
     <!-- /.intro-header -->
 
     <!-- Page Content -->
-	<a  name="about"></a>
+    <a name="about"></a>
     <div class="content-section-a">
 
         <div class="container">
@@ -120,7 +124,9 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop
+                        actions!
+                    </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <img class="img-responsive" src="img/dog.png" alt="">
@@ -155,7 +161,7 @@
     </div>
     <!-- /.content-section-a -->
 
-	<a  name="contact"></a>
+    <a name="contact"></a>
     <div class="banner">
 
         <div class="container">
@@ -164,12 +170,12 @@
                 <div class="col-lg-6">
                     <h2>Contact Us :</h2>
                     <br />
-                    <h4> 5610404452  Boonyaporn  Narkjumrussri</h4>
-                    <h4> 5610450063  Jompol      Sermsook</h4>
-                    <h4> 5610450993  Pannawat    Kanyawutthiphat</h4>
-                    <h4> 5710404357  Nattaya     Thitipimolpran</h4>
-                    <h4> 5710404446  Poramain    keawpan</h4>
-                    <h4> 5710404624  Waranya     Thamsritip</h4>
+                    <h4> 5610404452 Boonyaporn Narkjumrussri</h4>
+                    <h4> 5610450063 Jompol Sermsook</h4>
+                    <h4> 5610450993 Pannawat Kanyawutthiphat</h4>
+                    <h4> 5710404357 Nattaya Thitipimolpran</h4>
+                    <h4> 5710404446 Poramain keawpan</h4>
+                    <h4> 5710404624 Waranya Thamsritip</h4>
                 </div>
             </div>
 
@@ -212,6 +218,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Login Script by Jompol -->
+    <script src="js/loginPageSrcipt_empty.js"></script>
 
 </body>
 

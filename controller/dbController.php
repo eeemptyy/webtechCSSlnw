@@ -42,6 +42,31 @@ class DB_Controller{
         
     }
 
+    public function getLogin($uname, $pass){
+        try{
+            $sql = 'SELECT user.username, user.password, user.fname, user.lname, role.role_name FROM user, role WHERE user.username = "'.$uname.'" and user.role_id = role.id';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+
+            $row = $q->fetch();
+            // echo $q->rowCount();
+            if ($row['password'] == $pass){
+                $userin = array();
+                $userin["username"] = $row['username'];
+                $userin['firstname'] = $row['fname'];
+                $userin['lastname'] = $row['lname'];
+                $userin['role'] = $row['role_name'];
+                // $userin['XX'] = "TEST";
+                echo json_encode($userin);
+            }else {
+                echo "Username/Password not found.";
+            }
+
+        } catch (PDOException $e){
+            die("Couldn't getAllUser from the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
     public function getAllUser(){
         try{
             $sql = 'SELECT user.username, user.fname, user.lname, role.role_name FROM user, role WHERE user.role_id = role.id';
