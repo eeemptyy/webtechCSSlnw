@@ -7,9 +7,8 @@
 
     $case_sw = $_POST['func'];
     switch ($case_sw) {
-        case "get_login":
-            $username = $_POST['username'];
-            echo $db_controller->getLogin($username);
+        case "get_user":
+            echo $db_controller->getAllUser();
             break;
         default:
             echo "Function Not Found.";

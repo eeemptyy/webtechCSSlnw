@@ -41,6 +41,31 @@ class DB_Controller{
         }
         
     }
+
+    public function getAllUser(){
+        try{
+            $sql = 'SELECT user.username, user.fname, user.lname, role.role_name FROM user, role WHERE user.role_id = role.id';
+            // $sql = "SELECT * FROM user";
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['username'] = $row['username'];
+                $temp['firstname'] = $row['fname'];
+                $temp['lastname'] = $row['lname'];
+                $temp['role'] = $row['role_name'];
+                $tempArr[$n] = $temp;
+            }
+            echo json_encode($tempArr);
+
+        } catch (PDOException $e){
+            die("Couldn't Insert to the database ".$this->dbname.": ".$e->getMessage());
+        }
+
+    }
     
 }
 ?>
