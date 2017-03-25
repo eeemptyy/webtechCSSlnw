@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                   <li>
-                      <a href="ad.html">Manage User</a>
+                      <a href="ad.php">Manage User</a>
                   </li>
                   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -215,7 +215,7 @@
         </div>
     </form>
 
-    
+
     <!-- Modal -->
     <form class="" action="index.html" method="post">
         <div id="deleteModal" class="modal fade" role="dialog">
