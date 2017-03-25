@@ -13,18 +13,18 @@ function validateLogin() {
                 pass: pass
             },
             success: function(data) {
-                alert(data);
+                // alert(data);
                 if (data == "Username/Password not found.") {
                     return false;
                 } else {
                     var obj = JSON.parse(data);
-                    alert("123 " + obj['username'] + " " + obj['firstname'] + " " + obj['lastname'] + " " + obj['role'] + " ")
+                    // alert("123 " + obj['username'] + " " + obj['firstname'] + " " + obj['lastname'] + " " + obj['role'] + " ")
                     $("#username").val(obj['username']);
                     $("#fname").val(obj['firstname']);
                     $("#lname").val(obj['lastname']);
                     $("#role_id").val(obj['role']);
-                    alert(obj['role'] + " 33321");
-                    alert($('#role_id').val() + " AAAsss");
+                    // alert(obj['role'] + " 33321");
+                    // alert($('#role_id').val() + " AAAsss");
                     $("#myForm").submit();
                 }
             },
