@@ -45,11 +45,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#login">Administer</a>
-                    </li>
-                    <li>
-                        <a href="#about">Home</a>
+                  <li>
+                      <a href="#Home">Home</a>
+                  </li>
+                  <li>
+                      <a href="#Subject">Subject</a>
+                  </li>
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Edit Password</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -75,62 +81,8 @@
                     <a href="" class="btn-admin"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                 </li>
             </ul>
-             <div id='table'> 
+             <div id='table'>
             </div>
-            <div>
-                <table class="table table-hover table-bordered">
-                    <!-- <table class="table table-hover table-striped table-bordered"> -->
-                    <thead>
-                        <tr>
-                            <!-- <th><div class="checkbox">
-                            <label><b><input type="checkbox" value="">All</b></label>
-                          </div></th> -->
-                            <th><input type="checkbox" value=""> All</th>
-                            <th>Username ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Position</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox" value=""></td>
-                            <td>5610404452</td>
-                            <td>John</td>
-                            <td>Smith</td>
-                            <td>Student</td>
-                            <td>
-                                <input type="button" id="edit" alt="Edit" data-toggle="modal" data-target="#editModal"value="" value="">
-                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" value=""></td>
-                            <td>5610404452</td>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>Teacher</td>
-                            <td>
-                                <input type="button" id="edit" alt="Edit" data-toggle="modal" data-target="#editModal"value="">
-                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" value=""></td>
-                            <td>5610404452</td>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>Student</td>
-                            <td>
-                                <input type="button" id="edit" alt="Edit" data-toggle="modal" data-target="#editModal" value="" value="">
-                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
         </div>
     </div>
 
@@ -199,14 +151,6 @@
                           <input type="text" class="form-control">
                       </div>
                       <div class="form-group">
-                          <label for="pwd">Password:</label>
-                          <input type="password" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <label for="repwd">Re-Password:</label>
-                          <input type="password" class="form-control">
-                      </div>
-                      <div class="form-group">
                           <label for="firstname">Firstname:</label>
                           <input type="text" class="form-control">
                       </div>
@@ -217,11 +161,11 @@
                       <div class="form-group">
                           <label for="position">Position:</label>
                           <select class="form-control">
-                                  <option>Student</option>
-                                  <option>Teacher</option>
-                                  <option>Laboratory-Teacher</option>
-                                  <option>Admin</option>
-                                </select>
+                                <option>Student</option>
+                                <option>Teacher</option>
+                                <option>Laboratory-Teacher</option>
+                                <option>Admin</option>
+                          </select>
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -275,14 +219,6 @@
                             <input type="text" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="repwd">Re-Password:</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <div class="form-group">
                             <label for="firstname">Firstname:</label>
                             <input type="text" class="form-control">
                         </div>
@@ -315,7 +251,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-         <!-- guitar --> 
+         <!-- guitar -->
         <script src="js/guitar-ad.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
