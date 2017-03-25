@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 var data = [ [ 5610404452, "John" , "Smith" , "Student" ]];
 
-var html = '<table><thead><tr><th><input type="checkbox" value=""> All</th><th>Username ID</th><th>Firstname</th><th>Lastname</th><th>Position</th><th></th></tr></thead><tbody>';
+var html = '<table class="table table-hover table-bordered"><thead><tr><th><input type="checkbox" value=""> All</th><th>Username ID</th><th>Firstname</th><th>Lastname</th><th>Position</th><th></th></tr></thead><tbody>';
 for (var i = 0, len = data.length; i < len; ++i) {
     html += '<tr>';
     html += '<td><input type="checkbox" value=""></td>'
@@ -17,6 +17,8 @@ for (var i = 0, len = data.length; i < len; ++i) {
 }
 html += '</tbody><tfoot><tr></tr></tfoot></table>';
 
-$(html).appendTo('#div1');
+$(html).appendTo('#table');
+    
+
 });
    
