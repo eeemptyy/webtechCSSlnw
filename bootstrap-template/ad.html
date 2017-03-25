@@ -67,71 +67,14 @@
             <ul class="list-inline intro-social-buttons">
                 <li>
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#myModal"><i><img src="img/AddUser.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW USER</span></a> &nbsp;&nbsp;
-                    <!-- Modal -->
-                    <form class="" action="index.html" method="post">
-                      <div id="myModal" class="modal fade" role="dialog">
-                          <div class="modal-dialog">
-
-                              <!-- Modal content-->
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <h4 class="modal-title"><img src="img/AddUser.png" alt="" style="height:30px;"> Create new user</h4>
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class="box-center">
-                                          <form method="post" action="">
-                                              <div class="form-group">
-                                                  <label for="usr">Username ID:</label>
-                                                  <input type="text" class="form-control">
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="pwd">Password:</label>
-                                                  <input type="password" class="form-control">
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="repwd">Re-Password:</label>
-                                                  <input type="password" class="form-control">
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="firstname">Firstname:</label>
-                                                  <input type="text" class="form-control">
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="lastname">Lastname:</label>
-                                                  <input type="text" class="form-control">
-                                              </div>
-                                              <div class="form-group">
-                                                  <label for="position">Position:</label>
-                                                  <select class="form-control" id="sel1">
-                                                    <option>teacher</option>
-                                                    <option>student</option>
-                                                    <option>admin</option>
-                                                  </select>
-                                              </div>
-                                          </form>
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  </div>
-                              </div>
-
-                          </div>
-                      </div>
-                    </form>
-
-
                 </li>
                 <li>
-                    <a href="" class="btn-admin"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD COURSE (CSV)</span></a>&nbsp;&nbsp;
+                    <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD COURSE (CSV)</span></a>&nbsp;&nbsp;
                 </li>
                 <li>
                     <a href="" class="btn-admin"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                 </li>
             </ul>
-
 
             <div>
                 <table class="table table-hover table-bordered">
@@ -157,8 +100,8 @@
                             <td>Smith</td>
                             <td>Student</td>
                             <td>
-                                <input type="button" id="edit" alt="Edit" value="">
-                                <input type="button" id="delete" alt="Delete" value="">
+                                <input type="button" id="edit" alt="Edit" data-toggle="modal" data-target="#editModal"value="" value="">
+                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
                             </td>
                         </tr>
                         <tr>
@@ -168,8 +111,8 @@
                             <td>Moe</td>
                             <td>Teacher</td>
                             <td>
-                                <input type="button" id="edit" alt="Edit" value="">
-                                <input type="button" id="delete" alt="Delete" value="">
+                                <input type="button" id="edit" alt="Edit" data-toggle="modal" data-target="#editModal"value="">
+                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
                             </td>
                         </tr>
                         <tr>
@@ -179,8 +122,8 @@
                             <td>Dooley</td>
                             <td>Student</td>
                             <td>
-                                <input type="button" id="edit" alt="Edit" value="">
-                                <input type="button" id="delete" alt="Delete" value="">
+                                <input type="button" id="edit" alt="Edit" data-toggle="modal" data-target="#editModal" value="" value="">
+                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
                             </td>
                         </tr>
                     </tbody>
@@ -212,6 +155,159 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <form class="" action="index.html" method="post">
+        <div id="deleteModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><img src="img/Delete-50.png" alt="" style="height:30px;"> Upload Course(CSV)</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color:red; text-align:center;">
+                            Do you want to Delete Record ?
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+
+    <!-- Modal -->
+    <form class="" action="index.html" method="post">
+        <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><img src="img/Edit-50.png" alt="" style="height:25px;">  Edit user information </h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                          <label for="usr">Username ID:</label>
+                          <input type="text" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="pwd">Password:</label>
+                          <input type="password" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="repwd">Re-Password:</label>
+                          <input type="password" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="firstname">Firstname:</label>
+                          <input type="text" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="lastname">Lastname:</label>
+                          <input type="text" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="position">Position:</label>
+                          <select class="form-control">
+                                  <option>Student</option>
+                                  <option>Teacher</option>
+                                  <option>Laboratory-Teacher</option>
+                                  <option>Admin</option>
+                                </select>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <!-- Modal -->
+    <form class="" action="index.html" method="post">
+        <div id="CSVModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><img src="img/AddFile-64.png" alt="" style="height:30px;"> Upload Course(CSV)</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            choose file
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <!-- Modal -->
+    <form class="" action="index.html" method="post">
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><img src="img/AddUser.png" alt="" style="height:30px;"> Create new user</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="usr">Username ID:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="repwd">Re-Password:</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstname">Firstname:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname:</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position:</label>
+                            <select class="form-control">
+                                    <option>Student</option>
+                                    <option>Teacher</option>
+                                    <option>Laboratory-Teacher</option>
+                                    <option>Admin</option>
+                                  </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
 
 
 
