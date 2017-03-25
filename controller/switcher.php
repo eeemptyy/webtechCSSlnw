@@ -1,5 +1,5 @@
 <?php
-   require 'db_controller.php';
+   require 'dbController.php';
 
     /* this file will act as a gate to db_controller on ajax called */ 
 
