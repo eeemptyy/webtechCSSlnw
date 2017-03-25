@@ -58,13 +58,47 @@ class DB_Controller{
                 $temp['lastname'] = $row['lname'];
                 $temp['role'] = $row['role_name'];
                 $tempArr[$n] = $temp;
+                $n++;
             }
             echo json_encode($tempArr);
 
         } catch (PDOException $e){
-            die("Couldn't Insert to the database ".$this->dbname.": ".$e->getMessage());
+            die("Couldn't getAllUser from the database ".$this->dbname.": ".$e->getMessage());
         }
+    }
 
+    public function addUser($username, $pass, $firstname, $lastname, $role){
+        try{
+            $sql = 'INSERT INTO project_webtech_csslnw.user (username, password, fname, lname, pic_path, role_id) VALUES ($username, $pass, $firstname, $lastname, "", $role)';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            echo "Database Inserte successful.";
+        } catch (PDOException $e){
+            die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+    public function getAllSubjectBySemester($semester, $year){
+        try{
+            $sql = 'SELECT * FROM `subject_semester` WHERE year = ".$year." and semester = ".$semester.';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['subjectID'] = $row['id_subject'];
+                $temp['semester'] = $row['semester'];
+                $temp['year'] = $row['year'];
+                $temp['section'] = $row['section'];
+                $temp['time'] = $row['time'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+        } catch (PDOException $e){
+            die("Couldn't getAllSubjectBySemester from the database ".$this->dbname.": ".$e->getMessage());
+        }
     }
     
 }
