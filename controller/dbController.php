@@ -44,7 +44,7 @@ class DB_Controller{
 
     public function getLogin($uname, $pass){
         try{
-            $sql = 'SELECT user.username, user.password, user.fname, user.lname, role.role_name FROM user, role WHERE user.username = "'.$uname.'" and user.role_id = role.id';
+            $sql = 'SELECT user.username, user.password, user.fname, user.lname, role.role_name, user.role_id FROM user, role WHERE user.username = "'.$uname.'" and user.role_id = role.id';
             $q = $this->connection->prepare($sql);
             $q->execute();
 
@@ -55,7 +55,7 @@ class DB_Controller{
                 $userin["username"] = $row['username'];
                 $userin['firstname'] = $row['fname'];
                 $userin['lastname'] = $row['lname'];
-                $userin['role'] = $row['role_name'];
+                $userin['role'] = $row['role_id'];
                 // $userin['XX'] = "TEST";
                 echo json_encode($userin);
             }else {
@@ -104,7 +104,8 @@ class DB_Controller{
     }
     public function getAllSubjectBySemester($semester, $year){
         try{
-            $sql = 'SELECT * FROM `subject_semester` WHERE year = ".$year." and semester = ".$semester.';
+            // $sql = 'SELECT * FROM `subject_semester` WHERE year = ".$year." and semester = ".$semester.';
+            $sql = 'SELECT DISTINCT subject_semester.id_subject as SubjectID, subject.name, subject.credit, subject_teacher.username as TeacherID, user.fname FROM subject_semester, subject, subject_teacher, user WHERE subject_semester.year = ".$year." and subject_semester.semester = ".$semester." and subject_semester.id_subject = subject.id and subject_teacher.username = user.username';
             $q = $this->connection->prepare($sql);
             $q->execute();
             

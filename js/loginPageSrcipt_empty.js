@@ -14,21 +14,22 @@ function validateLogin() {
                 pass: pass
             },
             success: function(data) {
-                alert("Is success");
-                alert(data);
                 var obj = JSON.parse(data);
-                alert("AA");
-                alert(obj['username'] + " " + obj['firstname'] + " " + obj['lastname'] + " " + obj['role'] + " ")
-                alert("BB");
+                alert("123 " + obj['username'] + " " + obj['firstname'] + " " + obj['lastname'] + " " + obj['role'] + " ")
+                $("#username").val(obj['username']);
                 $("#fname").val(obj['firstname']);
                 $("#lname").val(obj['lastname']);
-                $("#role").val(obj['role']);
+                $("#role_id").val(obj['role']);
+                alert(obj['role'] + " 33321");
+                alert($('#role_id').val + " AAAsss");
                 return true;
             },
             error: function(data) {
                 alert("error " + data);
             }
         });
+
+        alert("XXX");
 
     } else {
         alert("Invalid Username/Password");

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2017 at 11:00 AM
+-- Generation Time: Mar 25, 2017 at 04:12 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -76,9 +76,18 @@ INSERT INTO `role` (`id`, `role_name`) VALUES
 
 CREATE TABLE `subject` (
   `id` int(8) NOT NULL,
-  `name` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `credit` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`id`, `name`, `credit`) VALUES
+(1418114, 'Introduction to Computer Science', 4),
+(1418116, 'Computer Programming', 3),
+(1418217, 'Object Oriented Programming', 3);
 
 -- --------------------------------------------------------
 
@@ -95,6 +104,14 @@ CREATE TABLE `subject_semester` (
   `time` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `subject_semester`
+--
+
+INSERT INTO `subject_semester` (`id`, `id_subject`, `semester`, `year`, `section`, `time`) VALUES
+(1, 1418116, 2, 2016, 1, '09.30-11.30'),
+(2, 1418114, 1, 2016, 1, '08.00-10.00');
+
 -- --------------------------------------------------------
 
 --
@@ -106,6 +123,14 @@ CREATE TABLE `subject_teacher` (
   `id_subject_semester` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `subject_teacher`
+--
+
+INSERT INTO `subject_teacher` (`username`, `id_subject_semester`) VALUES
+('5610404452', 1),
+('5610404452', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -115,8 +140,16 @@ CREATE TABLE `subject_teacher` (
 CREATE TABLE `takes` (
   `username` varchar(10) NOT NULL,
   `id_subject_semester` int(11) NOT NULL,
-  `grade` float NOT NULL
+  `grade` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `takes`
+--
+
+INSERT INTO `takes` (`username`, `id_subject_semester`, `grade`) VALUES
+('5610450080', 1, NULL),
+('5610450080', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -236,7 +269,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `subject_semester`
 --
 ALTER TABLE `subject_semester`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
