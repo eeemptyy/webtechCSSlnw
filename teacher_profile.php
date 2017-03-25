@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#login">Administer</a>
+                        <a href="#login">Teacher</a>
                     </li>
                     <li>
                         <a href="#about">Home</a>
@@ -65,23 +65,22 @@
             <br />
 
             <div class="container">
-      <div class="row">
-      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-           <A href="edit.html" >Edit Profile</A>
+                <div class="row">
+                    <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+                        <A href="edit.html">Edit Profile</A>
 
-        <A href="edit.html" >Logout</A>
-       <br>
-<p class=" text-info"></p>
-      </div>
+                        <A href="edit.html">Logout</A>
+                        <br>
+                        <p class=" text-info"></p>
+                    </div>
 
-      <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/User.png" class="img-circle img-responsive"
-      p align = "left" width="304" height="236"> </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-
+                    <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/User.png" class="img-circle img-responsive" p align="left" width="304" height="236"> </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
 
 
 
-                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+
+                        <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                   <dl>
                     <dt>DEPARTMENT:</dt>
                     <dd>Administrator</dd>
@@ -93,54 +92,55 @@
                     <dd>Male</dd>
                   </dl>
                 </div>-->
-                <div class=" col-md-9 col-lg-9 ">
-                    <tbody>
-                    <h4><b class ="information-css">Username ID</b>  5610404452<br>
-                      <tr>
-                        <td><b>Firstname</b></td>
-                        <td>John</td> <br>
-                      </tr>
-                      <tr>
-                        <td><b>Lastname</b></td>
-                        <td>Smith</td> <br>
-                      </tr>
+                        <div class=" col-md-9 col-lg-9 ">
+                            <tbody>
+                                <h4><b class="information-css">Username ID</b> 5610404452<br>
+                                    <tr>
+                                        <td><b>Firstname</b></td>
+                                        <td>John</td> <br>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Lastname</b></td>
+                                        <td>Smith</td> <br>
+                                    </tr>
 
-                     <tr>
-                        <td><b>Faculty</b></td>
-                        <td>Science</td> <br>
-                      </tr>
-                      <tr>
-                        <td><b>Email</b></td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td><br>
-                      </tr>
-                      <tr>
-                        <td><b>Phone Number</b></td>
-                        <td>123-4567-890</td> <br>
-                      </tr>
-                      <tr>
-                        <td><b>Subject</b></td>
-                        <td>
-                            <select id="soflow">
+                                    <tr>
+                                        <td><b>Faculty</b></td>
+                                        <td>Science</td> <br>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Email</b></td>
+                                        <td><a href="mailto:info@support.com">info@support.com</a></td><br>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phone Number</b></td>
+                                        <td>123-4567-890</td> <br>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Subject</b></td>
+                                        <td>
+                                            <select id="soflow">
   <!-- This method is nice because it doesn't require extra div tags, but it also doesn't retain the style across all browsers. -->
                              <option>Select an Object</option>
                              <option>Computer</option>
-                           </select></td> </h4>
-                      </tr>
-                    </tbody>
-                  </table>
+                           </select></td>
+                                </h4>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+
+
             </div>
 
 
+        </div>
+        </<div>
 
     </div>
-
-
-        </div>
-</<div>
-
-</div>
 
 
     <footer>
