@@ -1,5 +1,4 @@
-function validateLogin() {
-
+$("#loginBTN").click(function() {
     var uname = $('#username').val();
     var pass = $('#pass').val();
 
@@ -29,15 +28,17 @@ function validateLogin() {
                 }
             },
             error: function(data) {
-                alert("error " + data);
+                // alert("error " + data);
+                $("#displayError").html("error " + data);
             }
         });
 
     } else {
-        alert("Invalid Username/Password");
+        // alert("Invalid Username/Password");
+        $("#displayError").html("Invalid Username/Password");
     }
+});
 
-}
 
 function isValid(text) {
     if (text == "" || text == " " || text == null) {

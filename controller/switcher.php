@@ -15,6 +15,9 @@
         case "get_user":
             echo $db_controller->getAllUser();
             break;
+        case "get_subject_by_semester":
+            echo $db_controller->getAllSubjectBySemester("1", "2016");
+            break;
         case "create_user":
             $username = $_POST['username'];
             $pass = $_POST['password'];

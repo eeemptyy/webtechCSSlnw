@@ -76,13 +76,14 @@
                     <h2 class="myhead">LOGIN</h2>
                     <hr class="intro-divider">
                     <form id="myForm" class="" action="controller/create_seesion.php" method="POST">
+                        <p id='displayError' style="color: red; text-align: left; padding-left: 13%;">asdas</p>
                         <input type="text" name="username" id='username' placeholder="Username" /><br />
                         <input type="password" name="password" id='pass' placeholder="Password" /><br />
                         <input type="text" name="fname" id="fname" hidden>
                         <input type="text" name="lname" id="lname" hidden>
                         <input type="text" name="role_id" id="role_id" hidden>
                         <br /><br />
-                        <input type="button" class="btn-login" value="LOGIN" onclick="validateLogin();" />
+                        <input id="loginBTN" type="button" class="btn-login" value="LOGIN" />
                     </form>
                 </div>
                 <!-- </div> -->
