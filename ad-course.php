@@ -73,53 +73,10 @@
                     <a href="" class="btn-admin"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                 </li>
             </ul>
-            <div>
-                <table class="table table-hover table-bordered">
-
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox" value=""> All</th>
-                            <th>Coruse ID</th>
-                            <th>Course Name</th>
-                            <th>Credit</th>
-                            <th>Teacher</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox" value=""></td>
-                            <td>5610404452</td>
-                            <td>John</td>
-                            <td>Smith</td>
-                            <td>Student</td>
-                            <td>
-                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" value=""></td>
-                            <td>5610404452</td>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>Teacher</td>
-                            <td>
-                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" value=""></td>
-                            <td>5610404452</td>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>Student</td>
-                            <td>
-                                <input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value="">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            
+            <div id="table"></div>
+            
+  
         </div>
     </div>
 
@@ -247,7 +204,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
          <!-- guitar -->
-        <script src="js/guitar-ad.js"></script>
+        <script src="js/ad-course.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
