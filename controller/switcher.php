@@ -43,6 +43,12 @@
         case "get_subject_by_semester":
             echo $db_controller->getAllSubjectBySemester(2, 2016);
             break;
+        case "get_QR":
+            $subjectID = $_POST['subjectID'];
+            $section = $_POST['section'];
+            $timeLimit = $_POST['timeLimit'];
+            echo $db_controller->generateQRCode($subjectID, $section, $timeLimit);
+            break;
         default:
             echo "Function Not Found.";
 }

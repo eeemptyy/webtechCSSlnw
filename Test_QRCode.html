@@ -16,24 +16,24 @@
     <div class="container-fluid ">
         <div class="margin">
             <div class="row">
-                <div class="col-xs-3 col-md-5"><img src="img/User.png" alt="Smiley face" width="142" height="142" p align="right"></div>
+                <div class="col-xs-3 col-md-5"><img id='displayQR' src="img/User.png" alt="Smiley face" width="142" height="142" p align="right"></div>
                 <from>
                     <div class="col-xs-9 col-md-7">
                         <b class="serif">Coure</b><br>
-                        <select id="soflow" class="form-control">
+                        <select id="course-select" class="form-control">
                             <option>01418221 Database</option>
                         </select>
                     </div>
 
                     <div class="col-xs-9 col-md-7">
                         <b class="serif">Section</b><br>
-                        <select id="soflow" class="form-control">
+                        <select id="section-select" class="form-control">
                             <option>200</option>
                         </select>
                     </div>
 
                     <div>
-                        <center><input class="btn btn-primary" type="submit" value="Go"></center>
+                        <center><input id="getQR" class="btn btn-primary" type="button" value="Go"></center>
                     </div>
                 </from>
             </div>
@@ -45,5 +45,35 @@
 </html>
 
 </body>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<script>
+    $('#getQR').click(function() {
+        var subjectID = $('#course-select option:selected').html().split(" ")[0];
+        var section = $('#section-select option:selected').html();
+        alert(subjectID + " " + section);
+        $.ajax({
+            type: "POST",
+            url: "controller/switcher.php",
+            data: {
+                func: 'get_QR',
+                subjectID: subjectID,
+                section: section,
+                timeLimit: "09:00"
+            },
+            success: function(data) {
+                alert(data);
+                data = data.split("../")[1];
+                alert(data)
+                $('#displayQR').attr("src", data);
+            },
+            error: function(data) {
+                $("#displayError").html("error " + data);
+            }
+        });
+    });
+</script>
 
 </html>

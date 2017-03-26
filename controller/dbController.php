@@ -167,6 +167,43 @@ class DB_Controller{
         }
     }
 
-    
+    public function generateQRCode($subjectID, $section, $timeLimit){
+        try{
+            $sql = 'SELECT * FROM subject_semester '.
+            'WHERE semester = "'.$this->currentSemester.'" and year = "'.$this->currentYear.
+            '" and id_subject = "'.$subjectID.'" and section = "'.$section.'"';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $row = $q->fetch();
+            $subjectSemesterID = $row['id'];
+            if ($subjectSemesterID != NULL){
+                $sql = 'INSERT INTO class (id, id_subject_semester, time_limit, qr_path)'.
+                ' VALUES (NULL, "'.$subjectSemesterID.'", "'.$timeLimit.'", NULL)';
+                $q = $this->connection->prepare($sql);
+                $q->execute();
+
+                $sql = 'SELECT * FROM class ORDER BY id DESC ';
+                $q = $this->connection->prepare($sql);
+                $q->execute();
+                $row = $q->fetch();
+                
+                $classID = $row['id'];
+                
+                $qrPath = '../files/img/qr/qr_'.$classID.'_'.$subjectSemesterID.'.png';
+                QRcode::png($classID.' '.$subjectSemesterID, $qrPath);
+
+                echo $qrPath;
+            }else {
+                echo "Cann't find subject";
+            }
+
+        } catch (PDOException $e){
+            die("Couldn't Login to the database ".$this->dbname.": ".$e->getMessage());
+        }
+
+    }
+
+
 }
 ?>
