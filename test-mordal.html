@@ -59,15 +59,24 @@
         </form>
 
     </div>
-    <script src="js/genPass.js"></script>
+
+    <script src="js/sha1.js"></script>
+    <script src="js/passwordController.js"></script>
     <script>
         $("#modal-submit").click(function() {
             var str = "";
+            var pass = startGen();
+            var x = "313d266aff26b8a7941228dcf13b8b9f89ba5679";
+            alert(pass + x.length);
+            var shaObj = new jsSHA("SHA-1", "TEXT");
+            shaObj.update(pass);
+            var hash = shaObj.getHash("HEX");
+            alert(hash + " < lenght: " + String(hash).lenght);
 
             $('#tempData').html($('#modal-select option:selected').html() + " " +
-                $('#modal-username').val() + " " + $('#modal-firstname').val()
+                $('#modal-username').val() + " " + $('#modal-firstname').val() +
+                " " + hash
             );
-            alert(startGen());
             // return true;
         });
     </script>

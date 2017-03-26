@@ -9,13 +9,14 @@ $("#loginBTN").click(function() {
             data: {
                 func: 'get_login',
                 username: uname,
-                pass: pass
+                pass: hashToSHA1(pass)
             },
             success: function(data) {
                 alert(data);
                 if (data == "Username/Password not found.") {
                     return false;
                 } else {
+                    alert(hashToSHA1(pass));
                     var obj = JSON.parse(data);
                     $("#username").val(obj['username']);
                     $("#fname").val(obj['firstname']);
