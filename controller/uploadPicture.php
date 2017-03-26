@@ -2,7 +2,7 @@
 require 'dbController.php';
 $db_controller = new DB_Controller();
 
-$target_dir = "../files/csv/";
+$target_dir = "../files/img/profile/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $upFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -31,8 +31,8 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
     $uploadOk = 0;
 }
 // Allow certain file formats // Temp save && $upFileType != "py"
-if($upFileType != "csv") {
-    echo "Sorry, only .csv files are allowed.<BR>";
+if($upFileType != "jpg" || $upFileType != "png" || $upFileType != "JPG" || $upFileType != "PNG") {
+    echo "Sorry, only jpg/JPG/png/PNG files are allowed.<BR>";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
