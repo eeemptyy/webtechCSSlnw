@@ -242,9 +242,11 @@
                     </div>
                     <div class="modal-body center-content">
                         <p>
-                            Choose CSV of user-data for upload to append Courses.
+                            Choose CSV of <i><u>user-data</u></i> for upload to create new Users.
                         </p>
-                        <input id="input-file" type="file" class="file">
+                        <div>
+                          <input type="file" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
@@ -269,6 +271,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
 
     <!-- GenPass -->
     <script src="js/sha1.js"></script>

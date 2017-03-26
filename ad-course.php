@@ -85,6 +85,9 @@
 
             <ul class="list-inline intro-social-buttons">
                 <li>
+                    <a href="" class="btn-admin" data-toggle="modal" data-target="#myModal"><i><img src="img/Add-64.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW CORSE</span></a> &nbsp;&nbsp;
+                </li>
+                <li>
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD COURSE (CSV)</span></a>&nbsp;&nbsp;
                 </li>
                 <li>
@@ -133,8 +136,11 @@
                     </div>
                     <div class="modal-body">
                         <p>
-                            choose file
+                            Choose CSV of <i><u>course-data</u></i> for upload to append Courses.
                         </p>
+                        <div>
+                          <input type="file" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
@@ -164,6 +170,45 @@
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+    <!-- Modal -->
+    <form class="" action="index.html" method="post">
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><img src="img/Add-64.png" alt="" style="height:30px;"> Create new course</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="courseID">Course ID:</label>
+                            <input type="text" id="courseID_create"class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="courseName">Course Name:</label>
+                            <input type="text" id="courseName_create" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="credit">Credit:</label>
+                            <input type="text" id="credit_create"class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="TeacherID">Teacher ID:</label>
+                            <input type="text" id="teacherID_create"class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button  type="submit" id="modal-submit" class="btn btn-default"  data-dismiss="modal" >Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
