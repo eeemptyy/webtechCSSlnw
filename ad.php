@@ -191,19 +191,19 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="usr">Username ID:</label>
-                            <input type="text" class="form-control">
+                            <input type="text" id="userid_create"class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="firstname">Firstname:</label>
-                            <input type="text" class="form-control">
+                            <input type="text" id="fname_create" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="lastname">Lastname:</label>
-                            <input type="text" class="form-control">
+                            <input type="text" id="lname_create"class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="role-create">Role:</label>
-                            <select class="form-control">
+                            <select id="role_create" class="form-control">
                                     <option>Student</option>
                                     <option>Teacher</option>
                                     <option>Laboratory-Teacher</option>
@@ -212,7 +212,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button  type="submit" id="modal-submit" class="btn btn-default"  data-dismiss="modal" >Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -233,6 +233,10 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    
+    <!-- GenPass -->
+    <script src="js/sha1.js"></script>
+    <script src="js/passwordController.js"></script>
     
     <!-- guitar -->
     <script src="js/guitar-ad.js"></script>

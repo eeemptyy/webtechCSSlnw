@@ -28,6 +28,39 @@ html += '</tbody><tfoot><tr></tr></tfoot></table>';
 
 }); 
     
+$("#modal-submit").click(function() {
+     var userid = $('#userid_create').val();
+     var fname = $('#fname_create').val();
+     var lname = $('#lname_create').val();
+     var role_create = $('#role_create').val();
+     var pass = startGen();
+     alert("usr: "+ userid +" pass: "+ pass+ " firstname: "+ fname + " lastname: "+ lname + " role: "+ role_create);
+     if(isValid(fname) && isValid(lname) && isID(userid))
+         {
+             $.ajax({
+                 type: "POST",
+                 url: "controller/switcher.php",
+            data: {
+                func: 'create_user',
+                username: userid,
+                password: pass ,
+                firstname: fname,
+                lastname: lname,
+                role: role_create
+             },
+                 success : function(data){
+                     alert("success "+data);
+                     location.reload();
+                     
+                 }
+             });
+         }
+        else {
+            return false;
+        }
+     
+ }); 
+    
 });
 
 
@@ -59,6 +92,28 @@ function toggleCheck(){
     }
     
 }
+function isValid(text) {
+   
+    
+    if(/^[A-Za-z]+$/.test(text) ){
+        return true;
+    }
+    else {
+        return false;
+        
+    }
+}
+
+function isID(text) {
+    if(/^[0-9]+$/.test(text) && text.length == 10){
+        return true;
+    }
+    else {
+        return false;
+        
+    }
+}
+
 
 
 
