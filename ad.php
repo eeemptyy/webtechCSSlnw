@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    session_start();
+?>
 <head>
     <title>Administer</title>
     <meta charset="utf-8">
@@ -215,17 +217,23 @@
         </div>
     </form>
 
+<input type="text" id="username" hidden />
+<input type="text" id="fname" hidden />
+<input type="text" id="lname" hidden />
+<input type="text" id="role_id" hidden />
 
-
+</body>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-         <!-- guitar -->
-        <script src="js/guitar-ad.js"></script>
+    
+    <!-- guitar -->
+    <script src="js/guitar-ad.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-</body>
+    <!-- Loaddata from js to hidden HTML element -->
+    <script src="loadDataFromSession.js"></script>
 
 </html>

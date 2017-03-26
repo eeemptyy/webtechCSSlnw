@@ -1,12 +1,10 @@
 <?php
 
 class DB_Controller{
-    
     private $username = "";
     private $password = "";
     private $hostname = "";
     private $dbname = "";   
-
     private $connection;
     
     public function __construct(){
@@ -15,31 +13,11 @@ class DB_Controller{
         $this->password = $pass;
         $this->hostname = $host;
         $this->dbname = $db;
-        
         try{
-            //
-            $this->connection = new PDO("mysql:host={$this->hostname};"."dbname={$this->dbname}",$this->username,$this->password);
-            
+            $this->connection = new PDO("mysql:host={$this->hostname};"."dbname={$this->dbname}",$this->username,$this->password);         
         } catch (PDOException $e){
             die("Couldn't connect to the database ".$this->dbname.": ".$e->getMessage());
         }
-    }
-
-    public function testInsert(){
-        try{
-            $sql = 'INSERT INTO project_webtech_csslnw.user (username, password, fname, lname, pic_path, role_id) VALUES ("5610404452", "4452", "Boonyaporn", "Narkjumrussri", "xxxxxxx_aaaxxxaaxx", "4")';
-            // $sql = "SELECT * FROM user";
-            $q = $this->connection->prepare($sql);
-            $q->execute();
-
-            echo "Inserted";
-            // while ($row = $q->fetch()) {
-            //     echo $row['username']." s ".$row['password'];
-            // }
-        } catch (PDOException $e){
-            die("Couldn't Insert to the database ".$this->dbname.": ".$e->getMessage());
-        }
-        
     }
 
     public function getLogin($uname, $pass){
@@ -49,21 +27,19 @@ class DB_Controller{
             $q->execute();
 
             $row = $q->fetch();
-            // echo $q->rowCount();
             if ($row['password'] == $pass){
                 $userin = array();
                 $userin["username"] = $row['username'];
                 $userin['firstname'] = $row['fname'];
                 $userin['lastname'] = $row['lname'];
                 $userin['role'] = $row['role_id'];
-                // $userin['XX'] = "TEST";
                 echo json_encode($userin);
             }else {
                 echo "Username/Password not found.";
             }
 
         } catch (PDOException $e){
-            die("Couldn't getAllUser from the database ".$this->dbname.": ".$e->getMessage());
+            die("Couldn't Login to the database ".$this->dbname.": ".$e->getMessage());
         }
     }
 
@@ -105,19 +81,23 @@ class DB_Controller{
     public function getAllSubjectBySemester($semester, $year){
         try{
             // $sql = 'SELECT * FROM `subject_semester` WHERE year = ".$year." and semester = ".$semester.';
-            $sql = 'SELECT DISTINCT subject_semester.id_subject as SubjectID, subject.name, subject.credit, subject_teacher.username as TeacherID, user.fname FROM subject_semester, subject, subject_teacher, user WHERE subject_semester.year = ".$year." and subject_semester.semester = ".$semester." and subject_semester.id_subject = subject.id and subject_teacher.username = user.username';
+            $sql = 'SELECT DISTINCT subject_semester.id_subject as SubjectID, subject.name, subject.credit, subject_teacher.username as TeacherID, user.fname, user.lname '.
+                    'FROM subject_semester, subject, subject_teacher, user '.
+                    'WHERE subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" and subject_semester.id_subject = subject.id and subject_teacher.username = user.username';
             $q = $this->connection->prepare($sql);
             $q->execute();
             
             $tempArr = array();
             $n =0;
+            // echo $q->rowCount()." ASA";
             while ($row = $q->fetch()) {
                 $temp = array();
-                $temp['subjectID'] = $row['id_subject'];
-                $temp['semester'] = $row['semester'];
-                $temp['year'] = $row['year'];
-                $temp['section'] = $row['section'];
-                $temp['time'] = $row['time'];
+                $temp['subjectID'] = $row['SubjectID'];
+                $temp['name'] = $row['name'];
+                $temp['credit'] = $row['credit'];
+                $temp['teacherID'] = $row['TeacherID'];
+                $temp['firstname'] = $row['fname'];
+                $temp['lastname'] = $row['lname'];
                 $tempArr[$n] = $temp;
                 $n++;
             }
