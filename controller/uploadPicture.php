@@ -31,8 +31,10 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
     $uploadOk = 0;
 }
 // Allow certain file formats // Temp save && $upFileType != "py"
-if($upFileType != "jpg" || $upFileType != "png" || $upFileType != "JPG" || $upFileType != "PNG") {
-    echo "Sorry, only jpg/JPG/png/PNG files are allowed.<BR>";
+$fileType = array('png', 'PNG', 'JPG', 'jpg');
+if (!in_array($upFileType, $fileType)){
+// if($upFileType != "png") {
+    echo "Sorry, only 'png', 'PNG', 'JPG', 'jpg' files are allowed.<BR>";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
@@ -48,7 +50,7 @@ if ($uploadOk == 0) {
         // $ff = readfile("../files/csv/".basename( $_FILES["fileToUpload"]["name"]));
         echo "\File ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.".'<br>';
     } else {
-        echo "Sorry, there was an error uploading your file.<BR>";
+        echo "Sorry, there was an error uploading your file.<BR> ";
     }
 }
 ?>
