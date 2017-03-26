@@ -1,6 +1,6 @@
 $(document).ready(function(){
  
-    var html = '<table class="table table-hover table-bordered"><thead><tr><th><input type="checkbox" id="select_all" value=""> All</th><th>Coruse ID</th><th>Coruse Name</th><th>Credit</th><th>Teacher ID</th><th>Teacher Name</th><th></th></tr></thead><tbody>';
+    var html = '<table class="table table-hover table-bordered"><thead><tr><th><input type="checkbox" id="select_all" value="" onclick="toggleCheck()"> All</th><th>Coruse ID</th><th>Coruse Name</th><th>Credit</th><th>Teacher ID</th><th>Teacher Name</th><th></th></tr></thead><tbody>';
 
     $.ajax({
     type: "POST",
@@ -14,7 +14,7 @@ $(document).ready(function(){
         for (var i = 0, len = obj.length; i < len; ++i) {
         var objIn = obj[i];
         html += '<tr>';
-        html += '<td><input type="checkbox" value=""></td><td>' 
+        html += '<td><input class="childbox" type="checkbox" value=""></td><td>' 
             + objIn['subjectID'] + '</td><td>' 
             + objIn['name']  + '</td><td>' 
             + objIn['credit'] + '</td><td>' 
@@ -35,3 +35,20 @@ html += '</tbody><tfoot><tr></tr></tfoot></table>';
 }); 
     
 });
+
+function toggleCheck(){
+    var parBox = document.getElementById('select_all');
+    if(parBox.checked == true){
+        var chbox = document.getElementsByClassName('childbox');
+        for(var i = 0, len = chbox.length; i < len; ++i){
+            chbox[i].checked = true;
+        }  
+    }
+    else{
+        var chbox = document.getElementsByClassName('childbox');
+        for(var i = 0, len = chbox.length; i < len; ++i){
+            chbox[i].checked = false;
+        }
+    }
+    
+}

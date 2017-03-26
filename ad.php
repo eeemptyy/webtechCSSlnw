@@ -78,7 +78,7 @@
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#myModal"><i><img src="img/AddUser.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW USER</span></a> &nbsp;&nbsp;
                 </li>
                 <li>
-                    <a href="" class="btn-admin" onclick="popUp()"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
+                    <a href="" class="btn-admin" onclick="popUp('ad')"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                 </li>
             </ul>
              <div id='table'>
