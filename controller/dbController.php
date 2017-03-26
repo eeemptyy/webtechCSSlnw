@@ -9,6 +9,7 @@ class DB_Controller{
     
     public function __construct(){
         include("dbconfig.php");
+        include("phpqrcode/qrlib.php");
         $this->username = $uname;
         $this->password = $pass;
         $this->hostname = $host;
