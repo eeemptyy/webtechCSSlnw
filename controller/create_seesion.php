@@ -11,7 +11,7 @@ if ($role > 3){
     header("Location: ../ad.php");
 }else if ($role < 1){
     header("Location: ../student_profile.php");
-}else {
+}else{
     header("Location: ../teacher_profile.php");
 }
 ?>

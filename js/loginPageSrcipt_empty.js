@@ -7,7 +7,7 @@ $("#loginBTN").click(function() {
             type: "POST",
             url: "controller/switcher.php",
             data: {
-                func: 'get_subject_by_semester',
+                func: 'get_login',
                 username: uname,
                 pass: pass
             },

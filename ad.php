@@ -2,6 +2,10 @@
 <html lang="en">
 <?php
     session_start();
+    $role = $_SESSION['role_id'];
+    if ($role < 3){
+        header("Location: login.html");
+    }
 ?>
 <head>
     <title>Administer</title>
@@ -233,7 +237,13 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Loaddata from js to hidden HTML element -->
-    <script src="loadDataFromSession.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#username').val('<?php echo $_SESSION['username'];?>');
+            $('#fname').val('<?php echo $_SESSION['fname'];?>');
+            $('#lname').val('<?php echo $_SESSION['lname'];?>');
+            $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
+        });
+    </script>
 
 </html>
