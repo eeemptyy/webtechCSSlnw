@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2017 at 09:15 AM
+-- Generation Time: Mar 26, 2017 at 10:18 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -87,7 +87,8 @@ CREATE TABLE `subject` (
 INSERT INTO `subject` (`id`, `name`, `credit`) VALUES
 (1418114, 'Introduction to Computer Science', 4),
 (1418116, 'Computer Programming', 3),
-(1418217, 'Object Oriented Programming', 3);
+(1418217, 'Object Oriented Programming', 3),
+(1418221, 'Database System', 3);
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,9 @@ CREATE TABLE `subject_semester` (
 
 INSERT INTO `subject_semester` (`id`, `id_subject`, `semester`, `year`, `section`, `time`) VALUES
 (1, 1418116, 2, 2016, 1, '09.30-11.30'),
-(2, 1418114, 1, 2016, 1, '08.00-10.00');
+(2, 1418114, 1, 2016, 1, '08.00-10.00'),
+(3, 1418221, 2, 2016, 200, '08.00-12.00'),
+(4, 1418217, 1, 2016, 200, '12.00-16.00');
 
 -- --------------------------------------------------------
 
@@ -128,8 +131,10 @@ CREATE TABLE `subject_teacher` (
 --
 
 INSERT INTO `subject_teacher` (`username`, `id_subject_semester`) VALUES
-('5610404452', 1),
-('5610404452', 2);
+('5610400091', 1),
+('5610400091', 2),
+('5610400091', 3),
+('5610400091', 4);
 
 -- --------------------------------------------------------
 
@@ -173,7 +178,7 @@ CREATE TABLE `user` (
   `password` varchar(16) CHARACTER SET utf8mb4 NOT NULL,
   `fname` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `lname` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-  `pic_path` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `pic_path` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `role_id` int(1) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `address` text,
@@ -274,7 +279,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `subject_semester`
 --
 ALTER TABLE `subject_semester`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
