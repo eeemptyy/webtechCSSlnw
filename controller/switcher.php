@@ -15,9 +15,9 @@
         case "get_user":
             echo $db_controller->getAllUser();
             break;
-        case "get_subject_by_semester":
-            // echo "Hello";
-            echo $db_controller->getAllSubjectBySemester(1, 2016);
+        case "delete_user":
+            $username = $_POST['username'];
+            echo $db_controller->deleteUser($username);
             break;
         case "create_user":
             $username = $_POST['username'];
@@ -26,6 +26,9 @@
             $lastname = $_POST['lastname'];
             $role = $_POST['role'];
             echo $db_controller->addUser($username, $pass, $firstname, $lastname, $role);
+            break;
+        case "get_subject_by_semester":
+            echo $db_controller->getAllSubjectBySemester(2, 2016);
             break;
         default:
             echo "Function Not Found.";

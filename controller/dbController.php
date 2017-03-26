@@ -82,6 +82,18 @@ class DB_Controller{
             die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
         }
     }
+
+    public function deleteUser($username){
+        try{
+            $sql = 'DELETE FROM user WHERE user.username = "'.$username.'"';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            echo "Delete User successful.";
+        } catch (PDOException $e){
+            die("Couldn't delete user from the database ".$this->dbname.": ".$e->getMessage());            
+        }
+    }
+
     public function getAllSubjectBySemester($semester, $year){
         try{
             // $sql = 'SELECT * FROM `subject_semester` WHERE year = ".$year." and semester = ".$semester.';
