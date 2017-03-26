@@ -58,6 +58,13 @@
             </div>
         </form>
 
+        <form class="form-inline" id="addProblem" action="controller/uploadCSV.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+            <input type="submit" value="upload" name="submit" class="btn btn-primary">
+        </form>
+
     </div>
 
     <script src="js/sha1.js"></script>

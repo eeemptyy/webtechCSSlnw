@@ -74,7 +74,8 @@ class DB_Controller{
 
     public function addUser($username, $pass, $firstname, $lastname, $role){
         try{
-            $sql = 'INSERT INTO project_webtech_csslnw.user (username, password, fname, lname, pic_path, role_id) VALUES ($username, $pass, $firstname, $lastname, "", $role)';
+            $sql = 'INSERT INTO project_webtech_csslnw.user (username, password, fname, lname, pic_path, role_id) '.
+            'VALUES ("'.$username.'", "'.$pass.'", "'.$firstname.'", "'.$lastname.'", "", "'.$role.'")';
             $q = $this->connection->prepare($sql);
             $q->execute();
             echo "Database Inserte successful.";
