@@ -217,7 +217,7 @@
                                     <option value="2">Teacher</option>
                                     <option value="3">Laboratory-Teacher</option>
                                     <option value="4">Admin</option>
-                                  </select>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">
