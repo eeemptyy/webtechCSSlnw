@@ -24,13 +24,12 @@ $(document).ready(function(){
             $('#mydatatable').DataTable({
               "order": [[1, "asc"]],
               // "pageLenght": 25,
-            
+
               destroy: true,
               "autoWidth": false,
               "paging":   false,
-              "ordering": false,
+              // "ordering": false,
               "info":     false
-
             });
     },
           error: function(data) {
