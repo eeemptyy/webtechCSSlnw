@@ -72,6 +72,17 @@ class DB_Controller{
         }
     }
 
+    public function editUserPassword($username, $newPass, $oldPass){
+        try{
+            $sql = 'UPDATE user SET password = "'.$newPass.'" WHERE user.username = "'.$username.'" and user.password = "'.$oldPass.'" ';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            echo "Database Update successful.";
+        } catch (PDOException $e){
+            die("Couldn't Update the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
     public function addUser($username, $pass, $firstname, $lastname, $role){
         try{
             $sql = 'INSERT INTO project_webtech_csslnw.user (username, password, fname, lname, pic_path, role_id) '.

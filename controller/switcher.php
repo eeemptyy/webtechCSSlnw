@@ -19,6 +19,12 @@
             $username = $_POST['username'];
             echo $db_controller->deleteUser($username);
             break;
+        case "edit_password":
+            $username = $_POST['username'];
+            $newPass = $_POST['newPass'];
+            $oldPass = $_POST['oldPass'];
+            echo $db_controller->editUserPassword($username, $newPass, $oldPass);
+            break;
         case "create_user":
             $username = $_POST['username'];
             $pass = $_POST['password'];
