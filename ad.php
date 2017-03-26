@@ -7,6 +7,7 @@
         header("Location: login.html");
     }
 ?>
+
 <head>
     <title>Administer</title>
     <meta charset="utf-8">
@@ -24,6 +25,7 @@
     <link href="css/admin-css.css" rel="stylesheet" />
     <link href="css/landing-page.css" rel="stylesheet">
     <!-- Custom Fonts -->
+    <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -72,13 +74,16 @@
         <div class="container">
             <h2>Manage User</h2>
             <br />
-            <input type="text" class="search-query form-control search-css" placeholder="Search" />
+            <!-- <input type="text" class="search-query form-control search-css" placeholder="Search" /> -->
             <ul class="list-inline intro-social-buttons">
                 <li>
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#myModal"><i><img src="img/AddUser.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW USER</span></a> &nbsp;&nbsp;
                 </li>
                 <li>
-                    <a href="" class="btn-admin" onclick="popUp('ad')"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
+                    <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD USER (CSV)</span></a>&nbsp;&nbsp;
+                </li>
+                <li>
+                    <a href="" class="btn-admin" onclick="popUp()"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                 </li>
             </ul>
              <div id='table'>
@@ -142,13 +147,13 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal" >&times;</button>
                         <h4 class="modal-title"><img src="img/Edit-50.png" alt="" style="height:25px;">  Edit user information </h4>
                     </div>
                     <div class="modal-body">
                       <div class="form-group">
                           <label for="usr">Username ID:</label>
-                          <input type="text" class="form-control" id="usr">
+                          <input type="text" class="form-control" id="usr" disabled="true">
                       </div>
                       <div class="form-group">
                           <label for="firstname">Firstname:</label>
@@ -221,6 +226,32 @@
         </div>
     </form>
 
+    <!-- Modal -->
+    <form class="" action="index.html" method="post">
+        <div id="CSVModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><img src="img/AddFile-64.png" alt="" style="height:30px;"> Upload Course(CSV)</h4>
+                    </div>
+                    <div class="modal-body center-content">
+                        <p>
+                            Choose CSV of user-data for upload to append Courses.
+                        </p>
+                        <input id="input-file" type="file" class="file">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
 <input type="text" id="username" hidden />
 <input type="text" id="fname" hidden />
 <input type="text" id="lname" hidden />
@@ -233,11 +264,12 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
     <!-- GenPass -->
     <script src="js/sha1.js"></script>
     <script src="js/passwordController.js"></script>
-    
+
     <!-- guitar -->
     <script src="js/guitar-ad.js"></script>
 
