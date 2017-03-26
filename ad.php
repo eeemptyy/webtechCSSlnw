@@ -21,6 +21,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/admin-css.css" rel="stylesheet" />
     <link href="css/landing-page.css" rel="stylesheet">
@@ -48,15 +49,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">CLASS WORK</a>
+                <a class="navbar-brand topnav classwork" href="">ClassWork</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a href="ad-course.php">Course</a>
+                  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Manage User<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ad.php">Manage User</a></li>
+                        <li><a href="ad-course.php">Course</a></li>
+                    </ul>
                   </li>
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
+                  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>

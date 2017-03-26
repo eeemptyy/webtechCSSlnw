@@ -14,10 +14,12 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/admin-css.css" rel="stylesheet" />
     <link href="css/landing-page.css" rel="stylesheet">
     <!-- Custom Fonts -->
+    <link href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,17 +42,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">CLASS WORK</a>
+                <a class="navbar-brand topnav classwork" href="">ClassWork</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a href="ad.php">Manage User</a>
+                  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Course<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ad.php">Manage User</a></li>
+                        <li><a href="ad-course.php">Course</a></li>
+                    </ul>
                   </li>
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
+                  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Edit Password</a></li>
+                            <li><a href="">Edit Password</a></li>
                             <li><a href="login.html">Logout</a></li>
                         </ul>
                     </li>
@@ -62,9 +67,22 @@
 
     <div class="content-section-b">
         <div class="container">
-            <h2>Course Semester 1/2017 </h2>
+          <div class="row content-heading">
+            <label class="course-label">Course  </label>
+              <select>
+                <option>2016</option>
+                <option>2017</option>
+              </select>
+              <label class="course-label">/</label>
+              <select>
+                <option>1</option>
+                <option>2</option>
+              </select>
+          </div>
+
+
             <br />
-            <input type="text" class="search-query form-control search-css" placeholder="Search" />
+
             <ul class="list-inline intro-social-buttons">
                 <li>
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD COURSE (CSV)</span></a>&nbsp;&nbsp;
@@ -73,10 +91,10 @@
                     <a href="" class="btn-admin" onclick="popUp('ad-course')"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                 </li>
             </ul>
-            
+
             <div id="table"></div>
-            
-  
+
+
         </div>
     </div>
 
@@ -102,50 +120,6 @@
             </div>
         </div>
     </footer>
-
-
-    <!-- Modal -->
-    <form class="" action="index.html" method="post">
-        <div id="editModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><img src="img/Edit-50.png" alt="" style="height:25px;">  Edit user information </h4>
-                    </div>
-                    <div class="modal-body">
-                      <div class="form-group">
-                          <label for="usr">Username ID:</label>
-                          <input type="text" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <label for="firstname">Firstname:</label>
-                          <input type="text" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <label for="lastname">Lastname:</label>
-                          <input type="text" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <label for="position">Position:</label>
-                          <select class="form-control">
-                                <option>Student</option>
-                                <option>Teacher</option>
-                                <option>Laboratory-Teacher</option>
-                                <option>Admin</option>
-                          </select>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </form>
 
     <!-- Modal -->
     <form class="" action="index.html" method="post">
@@ -203,8 +177,9 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-         <!-- guitar -->
-        <script src="js/ad-course.js"></script>
+      <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <!-- guitar -->
+    <script src="js/ad-course.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
