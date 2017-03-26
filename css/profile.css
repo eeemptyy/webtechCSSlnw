@@ -1,5 +1,10 @@
+
 .size-content{
   font-size: 120%;
+}
+
+.pantone-brown{
+  color:#a6957b;
 }
 
 #profile-label{
@@ -18,18 +23,26 @@
   margin-top: 5%;
   overflow: auto;
   box-shadow: 4px 4px 30px -10px rgba(117,117,117,1);
+
+  background: url(../img/3.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 30%;
 }
 
 .content{
-  background: pink;
+  /*background: rgba(198, 172, 124, 1);*/
   margin-top: 5%;
-  padding: 20px;
-  padding-left: 50px;
+  /*padding: 20px;*/
+  /*padding-left: 50px;*/
   height: auto;
 }
 
 .name{
-  font-size: 2.5em;
+  font-size: 2.75em;
+  font-weight: bold;
+  text-shadow: 4px 2px 5px rgba(198, 172, 124, 0.81);
+  padding-bottom: 20px;
 }
 
 .other-word{
@@ -42,15 +55,14 @@
   margin-top: 2%;
   float:left;
   padding-bottom: 6%
-  /*clear: both;*/
 }
 
 .box-containt{
   font-family: 'PT Sans', sans-serif;
-  /*background: green;*/
   padding-left: 3%;
-  padding-top: 5%;
+  padding-top: 4%;
   overflow: auto;
+  line-height: 30px;
 }
 
 .list-quotes {
@@ -127,4 +139,33 @@
     font-weight: bold;
     text-transform: capitalize;
     color: #fff;
+}
+
+.image-preview-input {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+
+.btn-takeroll{
+  background-color: rgba(198, 172, 124, 1);
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
 }

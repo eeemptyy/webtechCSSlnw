@@ -65,7 +65,7 @@
           <div class="head-profile">
 
             <div class="box-left">
-              <a class="list-quotes" href="/">
+              <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
                 <img src="img/Profile.jpg" alt="profile picture">
                 <!-- <img  src="img/5.png" alt="profile picture"> -->
                 <div class="quotes">
@@ -79,33 +79,31 @@
 
               <label class="name">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name">Narkjumrussri</lable><br />
                <div class="list-inline">
-                 <div class="col-sm-2 size-content">Username ID</div>
-                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-2 size-content pantone-brown">Username ID</div>
+                 <div class="col-sm-1 size-content pantone-brown" >:</div>
                  <div class="col-sm-9 size-content">5610404452</div>
                </div><br />
                <div class="list-inline">
-                 <div class="col-sm-2 size-content">Role</div>
-                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-2 size-content pantone-brown">Role</div>
+                 <div class="col-sm-1 size-content pantone-brown">:</div>
                  <div class="col-sm-9 size-content">Laboratory-Teacher</div>
                </div><br />
                <div class="list-inline">
-                 <div class="col-sm-2 size-content">Moblie Phone</div>
-                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-2 size-content pantone-brown">Moblie Phone</div>
+                 <div class="col-sm-1 size-content pantone-brown">:</div>
                  <div class="col-sm-9 size-content">095-558-5492</div>
                </div><br />
                <div class="list-inline">
-                 <div class="col-sm-2 size-content">E-mail</div>
-                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-2 size-content pantone-brown">E-mail</div>
+                 <div class="col-sm-1 size-content pantone-brown">:</div>
                  <div class="col-sm-9 size-content">boonyaporn.n@ku.th</div>
                </div><br />
                <div class="list-inline">
-                 <div class="col-sm-2 size-content">Address</div>
-                 <div class="col-sm-1 size-content">:</div>
-                 <div class="col-sm-6 size-content">161/149, Soi.Intramara41, Sutthisan Road, Dindang, Bangkok, Thailand, 10400</div>
-                 <div class="col-sm-3 size-content"></div>
+                 <div class="col-sm-2 size-content pantone-brown">Address</div>
+                 <div class="col-sm-1 size-content pantone-brown">:</div>
+                 <div class="col-sm-5 size-content">161/149, Soi.Intramara41, Sutthisan Road, Dindang, Bangkok, Thailand, 10400</div>
+                 <div class="col-sm-4 size-content"></div>
                </div><br />
-
-
             </div>
           </div>
 
@@ -145,6 +143,42 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <form class="" action="index.html" method="post">
+        <div id="uploadModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><img src="img/Photos-50.png" alt="" style="height:30px;"> Upload Profile Picture</h4>
+                    </div>
+                    <div class="modal-body" style="height:500;">
+                      <div class="input-group image-preview">
+                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn">
+                  <!-- image-preview-clear button -->
+                  <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                      <span class="glyphicon glyphicon-remove"></span> Clear
+                  </button>
+                  <!-- image-preview-input -->
+                  <div class="btn btn-default image-preview-input">
+                      <span class="glyphicon glyphicon-folder-open"></span>
+                      <span class="image-preview-input-title">Browse</span>
+                      <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                  </div>
+              </span>
+          </div><!-- /input-group image-preview [TO HERE]-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
 
 
 
