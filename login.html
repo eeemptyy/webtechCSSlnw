@@ -15,7 +15,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link href="css/login.css" rel="stylesheet" />
     <link href="css/landing-page.css" rel="stylesheet">
@@ -77,10 +77,10 @@
                 <div class="box-login">
                     <h2 class="myhead">LOGIN</h2>
                     <hr class="intro-divider">
-                    <form id="myForm" class="" action="controller/create_seesion.php" method="POST">
+                    <form id="myForm"  class="" action="controller/create_seesion.php" method="POST">
                         <p id='displayError' style="color: red; text-align: left; padding-left: 13%;"></p>
-                        <input type="text" name="username" id='username' placeholder="Username" /><br />
-                        <input type="password" name="password" id='pass' placeholder="Password" /><br />
+                        <input type="text" name="username" id='username' placeholder="Username" autocomplete="off" /><br />
+                        <input type="password" name="password" id='pass' placeholder="Password" autocomplete="off" /><br />
                         <input type="text" name="fname" id="fname" hidden>
                         <input type="text" name="lname" id="lname" hidden>
                         <input type="text" name="role_id" id="role_id" hidden>

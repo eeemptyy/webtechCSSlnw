@@ -60,7 +60,7 @@
                         <li><a href="ad-course.php">Course</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
+                  <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Administer</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
