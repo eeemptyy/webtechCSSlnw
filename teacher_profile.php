@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Profile</title>
+    <title>Teacher Profile</title>
     <meta charset="utf-8">
     <meta name="description" content="for login">
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -17,6 +17,7 @@
     <!-- Custom CSS -->
     <link href="css/profile.css" rel="stylesheet" />
     <link href="css/landing-page.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -45,103 +46,82 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#login">Teacher</a>
-                    </li>
-                    <li>
-                        <a href="#about">Home</a>
+                  <!-- <li>Course</li> -->
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Laboratory-Teacher<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Edit Profile</a></li>
+                            <li><a href="#">Edit Password</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
 
     <div class="content-section-b">
         <div class="container">
-            <h2>Profile</h2>
-            <br />
+          <div class="head-profile">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-                        <A href="edit.html">Edit Profile</A>
-
-                        <A href="edit.html">Logout</A>
-                        <br>
-                        <p class=" text-info"></p>
-                    </div>
-
-                    <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/User.png" class="img-circle img-responsive" p align="left" width="304" height="236"> </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-
-
-
-
-                        <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                  <dl>
-                    <dt>DEPARTMENT:</dt>
-                    <dd>Administrator</dd>
-                    <dt>HIRE DATE</dt>
-                    <dd>11/12/2013</dd>
-                    <dt>DATE OF BIRTH</dt>
-                       <dd>11/12/2013</dd>
-                    <dt>GENDER</dt>
-                    <dd>Male</dd>
-                  </dl>
-                </div>-->
-                        <div class=" col-md-9 col-lg-9 ">
-                            <tbody>
-                                <h4><b class="information-css">Username ID</b> 5610404452<br>
-                                    <tr>
-                                        <td><b>Firstname</b></td>
-                                        <td>John</td> <br>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Lastname</b></td>
-                                        <td>Smith</td> <br>
-                                    </tr>
-
-                                    <tr>
-                                        <td><b>Faculty</b></td>
-                                        <td>Science</td> <br>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Email</b></td>
-                                        <td><a href="mailto:info@support.com">info@support.com</a></td><br>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Phone Number</b></td>
-                                        <td>123-4567-890</td> <br>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Subject</b></td>
-                                        <td>
-                                            <select id="soflow">
-  <!-- This method is nice because it doesn't require extra div tags, but it also doesn't retain the style across all browsers. -->
-                             <option>Select an Object</option>
-                             <option>Computer</option>
-                           </select></td>
-                                </h4>
-                                </tr>
-                            </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <div class="box-left">
+              <a class="list-quotes" href="/">
+                <img src="img/Profile.jpg" alt="profile picture">
+                <!-- <img  src="img/5.png" alt="profile picture"> -->
+                <div class="quotes">
+                    <p style="text-align:center;">
+                        Change your profile picture <span>...Click</span>
+                    </p>
                 </div>
+            </a>
+            </div>
+            <div class="box-containt">
 
+              <label class="name">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name">Narkjumrussri</lable><br />
+               <div class="list-inline">
+                 <div class="col-sm-2 size-content">Username ID</div>
+                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-9 size-content">5610404452</div>
+               </div><br />
+               <div class="list-inline">
+                 <div class="col-sm-2 size-content">Role</div>
+                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-9 size-content">Laboratory-Teacher</div>
+               </div><br />
+               <div class="list-inline">
+                 <div class="col-sm-2 size-content">Moblie Phone</div>
+                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-9 size-content">095-558-5492</div>
+               </div><br />
+               <div class="list-inline">
+                 <div class="col-sm-2 size-content">E-mail</div>
+                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-9 size-content">boonyaporn.n@ku.th</div>
+               </div><br />
+               <div class="list-inline">
+                 <div class="col-sm-2 size-content">Address</div>
+                 <div class="col-sm-1 size-content">:</div>
+                 <div class="col-sm-6 size-content">161/149, Soi.Intramara41, Sutthisan Road, Dindang, Bangkok, Thailand, 10400</div>
+                 <div class="col-sm-3 size-content"></div>
+               </div><br />
 
 
             </div>
+          </div>
 
+          <div class="content">
+
+            hhhh1
+            hhhh
+            hhhhh
+            hhhh
+            hhh
+            hhh
+
+          </div>
 
         </div>
-        </<div>
-
     </div>
-
 
     <footer>
         <div class="container">
@@ -171,6 +151,8 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+         <!-- guitar -->
+        <script src="js/testjs.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
