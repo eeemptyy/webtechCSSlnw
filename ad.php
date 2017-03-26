@@ -57,7 +57,7 @@
                   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/CircledUser.png" alt="" style="height:23px; color:gray;"> Administer<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Edit Password</a></li>
-                            <li><a href="login.html">Logout</a></li>
+                            <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -225,6 +225,9 @@
 <input type="text" id="fname" hidden />
 <input type="text" id="lname" hidden />
 <input type="text" id="role_id" hidden />
+<input type="text" name="email" id="email" hidden>
+<input type="text" name="address" id="address" hidden>
+<input type="text" name="tel" id="tel" hidden>
 
 </body>
 
@@ -243,6 +246,9 @@
             $('#fname').val('<?php echo $_SESSION['fname'];?>');
             $('#lname').val('<?php echo $_SESSION['lname'];?>');
             $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
+            $('#email').val('<?php echo $_SESSION['email'];?>');
+            $('#address').val('<?php echo $_SESSION['address'];?>');
+            $('#tel').val('<?php echo $_SESSION['tel'];?>');
         });
     </script>
 

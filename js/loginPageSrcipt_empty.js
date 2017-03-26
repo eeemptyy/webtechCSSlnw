@@ -21,6 +21,9 @@ $("#loginBTN").click(function() {
                     $("#fname").val(obj['firstname']);
                     $("#lname").val(obj['lastname']);
                     $("#role_id").val(obj['role']);
+                    $("#email").val(obj['email']);
+                    $("#address").val(obj['address']);
+                    $("#tel").val(obj['tel']);
                     $("#myForm").submit();
                 }
             },

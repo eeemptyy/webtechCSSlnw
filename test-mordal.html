@@ -1,60 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-  <h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    <div class="container">
 
+        <h2>Modal Example</h2>
+        <p id="tempData">Hello data</p>
 
-  <form class="" action="index.html" method="post">
-      <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title"><img src="img/AddUser.png" alt="" style="height:30px;"> Create new user</h4>
-                  </div>
-                  <div class="modal-body">
-                      <div class="form-group">
-                          <label for="usr">Username ID:</label>
-                          <input type="text" class="form-control">
-                      </div>
-                      <div class="form-group">
-                          <label for="firstname">Firstname:</label>
-                          <input type="text" class="form-control">
-                      </div>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-                      <div class="form-group">
-                          <label for="position">Position:</label>
-                          <select class="form-control">
+        <form class="" action="index.html" method="post">
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title"><img src="img/AddUser.png" alt="" style="height:30px;"> Create new user</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="usr">Username ID:</label>
+                                <input type="text" id="modal-username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname">Firstname:</label>
+                                <input type="text" id="modal-firstname" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="position">Position:</label>
+                                <select id="modal-select" class="form-control">
                                   <option>Student</option>
                                   <option>Teacher</option>
                                   <option>Laboratory-Teacher</option>
                                   <option>Admin</option>
                                 </select>
-                      </div>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-              </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" id='modal-submit' class="btn btn-default" data-dismiss="modal">Submit</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
 
-          </div>
-      </div>
-  </form>
+                </div>
+            </div>
+        </form>
 
-</div>
+    </div>
+    <script>
+        $("#modal-submit").click(function() {
+            var str = "";
+
+            $('#tempData').html($('#modal-select option:selected').html() + " " +
+                $('#modal-username').val() + " " + $('#modal-firstname').val()
+            );
+            // return true;
+        });
+    </script>
 
 </body>
+
 </html>

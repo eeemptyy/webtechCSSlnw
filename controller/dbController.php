@@ -22,7 +22,8 @@ class DB_Controller{
 
     public function getLogin($uname, $pass){
         try{
-            $sql = 'SELECT user.username, user.password, user.fname, user.lname, role.role_name, user.role_id FROM user, role WHERE user.username = "'.$uname.'" and user.role_id = role.id';
+            $sql = 'SELECT user.username, user.password, user.fname, user.lname, role.role_name, user.role_id, user.email, user.address, user.tel '.
+            'FROM user, role WHERE user.username = "'.$uname.'" and user.role_id = role.id';
             $q = $this->connection->prepare($sql);
             $q->execute();
 
@@ -33,6 +34,9 @@ class DB_Controller{
                 $userin['firstname'] = $row['fname'];
                 $userin['lastname'] = $row['lname'];
                 $userin['role'] = $row['role_id'];
+                $userin['email'] = $row['email'];
+                $userin['address'] = $row['address'];
+                $userin['tel'] = $row['tel'];
                 echo json_encode($userin);
             }else {
                 echo "Username/Password not found.";
