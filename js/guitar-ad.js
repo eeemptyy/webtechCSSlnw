@@ -49,7 +49,7 @@ $("#modal-submit").click(function() {
                 role: role_create
              },
                  success : function(data){
-                     alert("success "+data);
+//                     alert("success "+data);
                      location.reload();
                      
                  }
@@ -113,6 +113,7 @@ function isID(text) {
         
     }
 }
+
 
 
 
