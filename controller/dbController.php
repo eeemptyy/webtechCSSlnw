@@ -6,6 +6,9 @@ class DB_Controller{
     private $hostname = "";
     private $dbname = "";   
     private $connection;
+
+    private $currentSemester = "";
+    private $currentYear = "";
     
     public function __construct(){
         include("dbconfig.php");
@@ -16,8 +19,25 @@ class DB_Controller{
         $this->dbname = $db;
         try{
             $this->connection = new PDO("mysql:host={$this->hostname};"."dbname={$this->dbname}",$this->username,$this->password);         
+            $this->getCurrentData();            
         } catch (PDOException $e){
             die("Couldn't connect to the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
+    private function getCurrentData(){
+        try{
+            $sql = 'SELECT * FROM subject_semester ORDER BY year DESC, semester DESC LIMIT 1';
+            // $sql = "SELECT * FROM user";
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+
+            $row = $q->fetch();
+            $this->currentSemester = $row['semester'];
+            $this->currentYear = $row['year'];
+
+        } catch (PDOException $e){
+            die("Couldn't getAllUser from the database ".$this->dbname.": ".$e->getMessage());
         }
     }
 
@@ -84,6 +104,17 @@ class DB_Controller{
         }
     }
 
+    public function editUserData($username, $newFname, $newLname, $newRole){
+        try{
+            $sql = 'UPDATE user SET user.fname = "'.$newFname.'", user.lname = "'.$newLname.'", user.role_id = "'.$newRole.'" WHERE user.username = "'.$username.'"';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            echo "Database Update successful.";
+        } catch (PDOException $e){
+            die("Couldn't Update the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
     public function addUser($username, $pass, $firstname, $lastname, $role){
         try{
             $sql = 'INSERT INTO project_webtech_csslnw.user (username, password, fname, lname, pic_path, role_id) '.
@@ -135,6 +166,7 @@ class DB_Controller{
             die("Couldn't getAllSubjectBySemester from the database ".$this->dbname.": ".$e->getMessage());
         }
     }
+
     
 }
 ?>

@@ -25,6 +25,13 @@
             $oldPass = $_POST['oldPass'];
             echo $db_controller->editUserPassword($username, $newPass, $oldPass);
             break;
+        case "edit_user":
+            $username = $_POST['username'];
+            $newFname = $_POST['newFname'];
+            $newLname = $_POST['newLname'];
+            $newRole = $_POST['newRole'];
+            echo $db_controller->editUserData($username, $newFname, $newLname, $newRole);
+            break;
         case "create_user":
             $username = $_POST['username'];
             $pass = $_POST['password'];
