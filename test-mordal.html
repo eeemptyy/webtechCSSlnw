@@ -59,6 +59,7 @@
         </form>
 
     </div>
+    <script src="js/genPass.js"></script>
     <script>
         $("#modal-submit").click(function() {
             var str = "";
@@ -66,6 +67,7 @@
             $('#tempData').html($('#modal-select option:selected').html() + " " +
                 $('#modal-username').val() + " " + $('#modal-firstname').val()
             );
+            alert(startGen());
             // return true;
         });
     </script>
