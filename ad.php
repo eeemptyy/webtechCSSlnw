@@ -204,10 +204,10 @@
                         <div class="form-group">
                             <label for="role-create">Role:</label>
                             <select id="role_create" class="form-control">
-                                    <option>Student</option>
-                                    <option>Teacher</option>
-                                    <option>Laboratory-Teacher</option>
-                                    <option>Admin</option>
+                                    <option value="1">Student</option>
+                                    <option value="2">Teacher</option>
+                                    <option value="3">Laboratory-Teacher</option>
+                                    <option value="4">Admin</option>
                                   </select>
                         </div>
                     </div>
