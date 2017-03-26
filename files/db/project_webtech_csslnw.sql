@@ -1,21 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: Mar 26, 2017 at 10:18 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.8
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `project_webtech_csslnw`
 --
@@ -175,7 +157,7 @@ CREATE TABLE `take_class` (
 
 CREATE TABLE `user` (
   `username` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
-  `password` varchar(16) CHARACTER SET utf8mb4 NOT NULL,
+  `password` varchar(64) NOT NULL,
   `fname` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `lname` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `pic_path` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -190,10 +172,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `pic_path`, `role_id`, `email`, `address`, `tel`) VALUES
-('5610400091', '0091', 'Nattharat', 'Jariyanuntanet', 'adasjdkajslkdjalsjdlk', 3, 'nattharat.j@ku.th', 'Lak si, Bangkok, Thailand', '084-444-4444'),
-('5610404452', '4452', 'Boonyaporn', 'Narkjumrussri', 'xxxxxxx_aaaxxxaaxx', 4, 'boonyaporn.n@ku.th', 'Bongkok, Thailand', '089-999-9999'),
-('5610450063', '0063', 'Jompol', 'Sermsook', 'aaaaaaaxxxxxxx_Xx', 4, 'jompol.s@ku.th', 'Nonthaburi, Thailand', '085-088-1886'),
-('5610450080', '0080', 'Chayamon', 'Kanjanapongsawet', 'xxxxxxxaas', 1, 'chayamon.ka@ku.th', 'Samyan, Bangkok, Thailand', '081-111-1111');
+('5610400091', '0ed02142ead58ab9da947e00fa0f416895478618', 'Nattharat', 'Jariyanuntanet', 'adasjdkajslkdjalsjdlk', 3, 'nattharat.j@ku.th', 'Lak si, Bangkok, Thailand', '084-444-4444'),
+('5610404452', '78c84e6895448e0317aa1f06f807c4e22fba5113', 'Boonyaporn', 'Narkjumrussri', 'xxxxxxx_aaaxxxaaxx', 4, 'boonyaporn.n@ku.th', 'Bongkok, Thailand', '089-999-9999'),
+('5610450063', 'c9dfb3338b461c8662ce7c52f4a28672a75b9fb5', 'Jompol', 'Sermsook', 'aaaaaaaxxxxxxx_Xx', 4, 'jompol.s@ku.th', 'Nonthaburi, Thailand', '085-088-1886'),
+('5610450080', '817965431c04a46f3af2f982ceff704a9cd0890b', 'Chayamon', 'Kanjanapongsawet', 'xxxxxxxaas', 1, 'chayamon.ka@ku.th', 'Samyan, Bangkok, Thailand', '081-111-1111');
 
 --
 -- Indexes for dumped tables
