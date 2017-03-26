@@ -12,7 +12,7 @@ $_SESSION['tel'] = $_POST['tel'];
 $role = $_SESSION['role_id'];
 if ($role > 3){
     header("Location: ../ad.php");
-}else if ($role < 1){
+}else if ($role < 2){
     header("Location: ../student_profile.php");
 }else{
     header("Location: ../teacher_profile.php");
