@@ -42,7 +42,7 @@
             $email = $_POST['email'];
             $mobile = $_POST['mobile'];
             $address = $_POST['address'];
-            echo $db_controller->editUserData($username, $newFname, $newLname, $email, $mobile, $address);
+            echo $db_controller->editUserDataByUser($username, $newFname, $newLname, $email, $mobile, $address);
             break;
         case "create_user":
             $username = $_POST['username'];
