@@ -239,7 +239,7 @@ class DB_Controller{
             $year = $this->currentYear;
         }
         try{
-            $sql = 'SELECT subject.id AS CourseID, subject.name AS CourseName, subject.credit, takes.grade'.
+            $sql = 'SELECT DISTINCT subject.id AS CourseID, subject.name AS CourseName, subject.credit, takes.grade '.
                     'FROM takes, user, subject_semester, subject '.
                     'WHERE takes.username = "'.$username.'" and subject.id = subject_semester.id_subject and '.
                     'subject_semester.id = takes.id_subject_semester and subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" ';
@@ -299,6 +299,34 @@ class DB_Controller{
             die("Couldn't Login to the database ".$this->dbname.": ".$e->getMessage());
         }
 
+    }
+
+    public function readCSV($target_file){
+        $out = $target_file."\n";
+        $file = fopen($target_file,"r");
+        while(! feof($file)){
+            $line = preg_replace('/\s+/', '', fgets($file));
+            $lineArr = $line.split(",");
+            try{           
+                $username = $lineArr[0];
+                $password = sha1(substr($username,6));
+                $fname = $lineArr[1];
+                $lname = $lineArr[2];
+                $role_id = $lineArr[3];
+                
+                $sql = 'INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `pic_path`, `role_id`, `email`, `address`, `tel`)'.
+                        ' VALUES ("'.$username.'", "'.$password.'", "'.$fname.'", "'.$lname.'",'.
+                        ' "files/img/profile/contact-default3.png", "'.$role_id.'", NULL, NULL, NULL)';
+                $q = $this->connection->prepare($sql);
+                $q->execute();
+                // echo "Database Inserte successful.";
+            } catch (PDOException $e){
+                die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+            }
+            $out .= $line."\n";
+        }
+        fclose($file);
+        echo "Data from file read by server \n".$out;
     }
 
 

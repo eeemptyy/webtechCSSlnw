@@ -231,7 +231,7 @@
     </form>
 
     <!-- Modal -->
-    <form class="" action="index.html" method="post">
+    <form class="" id="uploadUserCSV" action="" method="post">
         <div id="CSVModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -245,11 +245,11 @@
                             Choose CSV of <i><u>user-data</u></i> for upload to create new Users.
                         </p>
                         <div>
-                          <input type="file" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
+                          <input name="inputFile" type="file" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button id="modal-usercsv-submit" type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -290,6 +290,29 @@
     <script src="js/report.js"></script>
 
     <script>
+        $("form#uploadUserCSV").submit(function(){
+
+            var formData = new FormData($(this)[0]);
+
+            $.ajax({
+                url: "controller/uploadCSV.php",
+                type: 'POST',
+                data: formData,
+                async: false,
+                success: function (data) {
+                    alert(data);
+                    location.reload();
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+
+            return false;
+        });
+        $('#modal-usercsv-submit').click(function() {
+            $('#uploadUserCSV').submit();
+        });
         $(document).ready(function() {
             $('#username').val('<?php echo $_SESSION['username'];?>');
             $('#fname').val('<?php echo $_SESSION['fname'];?>');

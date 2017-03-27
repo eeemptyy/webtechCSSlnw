@@ -3,12 +3,12 @@ require 'dbController.php';
 $db_controller = new DB_Controller();
 
 $target_dir = "../files/csv/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["inputFile"]["name"]);
 $uploadOk = 1;
 $upFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if file empty.
 if(isset($_POST["submit"])) {
-    $check = filesize($_FILES["fileToUpload"]["tmp_name"]);
+    $check = filesize($_FILES["inputFile"]["tmp_name"]);
     // echo $check;
     if($check !== false) {
         // echo "File is an correct - " . $check["mime"] . ".";
@@ -26,7 +26,7 @@ if (file_exists($target_file)) {
     $uploadOk = 1;
 }
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["inputFile"]["size"] > 500000) {
     echo "Sorry, your file is too large.<BR>";
     $uploadOk = 0;
 }
@@ -40,13 +40,13 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.<BR>";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($_FILES["inputFile"]["tmp_name"], $target_file)) {
         $prob = array();
-        $prob['file'] = $_FILES["fileToUpload"]["name"];
+        $prob['file'] = $_FILES["inputFile"]["name"];
 
-        // $out = $db_controller->addProblem($json_prob);
-        // $ff = readfile("../files/csv/".basename( $_FILES["fileToUpload"]["name"]));
-        echo "\File ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.".'<br>';
+        // echo "\File ". basename( $_FILES["inputFile"]["name"]). " has been uploaded. ".$target_file." \n".
+            echo $db_controller->readCSV($target_file);
+
     } else {
         echo "Sorry, there was an error uploading your file.<BR>";
     }
