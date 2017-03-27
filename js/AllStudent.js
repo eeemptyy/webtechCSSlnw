@@ -16,7 +16,7 @@ $(document).ready(function(){
                     var objIn = obj[i];
                     html += '<tr>';
                     html += '<td class="text-center">' + objIn['username'] +'</td><td>' + objIn['firstname'] +" &nbsp;&nbsp;"+  objIn['lastname'] + '</td>';
-                    html += '<td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" window.open("","_blank")"></td>';
+                    html += '<td class="text-center"><input type="button" id="profile_btn"  value="" alt="Comment" onclick=" window.open("","_blank")"></td>';
                     html += "</tr>";
             }
             html += '</tbody><tfoot><tr></tr></tfoot></table>';
