@@ -7,6 +7,7 @@ $("#submitChangPws").click(function() {
     var newPass1 = $('#newPass1').val();
     var newPass2 = $('#newPass2').val();
     var hold = false;
+    //alert(uname+"|"+oldPass+"|"+newPass1+"|"+newPass2)
 
     if(newPass1 == null || newPass2 == null || oldPass == null){
         alert("null value");
@@ -14,7 +15,7 @@ $("#submitChangPws").click(function() {
     else if(newPass1!=newPass2){
         alert("new password not match");
     }
-    else if(newPass1==newPass2 && newPass1 != null && newPass2 != null){
+    else if(newPass1==newPass2 && newPass1 != null && newPass2 != null && oldPass !=null){
         hold=true;
         document.getElementById('oldPass').value="";
         document.getElementById('newPass1').value="";

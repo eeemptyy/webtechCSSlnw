@@ -51,6 +51,7 @@
 		</center>
 	  </form>
 </div>	
+		<input type="text" id="username" hidden />
 		<!-- jQuery -->
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->

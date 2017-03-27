@@ -258,7 +258,7 @@
         </div>
     </form>
 
-<input type="text" id="username" id="username" hidden />
+<input type="text" id="username" hidden />
 <input type="text" id="fname" hidden />
 <input type="text" id="lname" hidden />
 <input type="text" id="role_id" hidden />
@@ -267,7 +267,7 @@
 <input type="text" name="tel" id="tel" hidden>
 
 </body>
-
+    
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
