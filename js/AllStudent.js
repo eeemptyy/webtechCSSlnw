@@ -10,7 +10,7 @@ $(document).ready(function(){
         func: "get_student"
         },
     success: function(data) {
-        alert("aa:"+data);
+//        alert("aa:"+data);
             var obj = JSON.parse(data);
             for (var i = 0, len = obj.length; i < len; ++i) {
                     var objIn = obj[i];
