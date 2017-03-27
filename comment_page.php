@@ -103,7 +103,7 @@
 
 
             <div id="all_comment">
-                <div class="student-box" style="width:100%; background:rgba(189, 167, 141, 0.74); height:auto; padding-button:20px;">
+                <div class="student-box" id="student-box"style="width:100%; background:rgba(189, 167, 141, 0.74); height:auto; padding-button:20px;">
                   <div class="form-group">
                     <label for="comment"><b><u>Sukumal :</u></b></label>
                     <p style="margin-left:30px;">
@@ -118,7 +118,8 @@
             </div>
 
             <div id="all_comment">
-                <div class="student-box" style="width:100%; background:rgba(189, 167, 141, 0.74); height:auto; padding-button:20px;">
+<!--                <div class="student-box" style="width:100%; background:rgba(189, 167, 141, 0.74); height:auto; padding-button:20px;">-->
+<!--
                   <div class="form-group">
                     <label for="comment"><b><u>Sukumal :</u></b></label>
                     <p style="margin-left:30px;">
@@ -129,6 +130,7 @@
                       <input id="submitChangPws" class="btn btn-default" style="font-size:12px; color:black; float:right;" type="button" value="Delete">
                   </div>
                   <br />
+-->
               </div>
             </div>
 
@@ -220,5 +222,6 @@
             
         });
     </script>
+    <script src="js/comment.js"></script>
 
 </html>
