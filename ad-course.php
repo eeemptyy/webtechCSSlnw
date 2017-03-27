@@ -85,7 +85,7 @@
 
             <ul class="list-inline intro-social-buttons">
                 <li>
-                    <a href="" class="btn-admin" data-toggle="modal" data-target="#myModal"><i><img src="img/Add-64.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW CORSE</span></a> &nbsp;&nbsp;
+                    <a href="" class="btn-admin" onclick="resetForm()" data-toggle="modal" data-target="#myModal"><i><img src="img/Add-64.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW CORSE</span></a> &nbsp;&nbsp;
                 </li>
                 <li>
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD COURSE (CSV)</span></a>&nbsp;&nbsp;
@@ -208,7 +208,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button  type="submit" id="modal-submit" class="btn btn-default"  data-dismiss="modal" >Submit</button>
+                        <button  type="submit" id="model-createSubject" class="btn btn-default"  data-dismiss="modal" >Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>

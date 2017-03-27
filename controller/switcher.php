@@ -52,6 +52,14 @@
             $role = $_POST['role'];
             echo $db_controller->addUser($username, $pass, $firstname, $lastname, $role);
             break;
+            // guitar code
+        case "create_subject":
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $credit = $_POST['credit'];
+            echo $db_controller->addSubject($id, $name, $credit);
+            break;
+            
         case "get_subject_by_semester":
             $semester = $_POST['semester'];
             $year = $_POST['year'];

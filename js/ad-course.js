@@ -29,6 +29,40 @@ $(document).ready(function() {
             console.log(data + ' error on page ready');
         }
     });
+    
+    $("#model-createSubject").click(function()
+{
+    var id = $('#courseID_create').val();
+    var name = $('#courseName_create').val();
+    var credit = $('#credit_create').val();
+    alert("id: "+ id +" name: "+ name+ " credit: "+ credit );
+    if(isValid(name) && isSubjectID(id) && isCredit(credit))
+    {
+            $.ajax({
+                 type: "POST",
+                 url: "controller/switcher.php",
+            data: {
+                func: 'create_subject',
+                id: id,
+                name: name ,
+                credit: credit
+             },
+                 success : function(data){
+//                     alert("success "+data);
+                     location.reload();
+
+                 }
+             });
+            alert("tt");
+         }
+        else {
+            alert("ff");
+            return false;
+        }
+    
+});
+
+//end add new code  
 });
 
 $('#select-year, #select-semester').change(function() {
@@ -99,4 +133,42 @@ function toggleCheck() {
         }
     }
 
+}
+    
+// add check
+function isValid(text) {
+        if(/^[A-Za-z]+$/.test(text) ){
+        return true;
+    }
+    else {
+        return false;
+
+    }
+}
+    
+function isCredit(text) {
+    if(/^[0-9]+$/.test(text) && text.length <= 3){
+        return true;
+    }
+    else {
+        return false;
+
+    }
+    
+}
+    
+function isSubjectID(text) {
+    if(/^[0-9]+$/.test(text) && text.length == 8){
+        return true;
+    }
+    else {
+        return false;
+
+    }
+}
+
+function resetForm(){
+    $('#courseID_create').val("");
+    $('#courseName_create').val("");
+    $('#credit_create').val("");
 }

@@ -162,7 +162,20 @@ class DB_Controller{
             die("Couldn't delete user from the database ".$this->dbname.": ".$e->getMessage());            
         }
     }
-
+ //addSubject -- guitar
+    public function addSubject($id,$name,$credit)
+    {
+        try{           
+         $sql = 'INSERT INTO project_webtech_csslnw.subject (id, name, credit) '.
+            'VALUES ("'.$id.'", "'.$name.'", "'.$credit.'")';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            echo "Database Inserte successful.";
+        } catch (PDOException $e){
+            die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+    
     public function getAllSubjectBySemester($semester, $year){
         if ($semester == "now" && $year == "now"){
             $semester = $this->currentSemester;
