@@ -31,6 +31,10 @@ $(document).ready(function(){
               // "ordering": false,
               "info":     false
             });
+
+            $('#profile_btn').click(function(event) {
+              window.open("student_profile.php","_blank");
+            });
     },
           error: function(data) {
               alert("error "+data);
