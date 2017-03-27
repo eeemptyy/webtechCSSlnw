@@ -15,7 +15,7 @@
   clear: both;
 }
 
-.head-profile{
+.box-whiteshadow{
   height: 100%;
   border: 1px;
   /*border-style: dashed;;*/
@@ -23,7 +23,9 @@
   margin-top: 5%;
   overflow: auto;
   box-shadow: 4px 4px 30px -10px rgba(117,117,117,1);
+}
 
+.head-profile{
   background: url(../img/3.png);
   background-repeat: no-repeat;
   background-position: right bottom;
