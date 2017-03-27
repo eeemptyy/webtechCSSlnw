@@ -10,7 +10,7 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // กำหนดรายละเอียดของเอกสาร pdf แสดงเมื่อคลิกขวาที่ไฟล์ PDF แล้วเลือก Document Property
 $pdf->SetCreator(PDF_CREATOR); // เครื่องมือสร้าง PDF  ค่าเริ่ม PDF_CREATOR = TCPDF
 $pdf->SetAuthor('Ninenik'); // ชื่อผู้สร้างไฟล์ PDF
-$pdf->SetTitle('STUDENT LIST');//  กำหนด Title
+$pdf->SetTitle('Student List');//  กำหนด Title
 $pdf->SetSubject('HTML 2 PDF'); // กำหนด Subject
 $pdf->SetKeywords('TCPDF, PDF, USING HTML 2 PDF'); // กำหนด Keyword
 
