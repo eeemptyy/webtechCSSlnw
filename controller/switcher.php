@@ -86,6 +86,13 @@
             $classID = $_POST['classID'];
             echo $db_controller->getAllInClass($classID);
             break;
+        case "get_comment_by_subject":
+            $username_stu = $_POST['usernameStu'];
+            $year = $_POST['year'];
+            $semester = $_POST['semester'];
+            $subjectID = $_POST['subjectID'];
+            echo $db_controller->getCommentInSubject($username_stu, $year, $semester, $subjectID);
+            break;
         default:
             echo "Function Not Found.";
 }

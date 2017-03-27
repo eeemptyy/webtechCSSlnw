@@ -216,6 +216,7 @@
                 async: false,
                 success: function (data) {
                     var path = data.split(":")[1].split("../")[1];
+                    alert(data);
                     location.reload();
                 },
                 cache: false,

@@ -506,6 +506,36 @@ class DB_Controller{
         }
     }
 
+    public function getCommentInSubject($username_stu, $year, $semester, $subjectID){
+        try {
+            $sql = 'SELECT DISTINCT comment.id, comment.username_stu, comment.username_tea AS TeacherID, '.
+                    'user.fname AS TeacherFName, user.lname AS TeacherLName, comment.comment_text, subject_semester.id_subject FROM comment, '.
+                    'user, subject_semester WHERE comment.username_stu = "'.$username_stu.'" '.
+                    'AND comment.id_subject_semester = subject_semester.id and comment.username_tea = user.username '.
+                    'AND subject_semester.year = "'.$year.'" AND subject_semester.semester = "'.$semester.'" and subject_semester.id_subject = "'.$subjectID.'"';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['id'] = $row['id'];
+                $temp['username_stu'] = $row['username_stu'];
+                $temp['TeacherID'] = $row['TeacherID'];
+                $temp['TeacherFName'] = $row['TeacherFName'];
+                $temp['TeacherLName'] = $row['TeacherLName'];
+                $temp['comment_text'] = $row['comment_text'];
+                $temp['id_subject'] = $row['id_subject'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+        } catch (PDOException $e){
+
+        }
+    }
+
 
 }
 ?>

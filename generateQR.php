@@ -4,7 +4,7 @@
 <?php
     session_start();
     $role = $_SESSION['role_id'];
-    if ($role < 1){
+    if ($role < 2){
         header("Location: login.html");
     }
 ?>
@@ -92,8 +92,8 @@
                       </select>
                   </div>
                   <div class="form-group">
-                      <label for="lastname">Time out:</label>
-                      <input type="time" class="form-control" id="usr">
+                      <label for="lastname">Time out:<small> ex.09:30 AM</small></label>
+                      <input type="time" class="form-control" id="timee">
                   </div>
                   <input id="getQR" class="btn btn-primary btn-block btn-qr" type="button" value="Generate">
                 </div>
@@ -118,6 +118,14 @@
         </div>
     </footer>
 
+<input type="text" id="username" hidden />
+<input type="text" id="fname" hidden />
+<input type="text" id="lname" hidden />
+<input type="text" id="role_id" hidden />
+<input type="text" name="email" id="email" hidden>
+<input type="text" name="address" id="address" hidden>
+<input type="text" name="tel" id="tel" hidden>
+
 </body>
 
     <!-- jQuery -->
@@ -127,31 +135,33 @@
     <script>
 
         $(document).ready(function() {
-            $.ajax({
-                type: "POST",
-                url: "controller/switcher.php",
-                data: {
-                    func: 'get_QR',
-                    subjectID: subjectID,
-                    section: section,
-                    timeLimit: "09:00"
-                },
-                success: function(data) {
-                    alert(data);
-                    data = data.split("../")[1];
-                    alert(data)
-                    $('#displayQR').attr("src", data);
-                },
-                error: function(data) {
-                    $("#displayError").html("error " + data);
-                }
-            });
+            $('#username').val('<?php echo $_SESSION['username'];?>');
+            $('#fname').val('<?php echo $_SESSION['fname'];?>');
+            $('#lname').val('<?php echo $_SESSION['lname'];?>');
+            $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
+            $('#email').val('<?php echo $_SESSION['email'];?>');
+            $('#address').val('<?php echo $_SESSION['address'];?>');
+            $('#tel').val('<?php echo $_SESSION['tel'];?>');
+            
+            alert($('#role_id').val());
+            var roleText = "";
+            if ($('#role_id').val() == '4') {
+                roleText = "Admin";
+            } else if ($('#role_id').val() == '3') {
+                roleText = "Laboratory-Teacher";
+            } else if ($('#role_id').val() == '2') {
+                roleText = "Teacher";
+            } else {
+                roleText = "Student";
+            }
+            $('#role-dropdown').html(roleText);
         });
 
         $('#getQR').click(function() {
             var subjectID = $('#course-select option:selected').html().split(" ")[0];
             var section = $('#section-select option:selected').html();
             alert(subjectID + " " + section);
+            alert($('#timee').val());
             $.ajax({
                 type: "POST",
                 url: "controller/switcher.php",
@@ -159,7 +169,7 @@
                     func: 'get_QR',
                     subjectID: subjectID,
                     section: section,
-                    timeLimit: "09:00"
+                    timeLimit: $('#timee').val()
                 },
                 success: function(data) {
                     alert(data);
