@@ -83,7 +83,7 @@
                 </div>
               </a>
               <div style="margin-left:10%; margin-top:5%">
-                <button type="button" class="btn btn-default  btn-block btn-takeroll" onclick="window.open('','_blank')">Take Roll</button>
+                <button type="button" class="btn btn-default  btn-block btn-takeroll" onclick="window.open('student_qr.php','_blank')">Take Roll</button>
               </div>
 
             </div>
