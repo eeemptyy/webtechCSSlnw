@@ -191,6 +191,7 @@
     <input type="text" name="email" id="email" hidden>
     <input type="text" name="address" id="address" hidden>
     <input type="text" name="tel" id="tel" hidden>
+    <input type="text" name="picPath" id="picPath" hidden>
 
 </body>
     <!-- jQuery -->
@@ -209,6 +210,7 @@
             $('#email').val('<?php echo $_SESSION['email'];?>');
             $('#address').val('<?php echo $_SESSION['address'];?>');
             $('#tel').val('<?php echo $_SESSION['tel'];?>');
+            $('#picPath').val('<?php echo $_SESSION['picPath'];?>');
         });
     </script>
     

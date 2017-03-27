@@ -29,6 +29,7 @@ $("#loginBTN").click(function() {
                     $("#email").val(obj['email']);
                     $("#address").val(obj['address']);
                     $("#tel").val(obj['tel']);
+                    $('#picPath').val(obj['picPath']);
                     $("#myForm").submit();
                 }
             },
