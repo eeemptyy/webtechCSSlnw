@@ -72,7 +72,8 @@ $("#modal-createUser").click(function() {
              });
          }
         else {
-            return false;
+            //return false;
+            alert('null value');
         }
 
  });
