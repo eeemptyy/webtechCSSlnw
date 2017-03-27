@@ -118,8 +118,8 @@
 
           <div class="list-inline">
             <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="Generate Class QRCode" onclick=" window.open('generateQR.php','_blank')"></div>
-            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Class-member"></div>
-            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Student"></div>
+            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Class-member" onclick=" window.open('AllHistoryClass.php','_blank')"></div>
+            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Student" onclick=" window.open('AllStudent.php','_blank')"></div>
           </div><br />
           <hr class="hr-design">
           </div>

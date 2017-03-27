@@ -84,7 +84,7 @@
                         <ul class="list-inline">
                             <li><a href="">Home</a></li>
                             <li class="footer-menu-divider">&sdot;</li>
-                            <li><a href="">Change Password</a></li>
+                            <li><a href="">All Student</a></li>
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                     </div>
