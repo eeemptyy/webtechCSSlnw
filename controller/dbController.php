@@ -141,9 +141,21 @@ class DB_Controller{
     }
 
     public function editUserDataByUser($username, $newFname, $newLname, $email, $mobile, $address){
-        try{
+        try{-
             $sql = 'UPDATE user SET user.fname = "'.$newFname.'", user.lname = "'.$newLname.
                     '", user.address = "'.$address.'", user.email = "'.$email.'", user.tel = "'.$mobile.'" WHERE user.username = "'.$username.'"';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            echo "Database Update successful.";
+        } catch (PDOException $e){
+            die("Couldn't Update the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
+    public function editProfilePicture($username, $targetPath){
+        try{
+            $sql = 'UPDATE user SET user.pic_path = "'.$targetPath.'"'.
+                    ' WHERE user.username = "'.$username.'"';
             $q = $this->connection->prepare($sql);
             $q->execute();
             echo "Database Update successful.";

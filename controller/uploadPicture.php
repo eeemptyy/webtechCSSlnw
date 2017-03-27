@@ -7,5 +7,6 @@
     $targetPath = "../files/img/profile/".$_FILES['inputFile']['name']; // Target path where file is to be stored
     move_uploaded_file($sourcePath,$targetPath) ;    // Moving Uploaded file
     $_SESSION['picPath'] = explode("../",$targetPath)[1];
-    echo $username.' uploaded at :'.$targetPath;
+    echo $username.' uploaded at :'.$targetPath.':'
+         .$db_controller->editProfilePicture($username, explode("../",$targetPath)[1]);
 ?>

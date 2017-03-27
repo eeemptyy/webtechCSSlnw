@@ -198,7 +198,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-         <!-- guitar -->
+    <!-- guitar -->
     <script src="js/upload-pic-modal.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -215,10 +215,7 @@
                 data: formData,
                 async: false,
                 success: function (data) {
-                    alert(data)
                     var path = data.split(":")[1].split("../")[1];
-                    alert(path);
-                    // $('#profileImage').attr("src",path);
                     location.reload();
                 },
                 cache: false,
@@ -229,8 +226,6 @@
             return false;
         });
         $('#modal-submit').click(function() {
-            alert("ssssssssssssssssssssss");
-            alert($("#inputFile").val());
             $('#uploadimage').submit();
         });
         $(document).ready(function() {
