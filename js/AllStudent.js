@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+
     var html = '<table id="mydatatable" class="table table-hover table-bordered"><thead><tr><th class="text-center">Student ID</th><th class="text-center">Student Name</th><th class="text-center">View More</th></tr></thead><tbody>';
 
 
