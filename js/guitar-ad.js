@@ -15,7 +15,7 @@ $(document).ready(function(){
             for (var i = 0, len = obj.length; i < len; ++i) {
                     var objIn = obj[i];
                     html += '<tr>';
-                    html += '<td><input class="childbox" type="checkbox" value=""></td><td>' + objIn['username'] + '</td><td>' + objIn['firstname'] + '</td><td>' + objIn['lastname'] + '</td><td>' + objIn['role'] + '</td>';
+                    html += '<td><input class="childbox" type="checkbox" value="" id="check_'+(i-1)+'"></td><td>' + objIn['username'] + '</td><td>' + objIn['firstname'] + '</td><td>' + objIn['lastname'] + '</td><td>' + objIn['role'] + '</td>';
                     html += '<td><input type="button" id="edit"  value="" onclick="editTable(this)" alt="Edit" data-toggle="modal" data-target="#editModal"><input type="button" id="delete" alt="Delete" data-toggle="modal" data-target="#deleteModal" value=""></td>';
                     html += "</tr>";
             }

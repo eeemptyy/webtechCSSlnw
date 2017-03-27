@@ -117,7 +117,7 @@
           </div>
 
           <div class="content">
-            <button type="button" class="btn btn-default btn-lg btn-block btn-takeroll">Take Roll</button>
+            <button type="button" class="btn btn-default btn-lg btn-block btn-takeroll" >Take Roll</button>
           </div>
 
         </div>
