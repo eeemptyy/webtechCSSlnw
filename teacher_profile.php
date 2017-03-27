@@ -73,7 +73,7 @@
 
             <div class="box-left">
               <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
-                <img src="img/Profile.jpg" alt="profile picture">
+                <img id="profileImage" src="img/Profile.jpg" alt="profile picture">
                 <!-- <img  src="img/5.png" alt="profile picture"> -->
                 <div class="quotes">
                     <p style="text-align:center;">
@@ -175,7 +175,7 @@
           </div><!-- /input-group image-preview [TO HERE]-->
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button id="modal-submit" type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -212,6 +212,8 @@
             $('#address').val('<?php echo $_SESSION['address'];?>');
             $('#tel').val('<?php echo $_SESSION['tel'];?>');
             $('#picPath').val('<?php echo $_SESSION['picPath'];?>');
+
+            $('#profileImage').attr("src", $('#picPath').val());
         });
     </script>
 

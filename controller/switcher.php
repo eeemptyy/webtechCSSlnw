@@ -35,6 +35,15 @@
             $newRole = $_POST['newRole'];
             echo $db_controller->editUserData($username, $newFname, $newLname, $newRole);
             break;
+        case "edit_user_by_user":
+            $username = $_POST['username'];
+            $newFname = $_POST['newFname'];
+            $newLname = $_POST['newLname'];
+            $email = $_POST['email'];
+            $mobile = $_POST['mobile'];
+            $address = $_POST['address'];
+            echo $db_controller->editUserData($username, $newFname, $newLname, $email, $mobile, $address);
+            break;
         case "create_user":
             $username = $_POST['username'];
             $pass = $_POST['password'];
