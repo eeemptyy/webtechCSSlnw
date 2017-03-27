@@ -45,8 +45,12 @@ $("#modal-createUser").click(function() {
      var fname = $('#fname_create').val();
      var lname = $('#lname_create').val();
      var role_create = $('#role_create').val();
-     var pass = startGen();
-     alert("usr: "+ userid +" pass: "+ pass+ " firstname: "+ fname + " lastname: "+ lname + " role: "+ role_create);
+     var res = userid.substring(6, 10);
+     var pass = hashToSHA1(res);
+     // alert("usr: "+ userid +" pass: "+ pass+ " firstname: "+ fname + " lastname: "+ lname + " role: "+ role_create);
+     // if(isValid(fname)==false){
+     //    document.getElementById('fname_create').style.backgroundColor = "red";
+     // }
      if(isValid(fname) && isValid(lname) && isID(userid))
          {
              $.ajax({
