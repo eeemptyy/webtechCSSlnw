@@ -71,113 +71,42 @@
 
     <div class="content-section-b">
         <div class="container">
-          <div class="head-profile box-whiteshadow">
-            <div class="box-left">
-              <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
-                <!-- <img src="img/Contacts-512.png" alt="profile picture"> -->
-                <img src="files/img/profile/contact-default3.png" alt="profile picture">
-                <div class="quotes">
-                    <p style="text-align:center;">
-                        Change your profile picture <span>...Click</span>
-                    </p>
-                </div>
-              </a>
-              <div style="margin-left:10%; margin-top:5%">
-                <button type="button" class="btn btn-default  btn-block btn-takeroll">Take Roll</button>
+          <div>
+            <form action="" method="">
+              <div class="form-group">
+                  <label for="usr">Username ID:</label>
+                  <input type="text" id="userid_create"class="form-control" disabled="true">
               </div>
-
-            </div>
-            <div class="box-containt">
-              <label class="name" id="firstname">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id="lastname">Narkjumrussri</lable><br />
-               <div class="list-inline">
-                 <div class="col-sm-2 size-content pantone-brown">Username ID</div>
-                 <div class="col-sm-1 size-content pantone-brown" >:</div>
-                 <div class="col-sm-9 size-content" id="usr">5610404452</div>
-               </div><br />
-               <div class="list-inline">
-                 <div class="col-sm-2 size-content pantone-brown">Role</div>
-                 <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div class="col-sm-9 size-content" id="role">Laboratory-Teacher</div>
-               </div><br />
-               <div class="list-inline">
-                 <div class="col-sm-2 size-content pantone-brown">Moblie Phone</div>
-                 <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div id="tel-phone" class="col-sm-9 size-content">095-558-5492</div>
-               </div><br />
-               <div class="list-inline">
-                 <div class="col-sm-2 size-content pantone-brown">E-mail</div>
-                 <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div class="col-sm-9 size-content" id="e-mail">boonyaporn.n@ku.th</div>
-               </div><br />
-               <div class="list-inline">
-                 <div class="col-sm-2 size-content pantone-brown">Address</div>
-                 <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div class="col-sm-5 size-content" id="addr">161/149, Soi.Intramara41, Sutthisan Road, Dindang, Bangkok, Thailand, 10400</div>
-                 <div class="col-sm-4 size-content"></div>
-               </div><br />
-            </div>
+              <div class="form-group">
+                  <label for="firstname">Firstname:</label>
+                  <input type="text" id="fname_create" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="lastname">Lastname:</label>
+                  <input type="text" id="lname_create"class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="role-create">Role:</label>
+                  <input type="text" id="lname_create"class="form-control" disabled="true">
+              </div>
+              <div class="form-group">
+                  <label for="role-create">Mobile Phone:</label>
+                  <input type="text" id="lname_create"class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="role-create">E-mail:</label>
+                  <input type="text" id="lname_create"class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="role-create">Address:</label>
+                  <input type="text" id="lname_create"class="form-control">
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block ">Update Profile</button>
+              </div>
           </div>
+          </form>
 
-          <div class="content box-whiteshadow">
-            <div class="option-course">
-              <div class="list-inline">
-                <div class="col-sm-2">Year</div>
-                <div class="col-sm-1">:</div>
-                <div class="col-sm-9">
-                  <select id="select-year">
-                  <option>2016</option>
-                  <option>2017</option>
-                </select></div>
-              </div><br />
-              <div class="list-inline">
-                <div class="col-sm-2">Semester</div>
-                <div class="col-sm-1">:</div>
-                <div class="col-sm-9">
-                  <select id="select-semester">
-                    <option>1</option>
-                    <option>2</option>
-                  </select>
-                </div>
-              </div><br />
-            </div>
-
-            <div class="table-div">
-              <table id="datatable-student" class="table table-hover table-bordered">
-                  <thead>
-                      <tr>
-                          <th>Course ID</th>
-                          <th>Course Name</th>
-                          <th>Credit</th>
-                          <th>Grade</th>
-                          <th>View Comment</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                        <td>01418116</td>
-                        <td>Computer Programming</td>
-                        <td>3</td>
-                        <td>A</td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>01418116</td>
-                        <td>Computer Programming</td>
-                        <td>3</td>
-                        <td>A</td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>01418116</td>
-                        <td>Computer Programming</td>
-                        <td>3</td>
-                        <td>A</td>
-                        <td></td>
-                      </tr>
-                  </tbody>
-              </table>
-            </div>
-          </div>
         </div>
     </div>
 
@@ -240,40 +169,14 @@
         </div>
     </form>
 
-    <input type="text" id="username"  hidden/>
-    <input type="text" id="fname" hidden />
-    <input type="text" id="lname" hidden />
-    <input type="text" id="role_id" hidden />
-    <input type="text" name="email" id="email" hidden>
-    <input type="text" name="address" id="address" hidden>
-    <input type="text" name="tel" id="tel" hidden>
-
 </body>
 
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-
-    <script src="js/upload-pic-modal.js"></script>
-
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $('#username').val('<?php echo $_SESSION['username'];?>');
-            $('#fname').val('<?php echo $_SESSION['fname'];?>');
-            $('#lname').val('<?php echo $_SESSION['lname'];?>');
-            $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
-            $('#email').val('<?php echo $_SESSION['email'];?>');
-            $('#address').val('<?php echo $_SESSION['address'];?>');
-            $('#tel').val('<?php echo $_SESSION['tel'];?>');
-        });
-    </script>
-
-    <script src="js/student_profile.js"></script>
 
 
 

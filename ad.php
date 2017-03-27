@@ -62,7 +62,7 @@
                   </li>
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Administer</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
-                            <li><a href="changePWS.php" username=<?php echo $_SESSION['username'] ?>">Edit Password</a></li>
+                            <li><a href="changePWS.php" username=<?php echo $_SESSION['username'] ?>>Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
@@ -267,7 +267,7 @@
 <input type="text" name="tel" id="tel" hidden>
 
 </body>
-    
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
