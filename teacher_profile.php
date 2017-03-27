@@ -69,7 +69,7 @@
 
     <div class="content-section-b bg-out">
         <div class="container">
-          <div class="head-profile">
+          <div class="head-profile box-whiteshadow">
 
             <div class="box-left">
               <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
@@ -214,7 +214,7 @@
             $('#picPath').val('<?php echo $_SESSION['picPath'];?>');
         });
     </script>
-    
+
     <script src="js/upload_profile.js"></script>
 
 </html>
