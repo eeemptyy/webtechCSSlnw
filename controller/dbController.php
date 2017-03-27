@@ -233,6 +233,37 @@ class DB_Controller{
         }
     }
 
+    public function getAllSubjectByStudentID($username, $semester, $year){
+        if ($semester == "now" && $year == "now"){
+            $semester = $this->currentSemester;
+            $year = $this->currentYear;
+        }
+        try{
+            $sql = 'SELECT subject.id AS CourseID, subject.name AS CourseName, subject.credit, takes.grade'.
+                    'FROM takes, user, subject_semester, subject '.
+                    'WHERE takes.username = "'.$username.'" and subject.id = subject_semester.id_subject and '.
+                    'subject_semester.id = takes.id_subject_semester and subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" ';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $tempArr = array();
+            $n =0;
+            // echo $q->rowCount()." ASA";
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['CourseID'] = $row['CourseID'];
+                $temp['CourseName'] = $row['CourseName'];
+                $temp['credit'] = $row['credit'];
+                $temp['grade'] = $row['grade'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+        } catch (PDOException $e){
+            die("Couldn't getAllSubjectByStudentID from the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
     public function generateQRCode($subjectID, $section, $timeLimit){
         try{
             $sql = 'SELECT * FROM subject_semester '.

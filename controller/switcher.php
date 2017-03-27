@@ -59,11 +59,16 @@
             $credit = $_POST['credit'];
             echo $db_controller->addSubject($id, $name, $credit);
             break;
-            
         case "get_subject_by_semester":
             $semester = $_POST['semester'];
             $year = $_POST['year'];
             echo $db_controller->getAllSubjectBySemester($semester, $year);
+            break;
+        case "get_subject_by_studentID":
+            $username = $_POST['username'];
+            $semester = $_POST['semester'];
+            $year = $_POST['year'];
+            echo $db_controller->getAllSubjectByStudentID($username, $semester, $year);
             break;
         case "get_QR":
             $subjectID = $_POST['subjectID'];
