@@ -16,7 +16,7 @@ $(document).ready(function(){
             for (var i = 0, len = obj.length; i < len; ++i) {
                     var objIn = obj[i];
                 //28/03/2017 &nbsp;
-                html += '<a class="link-class"     target="_blank" href="StudentInClass.php">' 
+                html += '<a class="link-class"     target="_blank" href="StudentInClass.php?SubjectID="+#cid>' 
                     +"[ "+objIn['Time']+" ]"+ '&nbsp;&nbsp;&nbsp;' 
                     +objIn['SubjectID'] +  '&nbsp;&nbsp;&nbsp;'  
                     +objIn['name']+" - "

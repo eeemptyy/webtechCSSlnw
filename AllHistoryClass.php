@@ -58,8 +58,8 @@
                                 <div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="">Edit Profile</a></li>
-                                <li><a href="">Edit Password</a></li>
+                                <li><a href="edit_user.php">Edit Profile</a></li>
+                                <li><a href="ChangePW.php">Edit Password</a></li>
                                 <li><a href="controller/kill_session.php">Logout</a></li>
                             </ul>
                         </li>

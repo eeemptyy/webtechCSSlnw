@@ -68,7 +68,7 @@
         <br /><br />
         <div class="content-section-b">
             <div class="container">
-              <label class="title-text" style="text-align:left;">ALL Student</label>
+              <label class="title-text" style="text-align:left;">Student in class</label>
               <br /><br /><br />
               <div id="table">
               </div>
@@ -92,6 +92,8 @@
             </div>
         </footer>
 
+        <input type="text" name="SubjectID" id="SubjectID" hidden>
+
         <script src="js/jquery.js"></script>
         <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
@@ -99,6 +101,14 @@
 
         <script src="js/AllStudent.js"></script>
 
+        <script>
+        $(document).ready(function() {
+            
+            $('#SubjectID').val('<?php echo $_GET['SubjectID']; ?>');
+            alert("> "+$('#SubjectID').val());
+            
+        });
+    </script>
 
     </body>
 </html>
