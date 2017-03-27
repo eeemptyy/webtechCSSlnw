@@ -1,21 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Mar 27, 2017 at 09:08 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.0.15
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `project_webtech_csslnw`
 --
@@ -39,7 +21,8 @@ CREATE TABLE `class` (
 
 INSERT INTO `class` (`id`, `id_subject_semester`, `time_limit`, `qr_path`) VALUES
 (1, 1, '10.00', NULL),
-(2, 3, '13.00', NULL);
+(2, 3, '13.00', NULL),
+(3, 3, '09:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -54,6 +37,24 @@ CREATE TABLE `comment` (
   `id_subject_semester` int(11) NOT NULL,
   `comment_text` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `username_stu`, `username_tea`, `id_subject_semester`, `comment_text`) VALUES
+(1, '5510404206', '5010400201', 1, 'Good'),
+(2, '5510404205', '5010400202', 2, 'very good'),
+(3, '5510404207', '5010400202', 3, 'sometime late'),
+(4, '5510404209', '5010400202', 4, ' good human relation'),
+(5, '5510404205', '5010400202', 5, 'High sense of responsibility'),
+(6, '5510404208', '5010400201', 1, 'Proven leadership skills '),
+(7, '5510404209', '5010400203', 2, 'Alert, aggressive and willing to work hard'),
+(8, '5510404207', '5010400201', 3, 'Good personality and a team player '),
+(9, '5010400203', '5510404209', 4, ' innovative and good interpersonal skills.'),
+(10, '5510404205', '5010400203', 5, 'Strong personality and hard working.'),
+(11, '5510404205', '5610400091', 1418217, 'This is awesome.'),
+(12, '5510404205', '5610400091', 2, 'This is also awesome too');
 
 -- --------------------------------------------------------
 
@@ -229,10 +230,10 @@ INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `pic_path`, `role_
 ('5510404207', '664b0ec2b6bd0af879f7b9f82205e8639159d7fd', 'Chota', 'Takemura', 'files/img/profile/contact-default3.png', 1, NULL, NULL, NULL),
 ('5510404208', 'e3645f32b13dbf35284ae794893a1b7dc71b0532', 'Tanatath', 'Likhittharakul', 'files/img/profile/contact-default3.png', 1, NULL, NULL, NULL),
 ('5510404209', 'bc9df7db16d7e5bdda4cc0b9d650014304c67dda', 'Kamonwut', 'Chittrarat', 'files/img/profile/contact-default3.png', 1, NULL, NULL, NULL),
-('5610400091', '0ed02142ead58ab9da947e00fa0f416895478618', 'Nattharat', 'Jariyanuntanet', 'files/img/profile/azure_logo.png', 3, 'nattharat.j@ku.th', 'Nonthaburi Thailand', '085-123-4567'),
+('5610400091', '0ed02142ead58ab9da947e00fa0f416895478618', 'Nattharat', 'Jariyanuntanet', 'files/img/profile/5610400091.png', 3, 'nattharat.j@ku.th', 'Nonthaburi Thailand', '085-123-4567'),
 ('5610404452', '78c84e6895448e0317aa1f06f807c4e22fba5113', 'Boonyaporn', 'Narkjumrussri', 'files/img/profile/contact-default3.png', 4, 'boonyaporn.n@ku.th', 'Bongkok, Thailand', '089-999-9999'),
 ('5610450063', 'c9dfb3338b461c8662ce7c52f4a28672a75b9fb5', 'Jompol', 'Sermsook', 'files/img/profile/contact-default3.png', 4, 'jompol.s@ku.th', 'Nonthaburi, Thailand', '085-088-1886'),
-('5610450080', '817965431c04a46f3af2f982ceff704a9cd0890b', 'Chayamon', 'Kanjanapongsawet', 'files/img/profile/contact-default3.png', 1, 'chayamon.ka@ku.th', 'Samyan, Bangkok, Thailand', '081-555-1511');
+('5610450080', '817965431c04a46f3af2f982ceff704a9cd0890b', 'Chayamon', 'Kanjanapongsawet', 'img/qrsample.png', 1, 'chayamon.ka@ku.th', 'Samyan, Bangkok, Thailand', '081-555-1511');
 
 --
 -- Indexes for dumped tables
@@ -303,12 +304,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `role`
 --

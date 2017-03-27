@@ -536,6 +536,18 @@ class DB_Controller{
         }
     }
 
+    public function getDropSubjectOnQR($username){
+        try {
+            $sql = 'SELECT DISTINCT subject_semester.id_subject, subject.name, subject_teacher.username '.
+                    'FROM subject_teacher, subject_semester, subject '.
+                    'WHERE subject_teacher.username = "'.$username.'" AND subject_semester.id = subject_teacher.id_subject_semester '.
+                    'and subject_semester.id_subject = subject.id '.
+                    'AND subject_semester.year = '.' and subject_semester.semester = ';
+        } catch (PDOException $e){
+
+        }
+    }
+
 
 }
 ?>
