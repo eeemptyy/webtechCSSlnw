@@ -34,7 +34,7 @@ function printPDFStd(){
 function printPDFCourse(){
 			var num = $("#datatable tbody").find("tr").length;
 			var str ="";
-			str += '<table border="1"><thead><tr><th align="center">Coruse ID</th><th align="center" >Coruse Name</th><th align="center">Credit</th><th align="center">Teacher ID</th><th align="center">Teacher Name</th></tr></thead><tbody>';
+			str += '<table border="1"><thead><tr><th width="400" align="center">Coruse ID</th><th width="900" align="center" >Coruse Name</th><th width="155" align="center">Credit</th><th width="320" align="center">Teacher ID</th><th width="770" align="center">Teacher Name</th></tr></thead><tbody>';
 			
 			console.log(num)
 			for(var i=0 ; i < num ; i++){
@@ -50,7 +50,7 @@ function printPDFCourse(){
 					var teacherID = $("#datatable tbody").find("tr").eq(i).find("td").eq(4).text()
 					var teacherName = $("#datatable tbody").find("tr").eq(i).find("td").eq(5).text()
 					str += '<tr>';
-					str += '<td height="80">' + courseID + '</td>' + '<td>' + courseName + '</td>' + '<td>' + credit + '</td>' + '<td>' + teacherID + '</td>' + '<td>' + teacherName + '</td>';
+					str += '<td width="400" height="80">' + courseID + '</td>' + '<td width="900">' + courseName + '</td>' + '<td th width="155">' + credit + '</td>' + '<td width="320">' + teacherID + '</td>' + '<td width="770">' + teacherName + '</td>';
 					str += '</tr>';
 				}
 				
