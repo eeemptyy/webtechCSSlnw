@@ -69,12 +69,12 @@
         <div class="container">
           <div class="row content-heading">
             <label class="course-label">Course  </label>
-              <select>
+              <select id="select-year">
                 <option>2016</option>
                 <option>2017</option>
               </select>
               <label class="course-label">/</label>
-              <select>
+              <select id="select-semester">
                 <option>1</option>
                 <option>2</option>
               </select>
@@ -95,7 +95,7 @@
                 </li>
             </ul>
 
-            <div id="table"></div>
+            <div id="tableDiv"></div>
 
 
         </div>

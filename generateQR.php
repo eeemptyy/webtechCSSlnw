@@ -127,37 +127,57 @@
 
 </body>
 
-<script>
-    $('#getQR').click(function() {
-        var subjectID = $('#course-select option:selected').html().split(" ")[0];
-        var section = $('#section-select option:selected').html();
-        alert(subjectID + " " + section);
-        $.ajax({
-            type: "POST",
-            url: "controller/switcher.php",
-            data: {
-                func: 'get_QR',
-                subjectID: subjectID,
-                section: section,
-                timeLimit: "09:00"
-            },
-            success: function(data) {
-                alert(data);
-                data = data.split("../")[1];
-                alert(data)
-                $('#displayQR').attr("src", data);
-            },
-            error: function(data) {
-                $("#displayError").html("error " + data);
-            }
-        });
-    });
-</script>
-
-
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
 
+        $(document).ready(function() {
+            $.ajax({
+                type: "POST",
+                url: "controller/switcher.php",
+                data: {
+                    func: 'get_QR',
+                    subjectID: subjectID,
+                    section: section,
+                    timeLimit: "09:00"
+                },
+                success: function(data) {
+                    alert(data);
+                    data = data.split("../")[1];
+                    alert(data)
+                    $('#displayQR').attr("src", data);
+                },
+                error: function(data) {
+                    $("#displayError").html("error " + data);
+                }
+            });
+        });
+
+        $('#getQR').click(function() {
+            var subjectID = $('#course-select option:selected').html().split(" ")[0];
+            var section = $('#section-select option:selected').html();
+            alert(subjectID + " " + section);
+            $.ajax({
+                type: "POST",
+                url: "controller/switcher.php",
+                data: {
+                    func: 'get_QR',
+                    subjectID: subjectID,
+                    section: section,
+                    timeLimit: "09:00"
+                },
+                success: function(data) {
+                    alert(data);
+                    data = data.split("../")[1];
+                    alert(data)
+                    $('#displayQR').attr("src", data);
+                },
+                error: function(data) {
+                    $("#displayError").html("error " + data);
+                }
+            });
+        });
+    </script>
 </html>
