@@ -53,10 +53,10 @@ $(document).ready(function() {
 
                  }
              });
-            alert("tt");
+//            alert("tt");
          }
         else {
-            alert("ff");
+//            alert("ff");
             return false;
         }
     
