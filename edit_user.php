@@ -36,9 +36,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    
+
+    <script type="text/javascript">
+      //document.getElementById("username").value='test';
+      //alert('test alert');
+      //alert(document.getElementById("username").value);
+    </script>
+    
 </head>
 
 <body>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -58,7 +68,7 @@
                   <!-- <li>Course</li> -->
                     <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Edit Profile</a></li>
+                            <!-- <li><a href="#">Edit Profile</a></li> -->
                             <li><a href="changePWS.php">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
@@ -75,7 +85,8 @@
             <form action="" method="">
               <div class="form-group">
                   <label for="usr">Username ID:</label>
-                  <input type="text" id="userid_create"class="form-control" disabled="true">
+                  <input type="text" id="userid_create" class="form-control" disabled="true" >
+
               </div>
               <div class="form-group">
                   <label for="firstname">Firstname:</label>
@@ -83,27 +94,28 @@
               </div>
               <div class="form-group">
                   <label for="lastname">Lastname:</label>
-                  <input type="text" id="lname_create"class="form-control">
+                  <input type="text" id="lname_create" class="form-control">
               </div>
               <div class="form-group">
                   <label for="role-create">Role:</label>
-                  <input type="text" id="lname_create"class="form-control" disabled="true">
+                  <input type="text" id="role_id_create" class="form-control" disabled="true">
               </div>
               <div class="form-group">
                   <label for="role-create">Mobile Phone:</label>
-                  <input type="text" id="lname_create"class="form-control">
+                  <input type="text" id="tel_create" class="form-control">
               </div>
               <div class="form-group">
                   <label for="role-create">E-mail:</label>
-                  <input type="text" id="lname_create"class="form-control">
+                  <input type="text" id="email_create" class="form-control">
               </div>
               <div class="form-group">
                   <label for="role-create">Address:</label>
-                  <input type="text" id="lname_create"class="form-control">
+                  <input type="text" id="address_create" class="form-control">
               </div>
               <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block ">Update Profile</button>
+                  <button id='updateProfileBtn' type="submit" class="btn btn-primary btn-block">Update Profile</button>
               </div>
+              
           </div>
           </form>
 
@@ -169,14 +181,48 @@
         </div>
     </form>
 
-</body>
+    
+    <!-- <script type="text/javascript"> alert(document.getElementById('username').value)</script> -->
 
+    <input type="text" id="username" hidden />
+    <input type="text" id="fname" hidden />
+    <input type="text" id="lname" hidden />
+    <input type="text" id="role_id" hidden />
+    <input type="text" name="email" id="email" hidden/>
+    <input type="text" name="address" id="address" hidden/>
+    <input type="text" name="tel" id="tel" hidden/> 
+</body>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- mint send profile to DB -->
+    <script src="js/editProfile.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        //get value from session
+        $('#username').val('<?php echo $_SESSION['username']; ?>');
+        $('#fname').val('<?php echo $_SESSION['fname']; ?>');
+        $('#lname').val('<?php echo $_SESSION['lname']; ?>');
+        $('#role_id').val('<?php echo $_SESSION['role_id']; ?>');
+        $('#email').val('<?php echo $_SESSION['email']; ?>');
+        $('#address').val('<?php echo $_SESSION['address']; ?>');
+        $('#tel').val('<?php echo $_SESSION['tel']; ?>');
+        //set value to create
+        document.getElementById('userid_create').value=document.getElementById('username').value;
+        document.getElementById('fname_create').value=document.getElementById('fname').value;
+        document.getElementById('lname_create').value=document.getElementById('lname').value;
+        document.getElementById('role_id_create').value=document.getElementById('role_id').value;
+        document.getElementById('email_create').value=document.getElementById('email').value;
+        document.getElementById('address_create').value=document.getElementById('address').value;
+        document.getElementById('tel_create').value=document.getElementById('tel').value;
+      });
+    </script>
+  
 
 
 
