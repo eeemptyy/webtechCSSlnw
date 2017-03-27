@@ -31,7 +31,6 @@
         <input type="password" class="form-control" id="oldPass" placeholder="Password">
       </div>
     </div>
-
      		 <div class="form-group row">
       <label for="inputPassword3" class="col-sm-6 col-form-label" p align = "right">New Password</label>
       <div class="col-sm-3">
@@ -46,11 +45,11 @@
       </div>
     </div>
 	<center>
-		<input id="submitChangPws" class="btn btn-primary" type="submit" value="Submit">
+		<input id="submitChangPws" class="btn btn-primary " type="submit" value="Submit">
 		<input class="btn btn-primary" type="reset" value="Cancel" onclick="goBack()">
 		</center>
 	  </form>
-</div>	
+</div>
 		<input type="text" id="username" hidden />
 		<!-- jQuery -->
 		<script src="http://code.jquery.com/jquery.js"></script>
@@ -73,6 +72,6 @@
  		<!-- Password encryption part -->
     	<script src="js/sha1.js"></script>
     	<script src="js/passwordController.js"></script>
- 	
+
 	</body>
 </html>
