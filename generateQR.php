@@ -73,7 +73,7 @@
     <div class="content-section-b">
         <div class="container">
             <div class="box-containt">
-              <label id="title-text">- Generate Classroom -</label>
+              <label class="title-text">- Generate Classroom -</label>
               <div class="box-img">
                 <img id='displayQR' src="img/noclass.jpg" alt="QR Code">
               </div>
@@ -107,17 +107,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
+                        <li><a href="">Home</a></li>
                         <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#login">Administer</a>
-                        </li>
+                        <li><a href="">Teacher</a></li>
                         <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">Top</a>
-                        </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                 </div>

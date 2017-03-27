@@ -1,4 +1,52 @@
-#title-text{
+.content-center{
+  text-align: center;
+}
+
+.img-margin{
+  margin-bottom: 20px; 
+}
+
+.bg{
+  background: url(../img/qrcode-text.png);
+  background-blend-mode: hard-light;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 30%;
+}
+
+.btn-qr{
+  background-color: rgba(198, 172, 124, 1);
+  font-weight: bold;
+  font-size: 17px;
+  border: 0px;
+}
+
+.btn-qr:hover{
+  background-color: rgba(117, 110, 97, 1);
+  font-weight: bold;
+  font-size: 17px;
+  border: 0px;
+}
+
+.btn-qr:focus{
+  background-color: rgba(117, 110, 97, 1);
+  font-weight: bold;
+  font-size: 17px;
+  border: 0px;
+}
+
+.btn-qr:active{
+  background-color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+  font-size: 17px;
+  border: 0px;
+}
+
+.transparent-bg{
+  background: rgba(214, 214, 214, 0);
+}
+
+.title-text{
   /*padding: 1%;*/
   font-family: 'Open Sans', sans-serif;
   margin-top: 2%;
