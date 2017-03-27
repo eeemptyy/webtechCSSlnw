@@ -19,6 +19,7 @@ $("#loginBTN").click(function() {
             },
             success: function(data) {
                 if (data == "Username/Password not found.") {
+                    $("#displayError").html("Username/Password not found.");
                     return false;
                 } else {
                     var obj = JSON.parse(data);
