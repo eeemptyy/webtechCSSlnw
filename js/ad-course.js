@@ -86,7 +86,7 @@ function generateCourseTable(semester, year) {
             for (var i = 0, len = obj.length; i < len; ++i) {
                 var objIn = obj[i];
                 html += '<tr>';
-                html += '<td><input class="childbox" type="checkbox" value=""></td><td>' +
+                html += '<td><span style="display:none">'+i+'</span><input class="childbox" type="checkbox" value="" id="check_'+i+'"></td><td>' +
                     objIn['subjectID'] + '</td><td>' +
                     objIn['name'] + '</td><td>' +
                     objIn['credit'] + '</td><td>' +
