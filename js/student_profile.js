@@ -42,6 +42,7 @@ $(document).ready(function() {
 
 
     });
+
 });
 
 function isRole(text) {
@@ -87,7 +88,7 @@ function generateCourseTableByStudentID(semester, year, username) {
                             html += '<td class="text-center">'+objIn['CourseID']+ '</td><td>' +objIn['CourseName']+ '</td><td class="text-center">'
                                 +objIn['credit']+ '</td><td class="text-center">'
                                 +checkGrade(objIn['grade'])+ '</td>';
-                            html += '<td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" window.open("","_blank")"></td>';
+                            html += '<td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" goToCommends(this)"></td>';
                             html += "</tr>";
                         }
                         html += '</tbody><tfoot><tr></tr></tfoot></table>';
@@ -130,4 +131,14 @@ function checkGrade(text)
         
         
     }
+}
+
+function goToCommends(button){
+    currentID = $(button).parents('tr').find('td');
+    var course_id = currentID.eq(0).html();
+    var year = document.getElementById('select-year').value;
+    var semester = document.getElementById('select-semester').value;
+    alert(course_id+" "+year+"/"+semester);
+    
+    window.location.replace("comment_page.php")
 }
