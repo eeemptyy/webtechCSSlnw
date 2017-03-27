@@ -304,29 +304,117 @@ class DB_Controller{
     public function readCSV($target_file){
         $out = $target_file."\n";
         $file = fopen($target_file,"r");
+        $mode = '0';// t = teacher // s = student
         while(! feof($file)){
             $line = preg_replace('/\s+/', '', fgets($file));
-            $lineArr = $line.split(",");
-            try{           
-                $username = $lineArr[0];
-                $password = sha1(substr($username,6));
-                $fname = $lineArr[1];
-                $lname = $lineArr[2];
-                $role_id = $lineArr[3];
-                
-                $sql = 'INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `pic_path`, `role_id`, `email`, `address`, `tel`)'.
-                        ' VALUES ("'.$username.'", "'.$password.'", "'.$fname.'", "'.$lname.'",'.
-                        ' "files/img/profile/contact-default3.png", "'.$role_id.'", NULL, NULL, NULL)';
-                $q = $this->connection->prepare($sql);
-                $q->execute();
-                // echo "Database Inserte successful.";
-            } catch (PDOException $e){
-                die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+            if ($line == "#AddSubject"){
+                readSubjectCSV($file);
+            }else {
+                $lineArr = explode(",", $line);
+                try{           
+                    $username = $lineArr[0];
+                    $password = sha1(substr($username,6));
+                    $fname = $lineArr[1];
+                    $lname = $lineArr[2];
+                    $role_id = $lineArr[3];
+                    
+                    $sql = 'INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `pic_path`, `role_id`, `email`, `address`, `tel`)'.
+                            ' VALUES ("'.$username.'", "'.$password.'", "'.$fname.'", "'.$lname.'",'.
+                            ' "files/img/profile/contact-default3.png", "'.$role_id.'", NULL, NULL, NULL)';
+                    $q = $this->connection->prepare($sql);
+                    $q->execute();
+                    // echo "Database Inserte successful.";
+                } catch (PDOException $e){
+                    die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+                }
             }
             $out .= $line."\n";
         }
         fclose($file);
         echo "Data from file read by server \n".$out;
+    }
+
+    private function readSubjectCSV($file){
+        while(! feof($file)){
+            $line = preg_replace('/\s+/', '', fgets($file));
+            $lineArr = explode(",", $line);
+            try{           
+                $subjectID = $lineArr[0];
+                $name = $lineArr[1];
+                $credit = $lineArr[2];
+
+                $sql = 'INSERT INTO subject (id, name, credit)'.
+                ' VALUES ("'.$subjectID.'", "'.$name.'", "'.$credit.'")';
+                $q = $this->connection->prepare($sql);
+                $q->execute();
+                    // echo "Database Inserte successful.";
+            } catch (PDOException $e){
+                die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+            }
+            $out .= $line."\n";
+        }
+    }
+
+    private function readSubjectSemesterCSV($file){
+        $mode = '0';
+        $line = preg_replace('/\s+/', '', fgets($file));
+        try{           
+            $subjectID = $lineArr[0];
+            $name = $lineArr[1];
+            $credit = $lineArr[2];                
+            
+            $sql = 'INSERT INTO subject (id, name, credit)'.
+                    ' VALUES ("'.$subjectID.'", "'.$name.'", "'.$credit.'")';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+                    // echo "Database Inserte successful.";
+        } catch (PDOException $e){
+            die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+        }
+        
+        while(! feof($file)){
+            $line = preg_replace('/\s+/', '', fgets($file));
+            if (($line == '@') && ($mode == '0')){
+                $mode = 't';
+                $line = preg_replace('/\s+/', '', fgets($file));
+            }else if (($line == '@') && ($mode == 't')){
+                $mode = 's';
+                $line = preg_replace('/\s+/', '', fgets($file));
+            }
+
+            if ($mode =='t'){
+                $lineArr = explode(",", $line);
+                try{           
+                    $subjectID = $lineArr[0];
+                    $name = $lineArr[1];
+                    $credit = $lineArr[2];
+                    
+                    $sql = 'INSERT INTO subject (id, name, credit)'.
+                    ' VALUES ("'.$subjectID.'", "'.$name.'", "'.$credit.'")';
+                    $q = $this->connection->prepare($sql);
+                    $q->execute();
+                        // echo "Database Inserte successful.";
+                } catch (PDOException $e){
+                    die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+                }
+            }else if ($mode == 's'){
+                $lineArr = explode(",", $line);
+                try{           
+                    $subjectID = $lineArr[0];
+                    $name = $lineArr[1];
+                    $credit = $lineArr[2];
+                    
+                    $sql = 'INSERT INTO subject (id, name, credit)'.
+                    ' VALUES ("'.$subjectID.'", "'.$name.'", "'.$credit.'")';
+                    $q = $this->connection->prepare($sql);
+                    $q->execute();
+                        // echo "Database Inserte successful.";
+                } catch (PDOException $e){
+                    die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
+                }
+            }
+            $out .= $line."\n";
+        }
     }
 
 
