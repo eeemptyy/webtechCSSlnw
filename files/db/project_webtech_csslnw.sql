@@ -1,3 +1,21 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 27, 2017 at 09:08 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.0.15
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Database: `project_webtech_csslnw`
 --
@@ -14,6 +32,14 @@ CREATE TABLE `class` (
   `time_limit` varchar(5) NOT NULL,
   `qr_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `class`
+--
+
+INSERT INTO `class` (`id`, `id_subject_semester`, `time_limit`, `qr_path`) VALUES
+(1, 1, '10.00', NULL),
+(2, 3, '13.00', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,6 +183,19 @@ CREATE TABLE `take_class` (
   `username_stu` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `take_class`
+--
+
+INSERT INTO `take_class` (`id_class`, `username_stu`) VALUES
+(1, '5510404206'),
+(1, '5510404207'),
+(1, '5510404208'),
+(2, '5510404205'),
+(2, '5510404206'),
+(2, '5510404207'),
+(2, '5510404209');
+
 -- --------------------------------------------------------
 
 --
@@ -264,7 +303,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `comment`
 --
