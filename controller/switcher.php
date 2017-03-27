@@ -7,6 +7,9 @@
 
     $case_sw = $_POST['func'];
     switch ($case_sw) {
+        case "get_year_sem_drop":
+            echo $db_controller->getYearSemDrop();
+            break;
         case "get_login":
             $uname = $_POST['username'];
             $pass = $_POST['pass'];
@@ -41,7 +44,9 @@
             echo $db_controller->addUser($username, $pass, $firstname, $lastname, $role);
             break;
         case "get_subject_by_semester":
-            echo $db_controller->getAllSubjectBySemester(2, 2016);
+            $semester = $_POST['semester'];
+            $year = $_POST['year'];
+            echo $db_controller->getAllSubjectBySemester($semester, $year);
             break;
         case "get_QR":
             $subjectID = $_POST['subjectID'];

@@ -81,7 +81,7 @@
             <!-- <input type="text" class="search-query form-control search-css" placeholder="Search" /> -->
             <ul class="list-inline intro-social-buttons">
                 <li>
-                    <a href="" class="btn-admin" data-toggle="modal" data-target="#myModal"><i><img src="img/AddUser.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW USER</span></a> &nbsp;&nbsp;
+                    <a href="" class="btn-admin" onclick=resetForm() data-toggle="modal" data-target="#myModal"><i><img src="img/AddUser.png" alt="" style="height:23px;"></i><span class="network-name">    CREATE NEW USER</span></a> &nbsp;&nbsp;
                 </li>
                 <li>
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD USER (CSV)</span></a>&nbsp;&nbsp;
@@ -138,7 +138,7 @@
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="submit" id=model-del class="btn btn-default" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -174,15 +174,15 @@
                       <div class="form-group">
                           <label for="role">Role:</label>
                           <select class="form-control" id="role">
-                                <option>Student</option>
-                                <option>Teacher</option>
-                                <option>Laboratory-Teacher</option>
-                                <option>Admin</option>
+                                <option value="1">Student</option>
+                                    <option value="2">Teacher</option>
+                                    <option value="3">Laboratory-Teacher</option>
+                                    <option value="4">Admin</option>
                           </select>
                       </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button type="submit" id=model-editUser class="btn btn-default" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -225,7 +225,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button  type="submit" id="modal-submit" class="btn btn-default"  data-dismiss="modal" >Submit</button>
+                        <button  type="submit" id="modal-createUser" class="btn btn-default"  data-dismiss="modal" >Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>

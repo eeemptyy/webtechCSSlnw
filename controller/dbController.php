@@ -35,9 +35,33 @@ class DB_Controller{
             $row = $q->fetch();
             $this->currentSemester = $row['semester'];
             $this->currentYear = $row['year'];
+            // echo $this->currentSemester.":".$this->currentYear;
 
         } catch (PDOException $e){
             die("Couldn't getAllUser from the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
+    public function getYearSemDrop(){
+        try{
+            $sql = 'SELECT DISTINCT year, semester FROM subject_semester '.
+                    'ORDER by year DESC, semester DESC';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['year'] = $row['year'];
+                $temp['semester'] = $row['semester'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+            
+        } catch (PDOException $e){
+            die("Couldn't get Data.");
         }
     }
 
@@ -139,6 +163,10 @@ class DB_Controller{
     }
 
     public function getAllSubjectBySemester($semester, $year){
+        if ($semester == "now" && $year == "now"){
+            $semester = $this->currentSemester;
+            $year = $this->currentYear;
+        }
         try{
             // $sql = 'SELECT * FROM `subject_semester` WHERE year = ".$year." and semester = ".$semester.';
             $sql = 'SELECT DISTINCT subject_semester.id_subject as SubjectID, subject.name, subject.credit, subject_teacher.username as TeacherID, user.fname, user.lname '.

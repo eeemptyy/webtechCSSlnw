@@ -1,0 +1,28 @@
+#title-text{
+  /*padding: 1%;*/
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 2%;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-shadow: 4px 2px 7px rgba(199, 186, 140, 1);
+
+}
+
+.box-img{
+  width: 100%;
+  text-align: center;
+  /*background: pink;*/
+}
+
+#displayQR{
+  height: 200px;
+}
+
+.qr-option{
+  /*background: rgb(196, 177, 138);*/
+  width: 100%;
+  /*text-align: center;*/
+}

@@ -1,4 +1,4 @@
-select#soflow{
+/*select#soflow{
    -webkit-appearance: button;
    -webkit-border-radius: 2px;
    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -20,8 +20,6 @@ select#soflow{
 }
 
 .margin {
-    /*border: 1px solid black;*/
-        /*font-family: "Courier New", Times, serif;*/
     padding: 50px 30px 50px 80px;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -35,4 +33,4 @@ select#soflow{
    font-family: "Courier New", Times, serif;
    font-weight: bold;
    font-size: 200%;
-}
+}*/
