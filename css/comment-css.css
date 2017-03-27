@@ -1,0 +1,11 @@
+.student-box{
+  height: 180px;
+  padding: 20px;
+  box-shadow: 4px 4px 30px -10px rgba(117,117,117,1);
+  font-family: 'PT Sans', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.name{
+  font-size: 1.5em;
+}
