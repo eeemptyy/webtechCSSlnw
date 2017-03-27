@@ -90,10 +90,10 @@
                                         <center><img class="img-thumbnail img-margin" id="imgQR" src="img/qrcode.png" style="height:200px;"></center>
                                     </div>
                                     <div class="form-group">
-                                      <input id="getQR" class="btn btn-primary btn-block btn-qr" type="button" value="Upload" data-toggle="modal" data-target="#uploadModal">
+                                      <input class="btn btn-primary btn-block btn-qr" type="button" value="Upload" data-toggle="modal" data-target="#uploadModal">
                                     </div>
                                     <div class="form-group">
-                                      <input id="getQR" class="btn btn-primary btn-block btn-qr" type="button" value="Submit">
+                                      <input id="btUpload" class="btn btn-primary btn-block btn-qr" type="button" value="Submit">
                                     </div>
                                 </div>
                             </div>
@@ -105,24 +105,26 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title"><img src="img/uploadqr.png" alt="" style="height:30px;"> Upload QR Code</h4>
-                  </div>
-                    <div class="modal-body">
-                      <input type="file"  id="inputFile" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
-
+        <form id="uploadimage" class="" action="" method="post">
+            <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title"><img src="img/uploadqr.png" alt="" style="height:30px;"> Upload QR Code</h4>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" id="btUpload" onClick="">Upload</button>
+                        <div class="modal-body">
+                        <input type="file" name="inputFile" id="inputFile" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button id="modal-close" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button id='modal-submit' type="button" class="btn btn-primary" id="modal-btUpload" >Upload</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
 
         <footer>
             <div class="container">
@@ -152,14 +154,44 @@
     <script src="js/qcode-decoder.min.js"></script>
 
     <script>
+        $("form#uploadimage").submit(function(){
+
+            var formData = new FormData($(this)[0]);
+
+            $.ajax({
+                url: "controller/uploadQR.php",
+                type: 'POST',
+                data: formData,
+                async: false,
+                success: function (data) {
+                    var path = data.split(":")[1].split("../")[1];
+                    alert(data);
+                    $('#imgQR').attr("src",path);
+                    $('#modal-close').click();
+                    // location.reload();
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+
+            return false;
+        });
+
+        
+        $('#modal-submit').click(function() {
+            $('#uploadimage').submit();
+        });
+
         $(document).ready(function() {
             $("#btUpload").click(function(data) {
                 if (document.getElementById("inputFile").files.length == 0) {
                     alert("upload your qrcode");
                 } else {
+                    alert("In else");
                     $('#uploadModal').modal('hide');
                     var file = document.getElementById("inputFile").files[0].name;
-                    $("#imgQR").attr('src', 'img/' + file);
+                    // $("#imgQR").attr('src', 'img/' + file);
                     var image = document.getElementById("imgQR");
                     var qr = new QCodeDecoder();
                     qr.decodeFromImage(image, function(err, result) {
