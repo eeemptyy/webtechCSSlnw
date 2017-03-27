@@ -10,7 +10,7 @@
 ?>
 
 <head>
-    <title>Student Profile</title>
+    <title>Generate QR code</title>
     <meta charset="utf-8">
     <meta name="description" content="for login">
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -23,10 +23,10 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Passion+One" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/profile.css" rel="stylesheet" />
     <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/generateQR-css.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -72,40 +72,33 @@
 
     <div class="content-section-b">
         <div class="container">
-          <div class="head-profile">
-            <div class="box-left">
-              <img id='displayQR' src="img/noclass.jpg" alt="QR Code">
-            </div>
             <div class="box-containt">
-              <label class="name">Generater QR Code</label>
+              <label id="title-text">- Generate Classroom -</label>
+              <div class="box-img">
+                <img id='displayQR' src="img/noclass.jpg" alt="QR Code">
+              </div>
               <form>
                 <div class="qr-option">
                   <div class="form-group">
                       <label for="usr">Course:</label>
                       <select id="course-select" class="form-control">
-                              <option>01418221 Database</option>
+                          <option>01418221 Database</option>
                       </select>
                   </div>
                   <div class="form-group">
                       <label for="firstname">Section:</label>
                       <select id="section-select" class="form-control">
-                              <option>200</option>
+                          <option>200</option>
                       </select>
                   </div>
                   <div class="form-group">
                       <label for="lastname">Time out:</label>
-                      <select id="role_create" class="form-control">
-                              <option value="1">Student</option>
-                              <option value="2">Teacher</option>
-                      </select>
+                      <input type="time" class="form-control" id="usr">
                   </div>
-
-                  <button id="getQR" type="button" class="btn btn-primary btn-block">Generate</button>
-
+                  <input id="getQR" class="btn btn-primary btn-block" type="button" value="Generate">
                 </div>
               </form>
             </div>
-          </div>
         </div>
     </div>
 
@@ -164,14 +157,7 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
-    <script src="js/upload-pic-modal.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- <script src="js/student_profile.js"></script> -->
-
-
 
 </html>
