@@ -206,10 +206,13 @@ class DB_Controller{
             $year = $this->currentYear;
         }
         try{
-            // $sql = 'SELECT * FROM `subject_semester` WHERE year = ".$year." and semester = ".$semester.';
+            // $sql = 'SELECT DISTINCT subject_semester.id_subject as SubjectID, subject.name, subject.credit, subject_teacher.username as TeacherID, user.fname, user.lname '.
+            //         'FROM subject_semester, subject, subject_teacher, user '.
+            //         'WHERE subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" and subject_semester.id_subject = subject.id and subject_teacher.username = user.username';
             $sql = 'SELECT DISTINCT subject_semester.id_subject as SubjectID, subject.name, subject.credit, subject_teacher.username as TeacherID, user.fname, user.lname '.
-                    'FROM subject_semester, subject, subject_teacher, user '.
-                    'WHERE subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" and subject_semester.id_subject = subject.id and subject_teacher.username = user.username';
+                    'FROM subject_semester, subject_teacher, user, subject '.
+                    'WHERE subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" and subject_semester.id = subject_teacher.id_subject_semester '.
+                    'and user.username = subject_teacher.username and subject_semester.id_subject = subject.id ';            
             $q = $this->connection->prepare($sql);
             $q->execute();
             
@@ -308,7 +311,9 @@ class DB_Controller{
         while(! feof($file)){
             $line = preg_replace('/\s+/', '', fgets($file));
             if ($line == "#AddSubject"){
-                readSubjectCSV($file);
+                $out .= $this->readSubjectCSV($file);
+            }else if ($line == "#AddSem"){
+                $out .= $this->readSubjectSemesterCSV($file);
             }else {
                 $lineArr = explode(",", $line);
                 try{           
@@ -335,6 +340,7 @@ class DB_Controller{
     }
 
     private function readSubjectCSV($file){
+        $out = "";
         while(! feof($file)){
             $line = preg_replace('/\s+/', '', fgets($file));
             $lineArr = explode(",", $line);
@@ -353,20 +359,32 @@ class DB_Controller{
             }
             $out .= $line."\n";
         }
+        return $out;
     }
 
     private function readSubjectSemesterCSV($file){
+        $out = "";
         $mode = '0';
         $line = preg_replace('/\s+/', '', fgets($file));
         try{           
+            $lineArr = explode(",", $line);
             $subjectID = $lineArr[0];
-            $name = $lineArr[1];
-            $credit = $lineArr[2];                
+            $semester = $lineArr[1];
+            $year = $lineArr[2];
+            $section = $lineArr[3]; 
+            $timee = $lineArr[4];
             
-            $sql = 'INSERT INTO subject (id, name, credit)'.
-                    ' VALUES ("'.$subjectID.'", "'.$name.'", "'.$credit.'")';
+            $sql = 'INSERT INTO subject_semester (id, id_subject, semester, year, section, time) '.
+                    'VALUES (NULL, "'.$subjectID.'", "'.$semester.'", "'.$year.'", "'.$section.'", "'.$timee.'") ';
             $q = $this->connection->prepare($sql);
             $q->execute();
+
+            $sql = 'SELECT * FROM subject_semester ORDER BY id DESC LIMIT 1 ';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            $row = $q->fetch();
+            $subjectSemesterID = $row['id'];
+
                     // echo "Database Inserte successful.";
         } catch (PDOException $e){
             die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
@@ -383,14 +401,10 @@ class DB_Controller{
             }
 
             if ($mode =='t'){
-                $lineArr = explode(",", $line);
                 try{           
-                    $subjectID = $lineArr[0];
-                    $name = $lineArr[1];
-                    $credit = $lineArr[2];
+                    $username = $line;
                     
-                    $sql = 'INSERT INTO subject (id, name, credit)'.
-                    ' VALUES ("'.$subjectID.'", "'.$name.'", "'.$credit.'")';
+                    $sql = 'INSERT INTO subject_teacher (username, id_subject_semester) VALUES ("'.$username.'", "'.$subjectSemesterID.'") ';
                     $q = $this->connection->prepare($sql);
                     $q->execute();
                         // echo "Database Inserte successful.";
@@ -398,14 +412,10 @@ class DB_Controller{
                     die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
                 }
             }else if ($mode == 's'){
-                $lineArr = explode(",", $line);
                 try{           
-                    $subjectID = $lineArr[0];
-                    $name = $lineArr[1];
-                    $credit = $lineArr[2];
+                    $username = $line;
                     
-                    $sql = 'INSERT INTO subject (id, name, credit)'.
-                    ' VALUES ("'.$subjectID.'", "'.$name.'", "'.$credit.'")';
+                    $sql = 'INSERT INTO takes (username, id_subject_semester, grade) VALUES ("'.$username.'", "'.$subjectSemesterID.'", NULL)';
                     $q = $this->connection->prepare($sql);
                     $q->execute();
                         // echo "Database Inserte successful.";
@@ -415,6 +425,7 @@ class DB_Controller{
             }
             $out .= $line."\n";
         }
+        return $out;
     }
 
 

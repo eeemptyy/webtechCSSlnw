@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    session_start();
+    $role = $_SESSION['role_id'];
+    if ($role < 3){
+        header("Location: login.html");
+    }
+?>
 <head>
     <title>Administer-Subject</title>
     <meta charset="utf-8">
@@ -126,7 +132,7 @@
     </footer>
 
     <!-- Modal -->
-    <form class="" action="index.html" method="post">
+    <form id="uploadSubjectCSV" class="" action="index.html" method="post">
         <div id="CSVModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -140,11 +146,11 @@
                             Choose CSV of <i><u>course-data</u></i> for upload to append Courses.
                         </p>
                         <div>
-                          <input type="file" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
+                          <input name="inputFile" type="file" class="file form-control-file btn btn-default" style="width:100%; text-align:center;">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button id="modal-subjectcsv-submit" type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -213,8 +219,15 @@
         </div>
     </form>
 
+<input type="text" id="username" hidden />
+<input type="text" id="fname" hidden />
+<input type="text" id="lname" hidden />
+<input type="text" id="role_id" hidden />
+<input type="text" name="email" id="email" hidden>
+<input type="text" name="address" id="address" hidden>
+<input type="text" name="tel" id="tel" hidden>
 
-
+</body>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -230,6 +243,40 @@
 
     <!--report-->
     <script src="js/report.js"></script>
-</body>
+
+    <script>
+        $("form#uploadSubjectCSV").submit(function(){
+
+            var formData = new FormData($(this)[0]);
+
+            $.ajax({
+                url: "controller/uploadCSV.php",
+                type: 'POST',
+                data: formData,
+                async: false,
+                success: function (data) {
+                    alert(data);
+                    location.reload();
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+
+            return false;
+        });
+        $('#modal-subjectcsv-submit').click(function() {
+            $('#uploadSubjectCSV').submit();
+        });
+        $(document).ready(function() {
+            $('#username').val('<?php echo $_SESSION['username'];?>');
+            $('#fname').val('<?php echo $_SESSION['fname'];?>');
+            $('#lname').val('<?php echo $_SESSION['lname'];?>');
+            $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
+            $('#email').val('<?php echo $_SESSION['email'];?>');
+            $('#address').val('<?php echo $_SESSION['address'];?>');
+            $('#tel').val('<?php echo $_SESSION['tel'];?>');
+        });
+    </script>
 
 </html>
