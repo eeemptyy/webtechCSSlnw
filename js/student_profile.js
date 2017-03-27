@@ -67,7 +67,7 @@ $('#select-year, #select-semester').change(function() {
 });
 
 function generateCourseTableByStudentID(semester, year, username) {
-//    alert("show :: " + semester + ", " + username + ", " + year);
+    //    alert("show :: " + semester + ", " + username + ", " + year);
     var html = '<table id="datatable-student" class="table table-hover table-bordered"><thead><tr><th><center>Course ID</center></th><th><center>Course Name</center></th><th><center>Credit</center></th><th><center>Grade</center></th><th><center>View Comment</center></th></tr></thead><tbody>';
     $.ajax({
         type: "POST",
@@ -80,30 +80,30 @@ function generateCourseTableByStudentID(semester, year, username) {
         },
         success: function(data) {
             var obj = JSON.parse(data);
-//            alert("out: " + data);
-                        for (var i = 0, len = obj.length; i < len; ++i) {
-                            var objIn = obj[i];
-                            html += '<tr>';
-                            html += '<td class="text-center">'+objIn['CourseID']+ '</td><td>' +objIn['CourseName']+ '</td><td class="text-center">'
-                                +objIn['credit']+ '</td><td class="text-center">'
-                                +checkGrade(objIn['grade'])+ '</td>';
-                            html += '<td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" window.open("","_blank")"></td>';
-                            html += "</tr>";
-                        }
-                        html += '</tbody><tfoot><tr></tr></tfoot></table>';
-                        $('#table-div').html(html);
-                        $('#datatable-student').DataTable({
-                            "order": [
-                                [1, "asc"]
-                            ],
-                            // "pageLenght": 25,
-            
-                            destroy: true,
-                            "autoWidth": false,
-                            "paging": false,
-                            // "ordering": false,
-                            "info": false
-                        });
+            //            alert("out: " + data);
+            for (var i = 0, len = obj.length; i < len; ++i) {
+                var objIn = obj[i];
+                html += '<tr>';
+                html += '<td class="text-center">' + objIn['CourseID'] + '</td><td>' + objIn['CourseName'] + '</td><td class="text-center">' +
+                    objIn['credit'] + '</td><td class="text-center">' +
+                    checkGrade(objIn['grade']) + '</td>';
+                html += '<td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" window.open("","_blank")"></td>';
+                html += "</tr>";
+            }
+            html += '</tbody><tfoot><tr></tr></tfoot></table>';
+            $('#table-div').html(html);
+            $('#datatable-student').DataTable({
+                "order": [
+                    [1, "asc"]
+                ],
+                // "pageLenght": 25,
+
+                destroy: true,
+                "autoWidth": false,
+                "paging": false,
+                // "ordering": false,
+                "info": false
+            });
 
         },
         error: function(data) {
@@ -112,22 +112,13 @@ function generateCourseTableByStudentID(semester, year, username) {
 
     });
 }
-function checkGrade(text)
-{
-    if(text == null){
-            return "";
-        }
-    else{
-        if( text == "4") {return "A";}
-        else if( text == "4") {return "A";}
-        else if( text == "3.5") {return "B+";}
-        else if( text == "3") {return "B";}
-        else if( text == "2.5") {return "C+";}
-        else if( text == "2") {return "C";}
-        else if( text == "1.5") {return "D+";}
-        else if( text == "1") {return "D";}
-        else if( text == "0") {return "F";}
-        
-        
+
+function checkGrade(text) {
+    if (text == null) {
+        return "";
+    } else {
+        if (text == "4") { return "A"; } else if (text == "4") { return "A"; } else if (text == "3.5") { return "B+"; } else if (text == "3") { return "B"; } else if (text == "2.5") { return "C+"; } else if (text == "2") { return "C"; } else if (text == "1.5") { return "D+"; } else if (text == "1") { return "D"; } else if (text == "0") { return "F"; }
+
+
     }
 }
