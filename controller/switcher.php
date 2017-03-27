@@ -18,6 +18,9 @@
         case "get_user":
             echo $db_controller->getAllUser();
             break;
+        case "get_student":
+            echo $db_controller->getAllStudent();
+            break;
         case "delete_user":
             $username = $_POST['username'];
             echo $db_controller->deleteUser($username);
@@ -75,6 +78,13 @@
             $section = $_POST['section'];
             $timeLimit = $_POST['timeLimit'];
             echo $db_controller->generateQRCode($subjectID, $section, $timeLimit);
+            break;
+        case "get_all_class":
+            echo $db_controller->getAllClass();
+            break;
+        case "get_all_in_class":
+            $classID = $_POST['classID'];
+            echo $db_controller->getAllInClass($classID);
             break;
         default:
             echo "Function Not Found.";

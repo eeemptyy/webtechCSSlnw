@@ -118,6 +118,31 @@ class DB_Controller{
         }
     }
 
+    public function getAllStudent(){
+        try{
+            $sql = 'SELECT user.username, user.fname, user.lname, role.role_name FROM user, role WHERE user.role_id = "1" AND user.role_id = role.id';
+                // $sql = "SELECT * FROM user";
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['username'] = $row['username'];
+                $temp['firstname'] = $row['fname'];
+                $temp['lastname'] = $row['lname'];
+                $temp['role'] = $row['role_name'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+
+        } catch (PDOException $e){
+            die("Couldn't getAllUser from the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
     public function editUserPassword($username, $newPass, $oldPass){
         try{
             $sql = 'UPDATE user SET password = "'.$newPass.'" WHERE user.username = "'.$username.'" and user.password = "'.$oldPass.'" ';
@@ -426,6 +451,46 @@ class DB_Controller{
             $out .= $line."\n";
         }
         return $out;
+    }
+
+    public function getAllClass(){
+        try{
+            $sql = '';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['CourseID'] = $row['CourseID'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+        } catch (PDOException $e){
+            die("Couldn't getAllClass from the database ".$this->dbname.": ".$e->getMessage());
+        }
+    }
+
+    public function getAllInClass($classID){
+        try{
+            $sql = '';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['CourseID'] = $row['CourseID'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+        } catch (PDOException $e){
+            die("Couldn't getAllClass from the database ".$this->dbname.": ".$e->getMessage());
+        }
     }
 
 
