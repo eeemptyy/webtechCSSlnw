@@ -149,7 +149,7 @@
     </footer>
 
     <!-- Modal -->
-    <form class="" action="index.html" method="post">
+    <form id="uploadimage" class="" action="" method="post">
         <div id="uploadModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -169,7 +169,8 @@
                   <div class="btn btn-default image-preview-input">
                       <span class="glyphicon glyphicon-folder-open"></span>
                       <span class="image-preview-input-title">Browse</span>
-                      <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                      <input type="file" accept="image/png, image/jpeg, image/gif" name="inputFile" id="inputFile"/> <!-- rename it -->
+                      <input type="text" id="uname" name="uname" hidden />
                   </div>
               </span>
           </div><!-- /input-group image-preview [TO HERE]-->
@@ -203,6 +204,35 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
+
+        $("form#uploadimage").submit(function(){
+
+            var formData = new FormData($(this)[0]);
+
+            $.ajax({
+                url: "controller/uploadPicture.php",
+                type: 'POST',
+                data: formData,
+                async: false,
+                success: function (data) {
+                    alert(data)
+                    var path = data.split(":")[1].split("../")[1];
+                    alert(path);
+                    // $('#profileImage').attr("src",path);
+                    location.reload();
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+
+            return false;
+        });
+        $('#modal-submit').click(function() {
+            alert("ssssssssssssssssssssss");
+            alert($("#inputFile").val());
+            $('#uploadimage').submit();
+        });
         $(document).ready(function() {
             $('#username').val('<?php echo $_SESSION['username'];?>');
             $('#fname').val('<?php echo $_SESSION['fname'];?>');
