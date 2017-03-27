@@ -59,7 +59,7 @@
                     <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Edit Profile</a></li>
-                            <li><a href="changePWS.php">Edit Password</a></li>
+                            li><a href="changePWS.php">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
@@ -71,13 +71,11 @@
 
     <div class="content-section-b">
         <div class="container">
-          <div class="head-profile">
-
+          <div class="head-profile box-whiteshadow">
             <div class="box-left">
               <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
                 <!-- <img src="img/Contacts-512.png" alt="profile picture"> -->
-                <img src="img/Profile.jpg" alt="profile picture">
-                <!-- <img  src="img/5.png" alt="profile picture"> -->
+                <img src="img/contact-default3.png" alt="profile picture">
                 <div class="quotes">
                     <p style="text-align:center;">
                         Change your profile picture <span>...Click</span>
@@ -120,10 +118,66 @@
             </div>
           </div>
 
-          <div class="content">
-            <button type="button" class="btn btn-default btn-lg btn-block btn-takeroll">Take Roll</button>
-          </div>
+          <div class="content box-whiteshadow">
+            <div class="option-course">
+              <div class="list-inline">
+                <div class="col-sm-2">Year</div>
+                <div class="col-sm-1">:</div>
+                <div class="col-sm-9">
+                  <select id="select-year">
+                  <option>2016</option>
+                  <option>2017</option>
+                </select></div>
+              </div><br />
+              <div class="list-inline">
+                <div class="col-sm-2">Semester</div>
+                <div class="col-sm-1">:</div>
+                <div class="col-sm-9">
+                  <select id="select-semester">
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+              </div><br />
+            </div>
 
+            <div class="table-div">
+              <table id="datatable-student" class="table table-hover table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Course ID</th>
+                          <th>Course Name</th>
+                          <th>Credit</th>
+                          <th>Grade</th>
+                          <th>View Comment</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td>01418116</td>
+                        <td>Computer Programming</td>
+                        <td>3</td>
+                        <td>A</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>01418116</td>
+                        <td>Computer Programming</td>
+                        <td>3</td>
+                        <td>A</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>01418116</td>
+                        <td>Computer Programming</td>
+                        <td>3</td>
+                        <td>A</td>
+                        <td></td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>
         </div>
     </div>
 
