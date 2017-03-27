@@ -110,7 +110,7 @@
             $classID = $_POST['classID'];
             $username = $_POST['username'];
             echo $db_controller->checkInClass($username, $classID);
-            breask;
+            break;
         default:
             echo "Function Not Found.";
 }
