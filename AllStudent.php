@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-  session_start();
-  $role = $_SESSION['role_id'];
-?>
+
 
     <head>
-        <title>Edit Password</title>
+        <title>All Student</title>
         <meta charset="utf-8">
         <meta name="description" content="change password page">
         <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -73,30 +70,9 @@
             <div class="container">
               <label class="title-text" style="text-align:left;">ALL Student</label>
               <br /><br /><br />
-                <!-- <label class="title-text">- Edit Password -</label>
-                <br /><br /><br />
-                  <div style="padding-right:20%; padding-left:20%">
-                    <div class="form-group">
-                        <label for="usr">Present Password:</label>
-                        <input type="password" class="form-control" id="oldPass" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="firstname">New Password:</label>
-                        <input type="password" class="form-control" id="newPass1" placeholder="Password" >
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Re-Password:</label>
-                        <input type="password" class="form-control" id="newPass2" placeholder="Password">
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <input id="submitChangPws" class="btn btn-primary btn-qr btn-block" style="color:black; border:1px solid rgb(139, 134, 134);" type="submit" value="Submit">
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-primary btn-qr btn-block" style="background:white; color:black; border:1px solid rgb(139, 134, 134);" type="reset" value="Cancel" onclick="goBack()">
-                    </div>
-                    </div> -->
-                  </div>
+              <div id="table">
+              </div>
+            </div>
             </div>
         </div>
         </div>

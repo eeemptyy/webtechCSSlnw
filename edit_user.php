@@ -66,10 +66,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                   <!-- <li>Course</li> -->
-                    <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div></a>
+                    <li class="dropdown">
+                      <a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
                             <!-- <li><a href="#">Edit Profile</a></li> -->
-                            <li><a href="changePWS.php">Edit Password</a></li>
+                            <li><a href="changePW.php">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>

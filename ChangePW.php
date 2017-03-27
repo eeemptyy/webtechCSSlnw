@@ -58,8 +58,7 @@
                                 <div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="">Edit Profile</a></li>
-                                <li><a href="">Edit Password</a></li>
+                                <li><a href="edit_user.php">Edit Profile</a></li>
                                 <li><a href="controller/kill_session.php">Logout</a></li>
                             </ul>
                         </li>
@@ -119,6 +118,7 @@
         </footer>
 
         <input type="text" id="username" hidden />
+        <input type="text" id="role_id" hidden />
     		<!-- jQuery -->
     		<script src="http://code.jquery.com/jquery.js"></script>
     		<!-- Bootstrap JavaScript -->
@@ -128,14 +128,25 @@
     		<script>
     			$(document).ready(function() {
     	            $('#username').val('<?php echo $_SESSION['username']; ?>');
+                    $('#role_id').val('<?php echo $_SESSION['role_id']; ?>');
     			});
     			function goBack() {
-        			window.history.back();
+
+        			// window.history.back();
+                    var role = document.getElementById('role_id').value;
+                    //alert(role);
+                    if (role > 3) {
+                        window.location.replace("ad.php");
+                    } else if (role < 2) {
+                        window.location.replace("student_profile.php");
+                    } else {
+                        window.location.replace("teacher_profile.php");
+                    }
     			}
     	  </script>
-        <script src="js/jquery.js"></script>
+        <!-- <script src="js/jquery.js"></script> -->
         <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+        <!-- <script src="js/bootstrap.min.js"></script> -->
 
      		<!-- mint -->
      		<script src="js/changePws.js"></script>
