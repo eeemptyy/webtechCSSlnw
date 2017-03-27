@@ -47,7 +47,7 @@
     </div>
 	<center>
 		<input id="submitChangPws" class="btn btn-primary" type="submit" value="Submit">
-		<input class="btn btn-primary" type="reset" value="Cancel">
+		<input class="btn btn-primary" type="reset" value="Cancel" onclick="goBack()">
 		</center>
 	  </form>
 </div>	
@@ -62,6 +62,9 @@
 			$(document).ready(function() {
 	            $('#username').val('<?php echo $_SESSION['username']; ?>');
 			});
+			function goBack() {
+    			window.history.back();
+			}
 	    </script>
 
  		<!-- mint -->
