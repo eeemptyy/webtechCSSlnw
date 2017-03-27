@@ -7,7 +7,7 @@
 ?>
 
     <head>
-        <title>Edit Password</title>
+        <title>All History Class</title>
         <meta charset="utf-8">
         <meta name="description" content="change password page">
         <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -74,7 +74,7 @@
               <label class="title-text" style="text-align:left;">ALL CLASS HISTORY</label>
               <br /><br /><br />
               <div id="link-all-class">
-               
+
               </div>
             </div>
             </div>
@@ -88,7 +88,7 @@
                         <ul class="list-inline">
                             <li><a href="">Home</a></li>
                             <li class="footer-menu-divider">&sdot;</li>
-                            <li><a href="">Change Password</a></li>
+                            <li><a href="">History</a></li>
                         </ul>
                         <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                     </div>
