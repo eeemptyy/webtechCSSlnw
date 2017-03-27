@@ -151,21 +151,21 @@
                         <td>Computer Programming</td>
                         <td><center>3</center></td>
                         <td><center>A</center></td>
-                        <td><center><input type="button" id="comments"  value="" alt="Comment"></center></td>
+                        <td><center><input type="button" id="comments"  value="" alt="Comment" onclick=" window.open('','_blank')"></center></td>
                       </tr>
                       <tr>
                         <td class="text-center">01418233</td>
                         <td>Java Programming</td>
                         <td class="text-center">3</td>
                         <td class="text-center">B</td>
-                        <td class="text-center"><input type="button" id="comments"  value="" alt="Comment"></td>
+                        <td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" window.open('','_blank')"></td>
                       </tr>
                       <tr>
                         <td class="text-center">01175112</td>
                         <td>Volley Ball</td>
                         <td class="text-center">1</td>
                         <td class="text-center">A</td>
-                        <td class="text-center"><input type="button" id="comments"  value="" alt="Comment"></td>
+                        <td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" window.open('','_blank')"></td>
                       </tr>
                   </tbody>
               </table>
