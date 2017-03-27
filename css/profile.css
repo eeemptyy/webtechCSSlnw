@@ -36,6 +36,30 @@
   /*padding: 20px;*/
   /*padding-left: 50px;*/
   height: auto;
+  padding-bottom: 100px;
+}
+
+.teacher-button{
+  background: #bab891;
+  border: none;
+  font-size: 18px;
+}
+
+.teacher-button:hover{
+  background: #7d7c65;
+}
+
+.teacher-button:focus{
+  background: #4d4d4d;
+}
+
+.teacher-button:visited, .teacher-button:active{
+  background: rgba(#ffffff, 1);
+}
+
+.hr-design{
+  margin: 50px;
+  color: rgb(208, 184, 142);
 }
 
 .name{
@@ -43,6 +67,7 @@
   font-weight: bold;
   text-shadow: 4px 2px 5px rgba(198, 172, 124, 0.81);
   padding-bottom: 20px;
+  margin-top: 3%;
 }
 
 .other-word{
@@ -56,6 +81,15 @@
   float:left;
   padding-bottom: 6%
 }
+
+/*.bg-out{
+
+  background: url(../img/3.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 30%;
+
+}*/
 
 .box-containt{
   font-family: 'PT Sans', sans-serif;
@@ -168,4 +202,5 @@
   background-color: rgba(198, 172, 124, 1);
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
+  font-size: 17px;
 }

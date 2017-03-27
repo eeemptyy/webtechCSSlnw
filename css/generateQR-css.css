@@ -8,7 +8,6 @@
   font-weight: bold;
   letter-spacing: 5px;
   text-shadow: 4px 2px 7px rgba(199, 186, 140, 1);
-
 }
 
 .box-img{
@@ -22,7 +21,10 @@
 }
 
 .qr-option{
-  /*background: rgb(196, 177, 138);*/
   width: 100%;
-  /*text-align: center;*/
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  /*background: rgb(245, 237, 132);*/
 }

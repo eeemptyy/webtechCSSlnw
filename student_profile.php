@@ -75,15 +75,19 @@
 
             <div class="box-left">
               <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
-                <img src="img/Contacts-512.png" alt="profile picture">
-                <!-- <img src="img/Profile.jpg" alt="profile picture"> -->
+                <!-- <img src="img/Contacts-512.png" alt="profile picture"> -->
+                <img src="img/Profile.jpg" alt="profile picture">
                 <!-- <img  src="img/5.png" alt="profile picture"> -->
                 <div class="quotes">
                     <p style="text-align:center;">
                         Change your profile picture <span>...Click</span>
                     </p>
                 </div>
-            </a>
+              </a>
+              <div style="margin-left:10%; margin-top:5%">
+                <button type="button" class="btn btn-default  btn-block btn-takeroll">Take Roll</button>
+              </div>
+
             </div>
             <div class="box-containt">
               <label class="name" id="firstname">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id="lastname">Narkjumrussri</lable><br />

@@ -61,7 +61,7 @@
     </nav>
 
 
-    <div class="content-section-b">
+    <div class="content-section-b bg-out">
         <div class="container">
           <div class="head-profile">
 
@@ -110,16 +110,13 @@
 
           <div class="content">
 
-            hhhh1
-            hhhh
-            hhhhh
-            hhhh
-            hhh
-            hhh
-
+          <div class="list-inline">
+            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="Generate Class QRCode" onclick=" window.open('generateQR.php','_blank')"></div>
+            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Class-member"></div>
+            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Student"></div>
+          </div><br />
+          <hr class="hr-design">
           </div>
-
-        </div>
     </div>
 
     <footer>
@@ -187,8 +184,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
          <!-- guitar -->
-        <script src="js/testjs.js"></script>
-
+    <script src="js/upload-pic-modal.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
