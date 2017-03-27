@@ -93,6 +93,19 @@
             $subjectID = $_POST['subjectID'];
             echo $db_controller->getCommentInSubject($username_stu, $year, $semester, $subjectID);
             break;
+        case "gen_drop_for_qr":
+            $username = $_POST['username'];
+            $year = $_POST['year'];
+            $semester = $_POST['semester'];
+            echo $db_controller->getDropSubjectOnQR($username, $year, $semester);
+            break;
+        case "gen_drop_for_qr_2_section":
+            $username = $_POST['username'];
+            $year = $_POST['year'];
+            $semester = $_POST['semester'];
+            $subjectID = $_POST['subjectID'];
+            echo $db_controller->getDropSubjectOnQR2Section($username, $year, $semester, $subjectID);
+            break;
         default:
             echo "Function Not Found.";
 }

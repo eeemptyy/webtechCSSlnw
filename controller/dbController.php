@@ -536,13 +536,54 @@ class DB_Controller{
         }
     }
 
-    public function getDropSubjectOnQR($username){
+    public function getDropSubjectOnQR($username, $year, $semester){
         try {
             $sql = 'SELECT DISTINCT subject_semester.id_subject, subject.name, subject_teacher.username '.
                     'FROM subject_teacher, subject_semester, subject '.
                     'WHERE subject_teacher.username = "'.$username.'" AND subject_semester.id = subject_teacher.id_subject_semester '.
                     'and subject_semester.id_subject = subject.id '.
-                    'AND subject_semester.year = '.' and subject_semester.semester = ';
+                    'AND subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" ';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['id_subject'] = $row['id_subject'];
+                $temp['name'] = $row['name'];
+                $temp['username'] = $row['username'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+
+        } catch (PDOException $e){
+
+        }
+    }
+
+    public function getDropSubjectOnQR2Section($username, $year, $semester, $subjectID){
+        try {
+            $sql = 'SELECT DISTINCT subject_semester.id_subject, subject.name, subject_teacher.username, subject_semester.section '.
+                    'FROM subject_teacher, subject_semester, subject '.
+                    'WHERE subject_teacher.username = "'.$username.'" AND subject_semester.id = subject_teacher.id_subject_semester '.
+                    'and subject_semester.id_subject = subject.id '.
+                    'AND subject_semester.year = "'.$year.'" and subject_semester.semester = "'.$semester.'" '.
+                    'AND subject_semester.id_subject = "'.$subjectID.'" ';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            
+            $tempArr = array();
+            $n =0;
+            while ($row = $q->fetch()) {
+                $temp = array();
+                $temp['section'] = $row['section'];
+                $tempArr[$n] = $temp;
+                $n++;
+            }
+            echo json_encode($tempArr);
+
         } catch (PDOException $e){
 
         }

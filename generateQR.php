@@ -155,6 +155,56 @@
                 roleText = "Student";
             }
             $('#role-dropdown').html(roleText);
+
+            $.ajax({
+                type: "POST",
+                url: "controller/switcher.php",
+                data: {
+                    func: 'gen_drop_for_qr',
+                    username: $('#username').val(),
+                    subjectID: $('#select-semester option:selected').html().split(" ")[0],
+                    year: "2016",
+                    semester: "2"
+                },
+                success: function(data) {
+                    alert(data);
+                    var obj = JSON.parse(data);
+                    var out = "";
+                    for (i = 0; i < obj.length; i++) {
+                        out += '<option>' + obj[i]['id_subject'] + " "+obj[i]['name'] + '</option>';
+                    }
+                    $('#course-select').html(out);
+                },
+                error: function(data) {
+                    $("#displayError").html("error " + data);
+                }
+            });
+
+        });
+
+        $('#course-select').change(function() {
+            $.ajax({
+                type: "POST",
+                url: "controller/switcher.php",
+                data: {
+                    func: 'gen_drop_for_qr_2_section',
+                    username: $('#username').val(),
+                    year: "2016",
+                    semester: "2"
+                },
+                success: function(data) {
+                    alert(data);
+                    var obj = JSON.parse(data);
+                    var out = "";
+                    for (i = 0; i < obj.length; i++) {
+                        out += '<option>' + obj[i]['section']+ '</option>';
+                    }
+                    $('#section-select').html(out);
+                },
+                error: function(data) {
+                    $("#displayError").html("error " + data);
+                }
+            });
         });
 
         $('#getQR').click(function() {
