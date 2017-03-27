@@ -49,8 +49,8 @@
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Course<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="ad.php">Manage User</a></li>
-                        <li><a href="ad-course.php">Course</a></li>
+                      <li><a href="ad-course.php">Course</a></li>
+                      <li><a href="ad.php">Manage User</a></li>
                     </ul>
                   </li>
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Administer</label><b class="caret"></b></div></a>
@@ -117,10 +117,7 @@
                         <li>
                             <a href="#login">Administer</a>
                         </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">Top</a>
-                        </li>
+                        
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
                 </div>
@@ -205,11 +202,6 @@
                             <label for="credit">Credit:</label>
                             <input type="text" id="credit_create"class="form-control">
                         </div>
-                        <div class="form-group">
-                            <label for="TeacherID">Teacher ID:</label>
-                            <input type="text" id="teacherID_create"class="form-control">
-                        </div>
-
                     </div>
                     <div class="modal-footer">
                         <button  type="submit" id="model-createSubject" class="btn btn-default"  data-dismiss="modal" >Submit</button>
