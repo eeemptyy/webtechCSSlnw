@@ -82,33 +82,33 @@
                 </div>
             </a>
             </div>
-            <div class="box-containt">
 
-              <label class="name">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name">Narkjumrussri</lable><br />
+            <div class="box-containt">
+              <label class="name" id="firstname">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id="lastname">Narkjumrussri</lable><br />
                <div class="list-inline">
                  <div class="col-sm-2 size-content pantone-brown">Username ID</div>
                  <div class="col-sm-1 size-content pantone-brown" >:</div>
-                 <div class="col-sm-9 size-content">5610404452</div>
+                 <div class="col-sm-9 size-content" id="usr">5610404452</div>
                </div><br />
                <div class="list-inline">
                  <div class="col-sm-2 size-content pantone-brown">Role</div>
                  <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div class="col-sm-9 size-content">Laboratory-Teacher</div>
+                 <div class="col-sm-9 size-content" id="role">Laboratory-Teacher</div>
                </div><br />
                <div class="list-inline">
                  <div class="col-sm-2 size-content pantone-brown">Moblie Phone</div>
                  <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div class="col-sm-9 size-content">095-558-5492</div>
+                 <div id="tel-phone" class="col-sm-9 size-content">095-558-5492</div>
                </div><br />
                <div class="list-inline">
                  <div class="col-sm-2 size-content pantone-brown">E-mail</div>
                  <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div class="col-sm-9 size-content">boonyaporn.n@ku.th</div>
+                 <div class="col-sm-9 size-content" id="e-mail">boonyaporn.n@ku.th</div>
                </div><br />
                <div class="list-inline">
                  <div class="col-sm-2 size-content pantone-brown">Address</div>
                  <div class="col-sm-1 size-content pantone-brown">:</div>
-                 <div class="col-sm-5 size-content">161/149, Soi.Intramara41, Sutthisan Road, Dindang, Bangkok, Thailand, 10400</div>
+                 <div class="col-sm-5 size-content" id="addr">161/149, Soi.Intramara41, Sutthisan Road, Dindang, Bangkok, Thailand, 10400</div>
                  <div class="col-sm-4 size-content"></div>
                </div><br />
             </div>
@@ -211,5 +211,7 @@
             $('#tel').val('<?php echo $_SESSION['tel'];?>');
         });
     </script>
+    
+    <script src="js/upload_profile.js"></script>
 
 </html>
