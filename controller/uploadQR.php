@@ -42,16 +42,19 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.<BR>";
 // if everything is ok, try to upload file
 } else {
-    echo "I want to Know ".$_FILES['fileToUpload']["tmp_name"];
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        $prob = array();
-        $prob['file'] = $_FILES["fileToUpload"]["name"];
+    echo "read data ".$_FILES["fileToUpload"]["tmp_name"];
+    $aa = str_replace("\\","/",$_FILES["fileToUpload"]["tmp_name"]);
+    echo $aa;
+    header("Location: ../readQR/QRReader.php?qrPath='".$aa."'");
+    // if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    //     // $prob = array();
+    //     // $prob['file'] = $_FILES["fileToUpload"]["name"];
 
-        // $out = $db_controller->addProblem($json_prob);
-        // $ff = readfile("../files/csv/".basename( $_FILES["fileToUpload"]["name"]));
-        echo "\File ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.".'<br>';
-    } else {
-        echo "Sorry, there was an error uploading your file.<BR> ";
-    }
+    //     // $out = $db_controller->addProblem($json_prob);
+    //     // $ff = readfile("../files/csv/".basename( $_FILES["fileToUpload"]["name"]));
+    //     echo "\File ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.".'<br>';
+    // } else {
+    //     echo "Sorry, there was an error uploading your file.<BR> ";
+    // }
 }
 ?>
