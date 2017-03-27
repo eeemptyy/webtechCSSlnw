@@ -455,7 +455,10 @@ class DB_Controller{
 
     public function getAllClass(){
         try{
-            $sql = '';
+            $sql = 'SELECT DISTINCT class.id, class.time_limit AS Time, subject_semester.id_subject AS SubjectID, '.
+                    ' subject.name, subject_teacher.username, user.fname, user.lname FROM class, subject_semester, subject, '.
+                    'subject_teacher, user WHERE class.id_subject_semester = subject_semester.id and subject_semester.id_subject = subject.id '.
+                    'AND subject_semester.id = subject_teacher.id_subject_semester AND subject_teacher.username = user.username';
             $q = $this->connection->prepare($sql);
             $q->execute();
             
@@ -463,7 +466,13 @@ class DB_Controller{
             $n =0;
             while ($row = $q->fetch()) {
                 $temp = array();
-                $temp['CourseID'] = $row['CourseID'];
+                $temp['id'] = $row['id'];
+                $temp['Time'] = $row['Time'];
+                $temp['SubjectID'] = $row['SubjectID'];
+                $temp['name'] = $row['name'];
+                $temp['username'] = $row['username'];
+                $temp['fname'] = $row['fname'];
+                $temp['lname'] = $row['lname'];
                 $tempArr[$n] = $temp;
                 $n++;
             }
@@ -475,7 +484,8 @@ class DB_Controller{
 
     public function getAllInClass($classID){
         try{
-            $sql = '';
+            $sql = 'SELECT take_class.id_class AS id, user.username AS StudentID, user.fname, user.lname '.
+                    ' FROM take_class, user WHERE take_class.id_class = "'.$classID.'" AND take_class.username_stu = user.username';
             $q = $this->connection->prepare($sql);
             $q->execute();
             
@@ -483,13 +493,16 @@ class DB_Controller{
             $n =0;
             while ($row = $q->fetch()) {
                 $temp = array();
-                $temp['CourseID'] = $row['CourseID'];
+                $temp['id'] = $row['id'];
+                $temp['StudentID'] = $row['StudentID'];
+                $temp['fname'] = $row['fname'];
+                $temp['lname'] = $row['lname'];
                 $tempArr[$n] = $temp;
                 $n++;
             }
             echo json_encode($tempArr);
         } catch (PDOException $e){
-            die("Couldn't getAllClass from the database ".$this->dbname.": ".$e->getMessage());
+            die("Couldn't getAllInClass from the database ".$this->dbname.": ".$e->getMessage());
         }
     }
 
