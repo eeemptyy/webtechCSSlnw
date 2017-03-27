@@ -4,7 +4,7 @@
 <?php
     session_start();
     $role = $_SESSION['role_id'];
-    if ($role < 1){
+    if ($role < 0){
         header("Location: login.html");
     }
 ?>
@@ -60,7 +60,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">Edit Profile</a></li>
                             <li><a href="#">Edit Password</a></li>
-                            <li><a href="login.html">Logout</a></li>
+                            <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
