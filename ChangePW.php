@@ -118,6 +118,7 @@
         </footer>
 
         <input type="text" id="username" hidden />
+        <input type="text" id="role_id" hidden />
     		<!-- jQuery -->
     		<script src="http://code.jquery.com/jquery.js"></script>
     		<!-- Bootstrap JavaScript -->
@@ -127,11 +128,20 @@
     		<script>
     			$(document).ready(function() {
     	            $('#username').val('<?php echo $_SESSION['username']; ?>');
+                    $('#role_id').val('<?php echo $_SESSION['role_id']; ?>');
     			});
     			function goBack() {
 
-        			window.history.back();
-                    // window.location.replace("student_profile.php")
+        			// window.history.back();
+                    var role = document.getElementById('role_id').value;
+                    //alert(role);
+                    if (role > 3) {
+                        window.location.replace("ad.php");
+                    } else if (role < 2) {
+                        window.location.replace("student_profile.php");
+                    } else {
+                        window.location.replace("teacher_profile.php");
+                    }
     			}
     	  </script>
         <!-- <script src="js/jquery.js"></script> -->
