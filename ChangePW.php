@@ -58,8 +58,7 @@
                                 <div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="">Edit Profile</a></li>
-                                <li><a href="">Edit Password</a></li>
+                                <li><a href="edit_user.php">Edit Profile</a></li>
                                 <li><a href="controller/kill_session.php">Logout</a></li>
                             </ul>
                         </li>
@@ -130,12 +129,14 @@
     	            $('#username').val('<?php echo $_SESSION['username']; ?>');
     			});
     			function goBack() {
+
         			window.history.back();
+                    // window.location.replace("student_profile.php")
     			}
     	  </script>
-        <script src="js/jquery.js"></script>
+        <!-- <script src="js/jquery.js"></script> -->
         <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+        <!-- <script src="js/bootstrap.min.js"></script> -->
 
      		<!-- mint -->
      		<script src="js/changePws.js"></script>
