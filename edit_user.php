@@ -10,7 +10,7 @@
 ?>
 
 <head>
-    <title>Student Profile</title>
+    <title>Edit User Profile</title>
     <meta charset="utf-8">
     <meta name="description" content="for login">
     <meta name="keywords" content="HTML, CSS, JavaScript">
@@ -24,7 +24,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/profile.css" rel="stylesheet" />
+    <link href="css/generateQR-css.css" rel="stylesheet" />
     <link href="css/landing-page.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -36,15 +36,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    
+
+
 
     <script type="text/javascript">
       //document.getElementById("username").value='test';
       //alert('test alert');
       //alert(document.getElementById("username").value);
     </script>
-    
+
 </head>
 
 <body>
@@ -82,12 +82,12 @@
 
     <div class="content-section-b">
         <div class="container">
-          <div>
+          <div style="margin-top:50px; padding-right:20%; padding-left:20%;">
+            <label class="title-text" style="margin-bottom:50px;">- Edit Profile -</label>
             <form action="" method="">
               <div class="form-group">
                   <label for="usr">Username ID:</label>
                   <input type="text" id="userid_create" class="form-control" disabled="true" >
-
               </div>
               <div class="form-group">
                   <label for="firstname">Firstname:</label>
@@ -114,9 +114,9 @@
                   <input type="text" id="address_create" class="form-control">
               </div>
               <div class="form-group">
-                  <button id='updateProfileBtn' type="submit" class="btn btn-primary btn-block">Update Profile</button>
+                  <button id='updateProfileBtn' type="submit" class="btn btn-primary btn-block btn-qr">Update Profile</button>
               </div>
-              
+
           </div>
           </form>
 
@@ -182,7 +182,7 @@
         </div>
     </form>
 
-    
+
     <!-- <script type="text/javascript"> alert(document.getElementById('username').value)</script> -->
 
     <input type="text" id="username" hidden />
@@ -191,7 +191,7 @@
     <input type="text" id="role_id" hidden />
     <input type="text" name="email" id="email" hidden/>
     <input type="text" name="address" id="address" hidden/>
-    <input type="text" name="tel" id="tel" hidden/> 
+    <input type="text" name="tel" id="tel" hidden/>
 </body>
 
     <!-- jQuery -->
@@ -223,7 +223,7 @@
         document.getElementById('tel_create').value=document.getElementById('tel').value;
       });
     </script>
-  
+
 
 
 
