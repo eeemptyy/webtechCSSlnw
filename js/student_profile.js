@@ -42,6 +42,7 @@ $(document).ready(function() {
 
 
     });
+
 });
 
 function isRole(text) {
@@ -80,6 +81,7 @@ function generateCourseTableByStudentID(semester, year, username) {
         },
         success: function(data) {
             var obj = JSON.parse(data);
+<<<<<<< HEAD
             //            alert("out: " + data);
             for (var i = 0, len = obj.length; i < len; ++i) {
                 var objIn = obj[i];
@@ -104,6 +106,32 @@ function generateCourseTableByStudentID(semester, year, username) {
                 // "ordering": false,
                 "info": false
             });
+=======
+//            alert("out: " + data);
+                        for (var i = 0, len = obj.length; i < len; ++i) {
+                            var objIn = obj[i];
+                            html += '<tr>';
+                            html += '<td class="text-center">'+objIn['CourseID']+ '</td><td>' +objIn['CourseName']+ '</td><td class="text-center">'
+                                +objIn['credit']+ '</td><td class="text-center">'
+                                +checkGrade(objIn['grade'])+ '</td>';
+                            html += '<td class="text-center"><input type="button" id="comments"  value="" alt="Comment" onclick=" goToCommends(this)"></td>';
+                            html += "</tr>";
+                        }
+                        html += '</tbody><tfoot><tr></tr></tfoot></table>';
+                        $('#table-div').html(html);
+                        $('#datatable-student').DataTable({
+                            "order": [
+                                [1, "asc"]
+                            ],
+                            // "pageLenght": 25,
+            
+                            destroy: true,
+                            "autoWidth": false,
+                            "paging": false,
+                            // "ordering": false,
+                            "info": false
+                        });
+>>>>>>> 6aa1392ad2b9be73aed2a1c78759303e176b4879
 
         },
         error: function(data) {
@@ -121,4 +149,14 @@ function checkGrade(text) {
 
 
     }
+}
+
+function goToCommends(button){
+    currentID = $(button).parents('tr').find('td');
+    var course_id = currentID.eq(0).html();
+    var year = document.getElementById('select-year').value;
+    var semester = document.getElementById('select-semester').value;
+    alert(course_id+" "+year+"/"+semester);
+    
+    window.location.replace("comment_page.php")
 }
