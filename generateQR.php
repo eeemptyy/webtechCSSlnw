@@ -95,7 +95,7 @@
                       <label for="lastname">Time out:</label>
                       <input type="time" class="form-control" id="usr">
                   </div>
-                  <input id="getQR" class="btn btn-primary btn-block" type="button" value="Generate">
+                  <input id="getQR" class="btn btn-primary btn-block btn-qr" type="button" value="Generate">
                 </div>
               </form>
             </div>
