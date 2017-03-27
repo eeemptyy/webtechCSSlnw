@@ -1,3 +1,9 @@
+$("#myForm").keyup(function(event) {
+    if (event.keyCode == 13) {
+        $("#loginBTN").click();
+    }
+});
+
 $("#loginBTN").click(function() {
     var uname = $('#username').val();
     var pass = $('#pass').val();
@@ -12,11 +18,9 @@ $("#loginBTN").click(function() {
                 pass: hashToSHA1(pass)
             },
             success: function(data) {
-                alert(data);
                 if (data == "Username/Password not found.") {
                     return false;
                 } else {
-                    alert(hashToSHA1(pass));
                     var obj = JSON.parse(data);
                     $("#username").val(obj['username']);
                     $("#fname").val(obj['firstname']);
@@ -37,7 +41,6 @@ $("#loginBTN").click(function() {
         $("#displayError").html("Invalid Username/Password");
     }
 });
-
 
 function isValid(text) {
     if (text == "" || text == " " || text == null) {
