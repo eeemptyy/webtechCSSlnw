@@ -62,7 +62,7 @@
                   </li>
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Administer</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Edit Password</a></li>
+                            <li><a href="changePWS.php" username=<?php echo $_SESSION['username'] ?>">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
@@ -87,7 +87,7 @@
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD USER (CSV)</span></a>&nbsp;&nbsp;
                 </li>
                 <li>
-                    <a href="" class="btn-admin" onclick="popUp()"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
+                    <a href="" class="btn-admin" onclick="popUp('ad')"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                 </li>
             </ul>
              <div id='table'>
@@ -258,7 +258,7 @@
         </div>
     </form>
 
-<input type="text" id="username" hidden />
+<input type="text" id="username" id="username" hidden />
 <input type="text" id="fname" hidden />
 <input type="text" id="lname" hidden />
 <input type="text" id="role_id" hidden />
