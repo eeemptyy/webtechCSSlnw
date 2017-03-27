@@ -91,7 +91,7 @@
                     <a href="" class="btn-admin" data-toggle="modal" data-target="#CSVModal"><i><img src="img/AddFile-64.png" alt="" style="height:23px;"></i><span class="network-name">    UPLOAD COURSE (CSV)</span></a>&nbsp;&nbsp;
                 </li>
                 <li>
-                    <form action="pdf/html2pdf.php" method="post" target="_blank">
+                    <form action="pdf/html2pdf-2.php" method="post" target="_blank">
                     	<a id="topdf" href="#" class="btn-admin" onClick="printPDFCourse()"><i><img src="img/Print-64.png" alt="" style="height:23px;"></i><span class="network-name">    PRINT TO PDF</span></a>&nbsp;&nbsp;
                     	<button type="submit" id="btPDF" hidden="" value=""></button>
                         <input type="text" value="" id="HTMLcode" name="HTMLcode" hidden=""/>
