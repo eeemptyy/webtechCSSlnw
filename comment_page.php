@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    session_start();
+    $role = $_SESSION['role_id'];
+    if ($role < 1){
+        header("Location: login.html");
+    }
+?>
 
 
 
@@ -179,10 +186,39 @@
             </div>
         </footer>
 
+<input type="text" id="username" hidden />
+<input type="text" id="fname" hidden />
+<input type="text" id="lname" hidden />
+<input type="text" id="role_id" hidden />
+<input type="text" name="email" id="email" hidden>
+<input type="text" name="address" id="address" hidden>
+<input type="text" name="tel" id="tel" hidden>
+<input type="text" name="year" id="year" hidden>
+<input type="text" name="course_id" id="course_id" hidden>
+<input type="text" name="semester" id="semester" hidden>
+
+    </body>
+
         <script src="js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
 
+        <script>
+        $(document).ready(function() {
+            $('#username').val('<?php echo $_SESSION['username'];?>');
+            $('#fname').val('<?php echo $_SESSION['fname'];?>');
+            $('#lname').val('<?php echo $_SESSION['lname'];?>');
+            $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
+            $('#email').val('<?php echo $_SESSION['email'];?>');
+            $('#address').val('<?php echo $_SESSION['address'];?>');
+            $('#tel').val('<?php echo $_SESSION['tel'];?>');
+            alert(" IN EMPTY");
+            $('#year').val('<?php echo $_GET['year']; ?>');
+            $('#course_id').val('<?php echo $_GET['course']; ?>');
+            $('#semester').val('<?php echo $_GET['semester']; ?>');
+            alert("> "+$('#year').val()+" "+$('#course_id').val()+" "+$('#semester').val()+" <")
+            
+        });
+    </script>
 
-    </body>
 </html>
