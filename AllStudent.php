@@ -93,8 +93,11 @@
         </footer>
 
         <script src="js/jquery.js"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+
+        <script src="js/AllStudent.js"></script>
 
 
     </body>
