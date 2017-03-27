@@ -59,7 +59,7 @@
                     <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
                             <li><a href="edit_user.php">Edit Profile</a></li>
-                            <li><a href="changePWS.php">Edit Password</a></li>
+                            <li><a href="changePW.php">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
@@ -83,7 +83,7 @@
                 </div>
               </a>
               <div style="margin-left:10%; margin-top:5%">
-                <button type="button" class="btn btn-default  btn-block btn-takeroll" onclick="window.open('student_qr.php','_blank')">Take Roll</button>
+                <button type="button" class="btn btn-default  btn-block btn-takeroll" onclick="window.open('student_qr.php','_blank')">Turn In</button>
               </div>
 
             </div>
@@ -133,10 +133,10 @@
                   </select>
               </div>
             </div>
-              
+
               <div id="table-div"></div>
-              
-            
+
+
           </div>
         </div>
     </div>

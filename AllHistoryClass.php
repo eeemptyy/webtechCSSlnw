@@ -71,34 +71,13 @@
         <br /><br />
         <div class="content-section-b">
             <div class="container">
-                <label class="title-text">- Edit Password -</label>
-                <br /><br /><br />
-                  <div style="padding-right:20%; padding-left:20%">
-                    <div class="form-group">
-                        <label for="usr">Present Password:</label>
-                        <input type="password" class="form-control" id="oldPass" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="firstname">New Password:</label>
-                        <input type="password" class="form-control" id="newPass1" placeholder="Password" >
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Re-Password:</label>
-                        <input type="password" class="form-control" id="newPass2" placeholder="Password">
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <input id="submitChangPws" class="btn btn-primary btn-qr btn-block" style="color:black; border:1px solid rgb(139, 134, 134);" type="submit" value="Submit">
-                    </div>
-                    <div class="form-group">
-                        <input class="btn btn-primary btn-qr btn-block" style="background:white; color:black; border:1px solid rgb(139, 134, 134);" type="reset" value="Cancel" onclick="goBack()">
-
-
-                    </div>
-
-                    </div>
-                  </div>
-
+              <label class="title-text" style="text-align:left;">ALL CLASS HISTORY</label>
+              <br /><br /><br />
+              <div id="link-all-class">
+                <a class="link-class">28/03/2017 &nbsp; [23:40] &nbsp;&nbsp;&nbsp; 01418116  &nbsp;&nbsp;&nbsp;  Computer Programming - Sukumal</a><br />
+                <a class="link-class">28/03/2017 &nbsp; [22:40] &nbsp;&nbsp;&nbsp; 01418116  &nbsp;&nbsp;&nbsp;  Computer Programming - Sukumal</a><br />
+              </div>
+            </div>
             </div>
         </div>
         </div>
@@ -118,31 +97,10 @@
             </div>
         </footer>
 
-        <input type="text" id="username" hidden />
-    		<!-- jQuery -->
-    		<script src="http://code.jquery.com/jquery.js"></script>
-    		<!-- Bootstrap JavaScript -->
-    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
-    		<script>
-    			$(document).ready(function() {
-    	            $('#username').val('<?php echo $_SESSION['username']; ?>');
-    			});
-    			function goBack() {
-        			window.history.back();
-    			}
-    	  </script>
         <script src="js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
 
-     		<!-- mint -->
-     		<script src="js/changePws.js"></script>
-
-     		<!-- Password encryption part -->
-        <script src="js/sha1.js"></script>
-        <script src="js/passwordController.js"></script>
 
     </body>
 </html>

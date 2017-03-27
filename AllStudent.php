@@ -71,7 +71,9 @@
         <br /><br />
         <div class="content-section-b">
             <div class="container">
-                <label class="title-text">- Edit Password -</label>
+              <label class="title-text" style="text-align:left;">ALL Student</label>
+              <br /><br /><br />
+                <!-- <label class="title-text">- Edit Password -</label>
                 <br /><br /><br />
                   <div style="padding-right:20%; padding-left:20%">
                     <div class="form-group">
@@ -92,13 +94,9 @@
                     </div>
                     <div class="form-group">
                         <input class="btn btn-primary btn-qr btn-block" style="background:white; color:black; border:1px solid rgb(139, 134, 134);" type="reset" value="Cancel" onclick="goBack()">
-
-
                     </div>
-
-                    </div>
+                    </div> -->
                   </div>
-
             </div>
         </div>
         </div>
@@ -118,31 +116,10 @@
             </div>
         </footer>
 
-        <input type="text" id="username" hidden />
-    		<!-- jQuery -->
-    		<script src="http://code.jquery.com/jquery.js"></script>
-    		<!-- Bootstrap JavaScript -->
-    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
-    		<script>
-    			$(document).ready(function() {
-    	            $('#username').val('<?php echo $_SESSION['username']; ?>');
-    			});
-    			function goBack() {
-        			window.history.back();
-    			}
-    	  </script>
         <script src="js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
 
-     		<!-- mint -->
-     		<script src="js/changePws.js"></script>
-
-     		<!-- Password encryption part -->
-        <script src="js/sha1.js"></script>
-        <script src="js/passwordController.js"></script>
 
     </body>
 </html>
