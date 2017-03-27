@@ -27,11 +27,11 @@ $("#updateProfileBtn").click(function() {
                 address: address
             },
             success: function(data) {
-                alert(data);
-                alert('success');
+                //alert(data);
+                
                 updateMySession(uname, fname, lname, tel, address, role_id, email);
 
-                alert("AF UP");
+                
             },
             error: function(data) {
                 alert(data);
