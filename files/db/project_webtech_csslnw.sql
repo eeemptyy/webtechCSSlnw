@@ -11,8 +11,8 @@
 CREATE TABLE `class` (
   `id` int(11) NOT NULL,
   `id_subject_semester` int(11) NOT NULL,
-  `time_created` varchar(5) NOT NULL,
-  `qr_path` varchar(255) NOT NULL
+  `time_limit` varchar(5) NOT NULL,
+  `qr_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -57,7 +57,7 @@ INSERT INTO `role` (`id`, `role_name`) VALUES
 --
 
 CREATE TABLE `subject` (
-  `id` int(8) NOT NULL,
+  `id` varchar(8) NOT NULL,
   `name` varchar(255) NOT NULL,
   `credit` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -67,10 +67,10 @@ CREATE TABLE `subject` (
 --
 
 INSERT INTO `subject` (`id`, `name`, `credit`) VALUES
-(1418114, 'Introduction to Computer Science', 4),
-(1418116, 'Computer Programming', 3),
-(1418217, 'Object Oriented Programming', 3),
-(1418221, 'Database System', 3);
+('01418114', 'Introduction to Computer Science', 4),
+('01418116', 'Computer Programming', 3),
+('01418217', 'Object Oriented Programming', 3),
+('01418221', 'Database System', 3);
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ INSERT INTO `subject` (`id`, `name`, `credit`) VALUES
 
 CREATE TABLE `subject_semester` (
   `id` int(11) NOT NULL,
-  `id_subject` int(8) NOT NULL,
+  `id_subject` varchar(8) NOT NULL,
   `semester` int(1) NOT NULL,
   `year` int(4) NOT NULL,
   `section` int(3) NOT NULL,
@@ -92,10 +92,10 @@ CREATE TABLE `subject_semester` (
 --
 
 INSERT INTO `subject_semester` (`id`, `id_subject`, `semester`, `year`, `section`, `time`) VALUES
-(1, 1418116, 2, 2016, 1, '09.30-11.30'),
-(2, 1418114, 1, 2016, 1, '08.00-10.00'),
-(3, 1418221, 2, 2016, 200, '08.00-12.00'),
-(4, 1418217, 1, 2016, 200, '12.00-16.00');
+(1, '01418116', 2, 2016, 1, '09.30-11.30'),
+(2, '01418114', 1, 2016, 1, '08.00-10.00'),
+(3, '01418221', 2, 2016, 200, '08.00-12.00'),
+(4, '01418217', 1, 2016, 200, '12.00-16.00');
 
 -- --------------------------------------------------------
 
@@ -160,7 +160,7 @@ CREATE TABLE `user` (
   `password` varchar(64) NOT NULL,
   `fname` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
   `lname` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-  `pic_path` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `pic_path` varchar(255) CHARACTER SET utf8mb4 DEFAULT 'files/img/profile/contact-default3.png',
   `role_id` int(1) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `address` text,
@@ -172,10 +172,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `fname`, `lname`, `pic_path`, `role_id`, `email`, `address`, `tel`) VALUES
-('5610400091', '0ed02142ead58ab9da947e00fa0f416895478618', 'Nattharat', 'Jariyanuntanet', 'adasjdkajslkdjalsjdlk', 3, 'nattharat.j@ku.th', 'Lak si, Bangkok, Thailand', '084-444-4444'),
-('5610404452', '78c84e6895448e0317aa1f06f807c4e22fba5113', 'Boonyaporn', 'Narkjumrussri', 'xxxxxxx_aaaxxxaaxx', 4, 'boonyaporn.n@ku.th', 'Bongkok, Thailand', '089-999-9999'),
-('5610450063', 'c9dfb3338b461c8662ce7c52f4a28672a75b9fb5', 'Jompol', 'Sermsook', 'aaaaaaaxxxxxxx_Xx', 4, 'jompol.s@ku.th', 'Nonthaburi, Thailand', '085-088-1886'),
-('5610450080', '817965431c04a46f3af2f982ceff704a9cd0890b', 'Chayamon', 'Kanjanapongsawet', 'xxxxxxxaas', 1, 'chayamon.ka@ku.th', 'Samyan, Bangkok, Thailand', '081-111-1111');
+('5610400091', '0ed02142ead58ab9da947e00fa0f416895478618', 'Nattharat', 'Jariyanuntanet', 'files/img/profile/contact-default3.png', 3, 'nattharat.j@ku.th', 'Nonthaburi Thailand', '085-123-4567'),
+('5610404452', '78c84e6895448e0317aa1f06f807c4e22fba5113', 'Boonyaporn', 'Narkjumrussri', 'files/img/profile/contact-default3.png', 4, 'boonyaporn.n@ku.th', 'Bongkok, Thailand', '089-999-9999'),
+('5610450063', 'c9dfb3338b461c8662ce7c52f4a28672a75b9fb5', 'Jompol', 'Sermsook', 'files/img/profile/contact-default3.png', 4, 'jompol.s@ku.th', 'Nonthaburi, Thailand', '085-088-1886'),
+('5610450080', '817965431c04a46f3af2f982ceff704a9cd0890b', 'Chayamon', 'Kanjanapongsawet', 'files/img/profile/contact-default3.png', 1, 'chayamon.ka@ku.th', 'Samyan, Bangkok, Thailand', '081-111-1111');
 
 --
 -- Indexes for dumped tables
