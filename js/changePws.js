@@ -9,7 +9,7 @@ $("#submitChangPws").click(function() {
     var hold = false;
     //alert(uname+"|"+oldPass+"|"+newPass1+"|"+newPass2)
 
-    if(newPass1 == null || newPass2 == null || oldPass == null){
+    if(newPass1 == null || newPass2 == null || oldPass == null || newPass1 == "" || newPass2 == "" || oldPass == ""|| newPass1 == " " || newPass2 == " " || oldPass == " "){
         alert("null value");
     }
     else if(newPass1!=newPass2){
