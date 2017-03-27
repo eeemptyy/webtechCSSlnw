@@ -1,4 +1,32 @@
 
+
+select{
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 7px;
+  /*padding-top: 8px;*/
+  border-radius: 8px;
+  font-size: 25px;
+}
+
+.option-course{
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+#comments{
+  background:url(../img/Comments-50.png) ;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  width:40px;
+  height:25px;
+  border: 0;
+}
+
 .size-content{
   font-size: 120%;
 }
@@ -33,7 +61,7 @@
 }
 
 .content{
-  /*background: rgba(198, 172, 124, 1);*/
+  /*background: rgba(231, 221, 204, 1);*/
   margin-top: 5%;
   /*padding: 20px;*/
   /*padding-left: 50px;*/

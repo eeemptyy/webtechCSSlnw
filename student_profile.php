@@ -118,61 +118,54 @@
             </div>
           </div>
 
-          <div class="content box-whiteshadow">
+          <div class="content">
             <div class="option-course">
-              <div class="list-inline">
-                <div class="col-sm-2">Year</div>
-                <div class="col-sm-1">:</div>
-                <div class="col-sm-9">
+              <div class="row text-center">
+                <label>Course  </label>
                   <select id="select-year">
-                  <option>2016</option>
-                  <option>2017</option>
-                </select></div>
-              </div><br />
-              <div class="list-inline">
-                <div class="col-sm-2">Semester</div>
-                <div class="col-sm-1">:</div>
-                <div class="col-sm-9">
+                    <option>2016</option>
+                    <option>2017</option>
+                  </select>
+                  <label>/</label>
                   <select id="select-semester">
                     <option>1</option>
                     <option>2</option>
                   </select>
-                </div>
-              </div><br />
+              </div>
             </div>
 
             <div class="table-div">
               <table id="datatable-student" class="table table-hover table-bordered">
                   <thead>
                       <tr>
-                          <th>Course ID</th>
-                          <th>Course Name</th>
-                          <th>Credit</th>
-                          <th>Grade</th>
-                          <th>View Comment</th>
+                          <th><center>Course ID</center></th>
+                          <th><center>Course Name</center></th>
+                          <th><center>Credit</center></th>
+                          <th><center>Grade</center></th>
+                          <th><center>View Comment</center></th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
-                        <td>01418116</td>
+                        <td><center>01418116</center></td>
                         <td>Computer Programming</td>
-                        <td>3</td>
-                        <td>A</td>
-                        <td></td>
+                        <td><center>3</center></td>
+                        <td><center>A</center></td>
+                        <td><center><input type="button" id="comments"  value="" alt="Comment"></center></td>
                       </tr>
                       <tr>
-                        <td>01418116</td>
-                        <td>Computer Programming</td>
-                        <td>3</td>
-                        <td>A</td>
-                        <td></td>
+                        <td class="text-center">01418233</td>
+                        <td>Java Programming</td>
+                        <td class="text-center">3</td>
+                        <td class="text-center">B</td>
+                        <td class="text-center"><input type="button" id="comments"  value="" alt="Comment"></td>
                       </tr>
                       <tr>
-                        <td>01418116</td>
-                        <td>Computer Programming</td>
-                        <td>3</td>
-                        <td>A</td>
-                        <td></td>
+                        <td class="text-center">01175112</td>
+                        <td>Volley Ball</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">A</td>
+                        <td class="text-center"><input type="button" id="comments"  value="" alt="Comment"></td>
                       </tr>
                   </tbody>
               </table>
@@ -256,8 +249,6 @@
     <script type="text/javascript" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 
     <script src="js/upload-pic-modal.js"></script>
-
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
