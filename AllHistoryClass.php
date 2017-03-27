@@ -74,8 +74,7 @@
               <label class="title-text" style="text-align:left;">ALL CLASS HISTORY</label>
               <br /><br /><br />
               <div id="link-all-class">
-                <a class="link-class">28/03/2017 &nbsp; [23:40] &nbsp;&nbsp;&nbsp; 01418116  &nbsp;&nbsp;&nbsp;  Computer Programming - Sukumal</a><br />
-                <a class="link-class">28/03/2017 &nbsp; [22:40] &nbsp;&nbsp;&nbsp; 01418116  &nbsp;&nbsp;&nbsp;  Computer Programming - Sukumal</a><br />
+               
               </div>
             </div>
             </div>
@@ -100,6 +99,7 @@
         <script src="js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/AllHistoryClass.js"></script>
 
 
     </body>
