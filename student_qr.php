@@ -141,6 +141,14 @@
             </div>
         </footer>
 
+
+<input type="text" id="username" hidden />
+<input type="text" id="fname" hidden />
+<input type="text" id="lname" hidden />
+<input type="text" id="role_id" hidden />
+<input type="text" name="email" id="email" hidden>
+<input type="text" name="address" id="address" hidden>
+<input type="text" name="tel" id="tel" hidden>
     </body>
 
 
@@ -184,6 +192,15 @@
         });
 
         $(document).ready(function() {
+            $('#username').val('<?php echo $_SESSION['username'];?>');
+            $('#fname').val('<?php echo $_SESSION['fname'];?>');
+            $('#lname').val('<?php echo $_SESSION['lname'];?>');
+            $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
+            $('#email').val('<?php echo $_SESSION['email'];?>');
+            $('#address').val('<?php echo $_SESSION['address'];?>');
+            $('#tel').val('<?php echo $_SESSION['tel'];?>');
+
+
             $("#btUpload").click(function(data) {
                 if (document.getElementById("inputFile").files.length == 0) {
                     alert("upload your qrcode");
@@ -198,10 +215,30 @@
                         if (err) throw err;
                         $('#decodeText').html(result);
                         alert(result);
+                        checkIn(result.split(" ")[0]);
                     });
                 }
             });
         });
+
+        function checkIn(id){
+            $.ajax({
+                type: "POST",
+                url: "controller/switcher.php",
+                data: {
+                    func: 'check_in_class',
+                    classID: id,
+                    username: $('#username').val()
+                },
+                success: function(data) {
+                    alert(data);
+                },
+                error: function(data) {
+                    alert(data + " ERROR");
+                }
+            });
+
+        }
     </script>
 
 </html>

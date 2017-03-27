@@ -106,6 +106,11 @@
             $subjectID = $_POST['subjectID'];
             echo $db_controller->getDropSubjectOnQR2Section($username, $year, $semester, $subjectID);
             break;
+        case 'check_in_class':
+            $classID = $_POST['classID'];
+            $username = $_POST['username'];
+            echo $db_controller->checkInClass($username, $classID);
+            breask;
         default:
             echo "Function Not Found.";
 }

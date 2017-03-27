@@ -532,6 +532,7 @@ class DB_Controller{
             }
             echo json_encode($tempArr);
         } catch (PDOException $e){
+            die("Couldn't getAllInClass from the database ".$this->dbname.": ".$e->getMessage());
 
         }
     }
@@ -559,6 +560,7 @@ class DB_Controller{
             echo json_encode($tempArr);
 
         } catch (PDOException $e){
+            die("Couldn't getAllInClass from the database ".$this->dbname.": ".$e->getMessage());
 
         }
     }
@@ -585,7 +587,19 @@ class DB_Controller{
             echo json_encode($tempArr);
 
         } catch (PDOException $e){
+            die("Couldn't getAllInClass from the database ".$this->dbname.": ".$e->getMessage());
 
+        }
+    }
+
+    public function checkInClass($username, $classID){
+         try{
+            $sql = 'INSERT INTO take_class (id_class, username_stu) VALUES ("'.$classID.'", "'.$username.'")';
+            $q = $this->connection->prepare($sql);
+            $q->execute();
+            echo "Database Inserte successful.";
+        } catch (PDOException $e){
+            die("Couldn't addUser to the database ".$this->dbname.": ".$e->getMessage());
         }
     }
 
