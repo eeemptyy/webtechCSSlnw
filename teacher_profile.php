@@ -73,7 +73,7 @@
 
             <div class="box-left">
               <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
-                <img id="profileImage" src="img/Profile.jpg" alt="profile picture">
+                <img id="profileImage" src="files/img/profile/contact-default3.png" alt="profile picture">
                 <!-- <img  src="img/5.png" alt="profile picture"> -->
                 <div class="quotes">
                     <p style="text-align:center;">
