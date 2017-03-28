@@ -4,7 +4,7 @@
 <?php
     session_start();
     $role = $_SESSION['role_id'];
-    if ($role < 0){
+    if ($role < 1){
         header("Location: login.html");
     }
 ?>
@@ -75,7 +75,7 @@
             <div class="box-left">
               <a data-target="#uploadModal" data-toggle="modal" class="list-quotes" href="#uploadModal">
                 <!-- <img src="img/Contacts-512.png" alt="profile picture"> -->
-                <img src="files/img/profile/contact-default3.png" alt="profile picture">
+                <img id="profileImage" src="files/img/profile/contact-default3.png" alt="profile picture">
                 <div class="quotes">
                     <p style="text-align:center;">
                         Change your profile picture <span>...Click</span>
@@ -165,7 +165,7 @@
     </footer>
 
     <!-- Modal -->
-    <form class="" action="index.html" method="post">
+    <form id="uploadimage" class="" action="index.html" method="post">
         <div id="uploadModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -185,13 +185,13 @@
                   <div class="btn btn-default image-preview-input">
                       <span class="glyphicon glyphicon-folder-open"></span>
                       <span class="image-preview-input-title">Browse</span>
-                      <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                      <input type="file" accept="image/png, image/jpeg, image/gif" name="inputFile"/> <!-- rename it -->
                   </div>
               </span>
           </div><!-- /input-group image-preview [TO HERE]-->
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                        <button id="modal-submit" type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -207,6 +207,7 @@
     <input type="text" name="email" id="email" hidden>
     <input type="text" name="address" id="address" hidden>
     <input type="text" name="tel" id="tel" hidden>
+    <input type="text" name="picPath" id="picPath" hidden>
 
 </body>
 
@@ -220,14 +221,38 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
+        $("form#uploadimage").submit(function(){
+            var formData = new FormData($(this)[0]);
+            $.ajax({
+                url: "controller/uploadPicture.php",
+                type: 'POST',
+                data: formData,
+                async: false,
+                success: function (data) {
+                    var path = data.split(":")[1].split("../")[1];
+                    location.reload();
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+            return false;
+        });
+        $('#modal-submit').click(function() {
+            $('#uploadimage').submit();
+        });
+
         $(document).ready(function() {
-            $('#username').val('<?php echo $_SESSION['username'];?>');
-            $('#fname').val('<?php echo $_SESSION['fname'];?>');
-            $('#lname').val('<?php echo $_SESSION['lname'];?>');
-            $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
-            $('#email').val('<?php echo $_SESSION['email'];?>');
-            $('#address').val('<?php echo $_SESSION['address'];?>');
-            $('#tel').val('<?php echo $_SESSION['tel'];?>');
+                $('#username').val('<?php echo $_SESSION['username'];?>');
+                $('#fname').val('<?php echo $_SESSION['fname'];?>');
+                $('#lname').val('<?php echo $_SESSION['lname'];?>');
+                $('#role_id').val('<?php echo $_SESSION['role_id'];?>');
+                $('#email').val('<?php echo $_SESSION['email'];?>');
+                $('#address').val('<?php echo $_SESSION['address'];?>');
+                $('#tel').val('<?php echo $_SESSION['tel'];?>');
+                $('#picPath').val('<?php echo $_SESSION['picPath'];?>');
+
+                $('#profileImage').attr("src", $('#picPath').val());
         });
     </script>
 

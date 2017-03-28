@@ -82,7 +82,7 @@
                 <div class="student-box col-sm-4">
                   <label class="name" id="usr_id">5610404452</label><br />
                   <label class="name" id="firstname">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id="lastname">Narkjumrussri</lable><br />
-                  <label class="name">Grade</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id="lastname">A</lable><br />
+                  <label class="name">Grade</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id="lastname">NULL</lable><br />
                   <div class="form-group">
                       <input id="submitChangPws" class="btn btn-default" style="font-size:12px; color:black; float:right;" type="submit" value="Update Grade" data-toggle="modal" data-target="#myModal">
                   </div>
@@ -214,12 +214,15 @@
             $('#email').val('<?php echo $_SESSION['email'];?>');
             $('#address').val('<?php echo $_SESSION['address'];?>');
             $('#tel').val('<?php echo $_SESSION['tel'];?>');
-            alert(" IN EMPTY");
+            // alert(" IN EMPTY");
             $('#year').val('<?php echo $_GET['year']; ?>');
             $('#course_id').val('<?php echo $_GET['course']; ?>');
             $('#semester').val('<?php echo $_GET['semester']; ?>');
-            alert("> "+$('#year').val()+" "+$('#course_id').val()+" "+$('#semester').val()+" <")
+            // alert("> "+$('#year').sval()+" "+$('#course_id').val()+" "+$('#semester').val()+" <")
             
+            $('#firstname').html($('#fname').val());
+            $('#lastname').html($('#lname').val());
+
         });
     </script>
     <script src="js/comment.js"></script>

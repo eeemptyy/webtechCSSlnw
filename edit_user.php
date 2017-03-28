@@ -213,6 +213,18 @@
         $('#email').val('<?php echo $_SESSION['email']; ?>');
         $('#address').val('<?php echo $_SESSION['address']; ?>');
         $('#tel').val('<?php echo $_SESSION['tel']; ?>');
+
+        $roleText = "";
+        if ($('#role_id').val() == 4){
+            roleText = "Admin";
+        }else if ($('#role_id').val() == 3){
+            roleText = "Laboratory-Teacher";
+        }else if ($('#role_id').val() == 2){
+            roleText = "Teacher";
+        }else if ($('#role_id').val() == 1){
+            roleText = "Student";
+        }
+        $('#role-dropdown').html(roleText);
         //set value to create
         document.getElementById('userid_create').value=document.getElementById('username').value;
         document.getElementById('fname_create').value=document.getElementById('fname').value;
