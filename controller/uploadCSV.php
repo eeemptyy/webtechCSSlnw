@@ -20,8 +20,6 @@ if(isset($_POST["submit"])) {
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    // shell_exec("del ../files/csv/");
-    // echo "Sorry, file already exists. <BR><big>If you want to upload new version of this file please 'Delete' first.<BR></big>";
     echo "Files alredy exists, Replaced files. <br>";
     $uploadOk = 1;
 }
@@ -43,10 +41,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["inputFile"]["tmp_name"], $target_file)) {
         $prob = array();
         $prob['file'] = $_FILES["inputFile"]["name"];
-
-        // echo "\File ". basename( $_FILES["inputFile"]["name"]). " has been uploaded. ".$target_file." \n".
-            echo $db_controller->readCSV($target_file);
-
+        echo $db_controller->readCSV($target_file);
     } else {
         echo "Sorry, there was an error uploading your file.<BR>";
     }

@@ -4,6 +4,14 @@ $("#myForm").keyup(function(event) {
     }
 });
 
+function isValid(text) {
+    if (text == "" || text == " " || text == null) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 $("#loginBTN").click(function() {
     var uname = $('#username').val();
     var pass = $('#pass').val();
@@ -43,11 +51,3 @@ $("#loginBTN").click(function() {
         $("#displayError").html("Invalid Username/Password");
     }
 });
-
-function isValid(text) {
-    if (text == "" || text == " " || text == null) {
-        return false;
-    } else {
-        return true;
-    }
-}

@@ -214,11 +214,10 @@
             $('#email').val('<?php echo $_SESSION['email'];?>');
             $('#address').val('<?php echo $_SESSION['address'];?>');
             $('#tel').val('<?php echo $_SESSION['tel'];?>');
-            // alert(" IN EMPTY");
+            
             $('#year').val('<?php echo $_GET['year']; ?>');
             $('#course_id').val('<?php echo $_GET['course']; ?>');
             $('#semester').val('<?php echo $_GET['semester']; ?>');
-            // alert("> "+$('#year').sval()+" "+$('#course_id').val()+" "+$('#semester').val()+" <")
             
             $('#firstname').html($('#fname').val());
             $('#lastname').html($('#lname').val());
