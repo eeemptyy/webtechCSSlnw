@@ -131,5 +131,5 @@ function goToCommends(button) {
     var semester = document.getElementById('select-semester').value;
     alert(course_id + " " + year + "/" + semester);
 
-    window.location.replace("comment_page.php?course=" + course_id + "&year=" + year + "&semester=" + semester);
+    window.location.replace("comment.php?course=" + course_id + "&year=" + year + "&semester=" + semester);
 }
