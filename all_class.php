@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-  session_start();
-  $role = $_SESSION['role_id'];
-?>
-
+    <?php
+        session_start();
+        $role = $_SESSION['role_id'];
+    ?>
     <head>
         <title>All History Class</title>
         <meta charset="utf-8">
@@ -30,9 +28,9 @@
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
 
     <body>
@@ -42,43 +40,41 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" style="width" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a class="navbar-brand topnav classwork" href="">ClassWork</a>
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- <li>Course</li> -->
-                        <li class="dropdown">
-                            <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                                <div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="edit_user.php">Edit Profile</a></li>
-                                <li><a href="change_pwd.php">Edit Password</a></li>
-                                <li><a href="controller/kill_session.php">Logout</a></li>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <!-- <li>Course</li> -->
+                                <li class="dropdown">
+                                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                        <div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Student</label><b class="caret"></b></div>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="edit_user.php">Edit Profile</a></li>
+                                        <li><a href="change_pwd.php">Edit Password</a></li>
+                                        <li><a href="controller/kill_session.php">Logout</a></li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+                </nav>
+                <br /><br />
+                <div class="content-section-b">
+                    <div class="container">
+                        <label class="title-text" style="text-align:left;">ALL CLASS HISTORY</label>
+                        <br /><br /><br />
+                        <div id="link-all-class">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-
-        <br /><br />
-        <div class="content-section-b">
-            <div class="container">
-              <label class="title-text" style="text-align:left;">ALL CLASS HISTORY</label>
-              <br /><br /><br />
-              <div id="link-all-class">
-
-              </div>
-            </div>
-            </div>
-        </div>
         </div>
 
         <footer>
@@ -100,7 +96,6 @@
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/AllHistoryClass.js"></script>
-
 
     </body>
 </html>

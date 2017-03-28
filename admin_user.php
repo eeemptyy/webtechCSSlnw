@@ -7,7 +7,6 @@
         header("Location: login.html");
     }
 ?>
-
 <head>
     <title>Administer</title>
     <meta charset="utf-8">

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
     <head>
         <title>All Student</title>
         <meta charset="utf-8">
