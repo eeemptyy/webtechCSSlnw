@@ -59,7 +59,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="edit_user.php">Edit Profile</a></li>
-                                <li><a href="ChangePW.php">Edit Password</a></li>
+                                <li><a href="change_pwd.php">Edit Password</a></li>
                                 <li><a href="controller/kill_session.php">Logout</a></li>
                             </ul>
                         </li>

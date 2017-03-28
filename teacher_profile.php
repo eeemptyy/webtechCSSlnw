@@ -57,7 +57,7 @@
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Teacher</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
                             <li><a href="edit_user.php">Edit Profile</a></li>
-                            <li><a href="changePW.php">Edit Password</a></li>
+                            <li><a href="change_pwd.php">Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
@@ -119,7 +119,7 @@
           <div class="list-inline">
             <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="Generate Class QRCode" onclick=" window.open('generateQR.php','_blank')"></div>
             <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Class-member" onclick=" window.open('all_class.php','_blank')"></div>
-            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Student" onclick=" window.open('AllStudent.php','_blank')"></div>
+            <div class="col-sm-4"><input class="btn btn-primary btn-block teacher-button" type="button" value="View Student" onclick=" window.open('all_student.php','_blank')"></div>
           </div><br />
           <hr class="hr-design">
           </div>

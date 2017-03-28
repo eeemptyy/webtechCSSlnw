@@ -62,7 +62,7 @@
                   </li>
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Administer</label><b class="caret"></b></div></a>
                         <ul class="dropdown-menu">
-                            <li><a href="changePW.php" username=<?php echo $_SESSION['username'] ?>>Edit Password</a></li>
+                            <li><a href="change_pwd.php" username=<?php echo $_SESSION['username'] ?>>Edit Password</a></li>
                             <li><a href="controller/kill_session.php">Logout</a></li>
                         </ul>
                     </li>
