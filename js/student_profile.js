@@ -127,9 +127,11 @@ function checkGrade(text) {
 function goToCommends(button) {
     currentID = $(button).parents('tr').find('td');
     var course_id = currentID.eq(0).html();
+    var grade = currentID.eq(3).html();
     var year = document.getElementById('select-year').value;
     var semester = document.getElementById('select-semester').value;
-    alert(course_id + " " + year + "/" + semester);
+    alert(course_id + " " + year + "/" + semester +" G: "+grade);
+    
 
-    window.location.replace("comment.php?course=" + course_id + "&year=" + year + "&semester=" + semester);
+    window.location.replace("comment.php?course=" + course_id + "&year=" + year + "&semester=" + semester + "&grade=" + grade);
 }
