@@ -197,7 +197,7 @@
     <script src="js/editProfile.js"></script>
 
     <script>
-      $(document).ready(function(){
+        $(document).ready(function(){
         //get value from session
         $('#username').val('<?php echo $_SESSION['username']; ?>');
         $('#fname').val('<?php echo $_SESSION['fname']; ?>');
