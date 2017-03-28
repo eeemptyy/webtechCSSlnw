@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
     session_start();
     $role = $_SESSION['role_id'];
@@ -8,7 +7,6 @@
         header("Location: login.html");
     }
 ?>
-
 <head>
     <title>Edit User Profile</title>
     <meta charset="utf-8">
@@ -36,8 +34,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
 
     <script type="text/javascript">
       //document.getElementById("username").value='test';
@@ -79,7 +75,6 @@
         </div>
     </nav>
 
-
     <div class="content-section-b">
         <div class="container">
           <div style="margin-top:50px; padding-right:20%; padding-left:20%;">
@@ -119,7 +114,6 @@
 
           </div>
           </form>
-
         </div>
     </div>
 
@@ -182,7 +176,6 @@
         </div>
     </form>
 
-
     <!-- <script type="text/javascript"> alert(document.getElementById('username').value)</script> -->
 
     <input type="text" id="username" hidden />
@@ -235,8 +228,5 @@
         document.getElementById('tel_create').value=document.getElementById('tel').value;
       });
     </script>
-
-
-
 
 </html>
