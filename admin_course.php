@@ -76,13 +76,9 @@
           <div class="row content-heading">
             <label class="course-label">Course  </label>
               <select id="select-year">
-                <option>2016</option>
-                <option>2017</option>
               </select>
               <label class="course-label">/</label>
               <select id="select-semester">
-                <option>1</option>
-                <option>2</option>
               </select>
           </div>
 
