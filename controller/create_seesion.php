@@ -12,7 +12,7 @@
 
     $role = $_SESSION['role_id'];
     if ($role > 3){
-        header("Location: ../ad.php");
+        header("Location: ../admin_user.php");
     }else if ($role < 2){
         header("Location: ../student_profile.php");
     }else{
