@@ -84,7 +84,7 @@
                   <label class="name" id="firstname">Boonyaporn</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id="lastname">Narkjumrussri</lable><br />
                   <label class="name" >Grade</label>&nbsp;&nbsp;&nbsp;&nbsp;<lable class="name" id = "grade_comment">NULL</lable><br />
                   <div class="form-group">
-                      <input id="submitChangPws" class="btn btn-default" style="font-size:12px; color:black; float:right;" type="submit" value="Update Grade" data-toggle="modal" data-target="#myModal">
+                      <input id="submitChangPws" class="btn btn-default" onclick="changGradeBtn()"style="font-size:12px; color:black; float:right;" type="submit" value="Update Grade" data-toggle="modal" data-target="#myModal">
                   </div>
                 </div>
 
@@ -117,21 +117,6 @@
               </div>
             </div>
 
-            <div id="all_comment">
-<!--                <div class="student-box" style="width:100%; background:rgba(189, 167, 141, 0.74); height:auto; padding-button:20px;">-->
-<!--
-                  <div class="form-group">
-                    <label for="comment"><b><u>Sukumal :</u></b></label>
-                    <p style="margin-left:30px;">
-                      Comments
-                    </p>
-                  </div>
-                  <div class="form-group">
-                      <input id="submitChangPws" class="btn btn-default" style="font-size:12px; color:black; float:right;" type="button" value="Delete">
-                  </div>
-                  <br />
--->
-              </div>
             </div>
 
 
@@ -152,19 +137,19 @@
                         <div class="modal-body">
                           <div class="form-group">
                               <label for="usr">Student ID:</label>
-                              <input type="text" class="form-control" id="usr" disabled="true">
+                              <input type="text" class="form-control" id="user_edit" disabled="true">
                           </div>
                           <div class="form-group">
                               <label for="firstname">Student Name:</label>
-                              <input type="text" class="form-control" id="firstname" disabled="true">
+                              <input type="text" class="form-control" id="name_edit" disabled="true">
                           </div>
                           <div class="form-group">
                               <label for="lastname">Grade:</label>
-                              <input type="text" class="form-control" id="lastname">
+                              <input type="text" class="form-control" id="grade_edit">
                           </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" id=model-editUser class="btn btn-default" data-dismiss="modal">Submit</button>
+                            <button type="submit" id=model-editGrade class="btn btn-default" data-dismiss="modal">Submit</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
