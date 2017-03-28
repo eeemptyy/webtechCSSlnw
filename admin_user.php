@@ -57,7 +57,7 @@
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Manage User<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="admin_user.php">Manage User</a></li>
-                        <li><a href="ad-course.php">Course</a></li>
+                        <li><a href="admin_course.php">Course</a></li>
                     </ul>
                   </li>
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"><div><img src="img/CircledUser.png" alt="" style="height:23px;"><label id=role-dropdown>Administer</label><b class="caret"></b></div></a>

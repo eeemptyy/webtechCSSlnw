@@ -48,14 +48,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav classwork" href="ad-course.php">ClassWork</a>
+                <a class="navbar-brand topnav classwork" href="admin_course.php">ClassWork</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Course<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li><a href="ad-course.php">Course</a></li>
+                      <li><a href="admin_course.php">Course</a></li>
                       <li><a href="admin_user.php">Manage User</a></li>
                     </ul>
                   </li>
