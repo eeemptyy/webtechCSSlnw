@@ -70,7 +70,6 @@
         </div>
     </nav>
 
-
     <div class="content-section-b">
         <div class="container">
           <div class="row content-heading">
@@ -81,9 +80,7 @@
               <select id="select-semester">
               </select>
           </div>
-
-
-            <br />
+        <br />
 
             <ul class="list-inline intro-social-buttons">
                 <li>
@@ -102,7 +99,6 @@
             </ul>
 
             <div id="tableDiv"></div>
-
 
         </div>
     </div>
