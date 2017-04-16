@@ -2,6 +2,14 @@ This is a Project about Class check-in with QRCode.
 
 Before using this project. Please follow these instruction below.
 
+--- user/pass ---
+
+1. student : 5610450080/0080
+2. Teacher : 5610400091/0091
+3. Admin   : 5610450063/0063
+
+--- ### ---
+
 --- System Requirement ---
 
 1. Apache/2.4.18
